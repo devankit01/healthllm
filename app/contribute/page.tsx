@@ -42,8 +42,9 @@ Answer with one letter only.`,
   {
     step: "05",
     title: "Compute health score",
-    desc: "The seven scored evals are averaged into a single health score (0–100). A grade from A to E is assigned. Speed is recorded separately — it depends on hardware.",
-    example: `med_knowledge      61.0%
+    desc: "The seven Tier 1 evals are averaged into a Health Score (0–100) graded A–E. These measure medical knowledge. Tier 2 evals (citation grounding, clinical notes, epistemic humility) run separately with opt-in flags and appear as a second column group — they are never averaged into the Health Score.",
+    example: `── Tier 1: Medical Knowledge ──
+med_knowledge      61.0%
 clinical_reasoning 67.0%
 evidence_reasoning 55.0%
 claim_verification 48.0%
@@ -51,7 +52,12 @@ entity_extraction  44.0% F1
 json_reliability   72.0%
 consistency        74.0%
 ─────────────────────────
-Health Score       60.1%  →  C`,
+Health Score       60.1%  →  C
+
+── Tier 2: Deployment Trust (opt-in) ──
+citation_grounding  —    (run with --grounding)
+notes_score         —    (run with --notes)
+abstention          —    (run with --abstention)`,
   },
   {
     step: "06",

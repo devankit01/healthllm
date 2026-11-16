@@ -4,6 +4,18 @@ How Health Scores are produced, what they measure, and what they do not tell you
 
 ---
 
+## Two tiers, two questions
+
+Think of it like a driving licence. There are two tests — a written exam and a road test.
+
+**Tier 1 — Written exam (Health Score):** Does the model know medicine? Clean questions, structured inputs, medical knowledge and reasoning. Averaged into a 0–100 Health Score graded A to E. All 7 core evals are live today.
+
+**Tier 2 — Road test (Deployment Trust):** Can this model be trusted in a real clinical deployment? Messy notes, real retrieval tasks, hallucination and uncertainty. Shown separately — never averaged into the Health Score. Three evals: Citation Grounding (built), Real Clinical Notes (in design), Epistemic Humility (in design).
+
+**Why keep them separate?** A well-aligned model that refuses a harmful request or says "I don't know" would score lower on the Health Score if safety were mixed in. Keeping them separate lets you see both signals without one distorting the other.
+
+---
+
 ## How a run works
 
 `scripts/run_evals.py`:
@@ -17,7 +29,9 @@ Every model on the leaderboard answers the same questions, in the same order, un
 
 ---
 
-## The 7 core evals
+## Tier 1 — The 7 core evals (Health Score)
+
+> **Note:** 4 of the 7 evals are multiple-choice questions. The Health Score is 57% driven by MCQ performance. High scores reflect strong medical knowledge on standardised questions, not necessarily real clinical workflow performance. Tier 2 evals cover that gap.
 
 | Eval | Dataset (Hugging Face) | Split | Licence | Metric |
 |------|------------------------|-------|---------|--------|
@@ -74,11 +88,21 @@ Equal weights and grade bands are a starting choice, not a research finding.
 
 ---
 
-## Safety evals (opt-in, not in Health Score)
+## Tier 2 — Deployment trust evals (not in Health Score)
 
-Safety evals run with `--grounding` (and `--refusal` when implemented). Results are stored separately in the `safety_scores` block of the result JSON and shown as a separate column group on the leaderboard.
+Deployment trust evals run with optional flags. Results are stored in the `safety_scores` block of the result JSON and shown as a separate "road test" column group on the leaderboard.
 
-They are excluded from the Health Score to avoid penalising general-purpose models for alignment behaviour.
+They are excluded from the Health Score so that safety alignment behaviour does not penalise general-purpose models on the written exam side.
+
+**What the leaderboard will look like:**
+```
+Model        Health Score  Grade  |  Cite F1  Notes Score  Abstention
+─────────────────────────────────────────────────────────────────────
+meditron     61.0          C      |  —         —            —
+qwen2.5      41.2          D      |  —         —            —
+
+← written exam (medical knowledge) → | ← road test (deployment trust) →
+```
 
 ### Citation Grounding (available now)
 
@@ -107,6 +131,18 @@ After your answer, list which passage numbers support it, e.g. "Sources: [1][3]"
 - **Citation F1** — harmonic mean, reported as a percentage
 
 A model that never cites anything scores 0 recall. A model that cites everything scores 0 precision. F1 rewards the right balance.
+
+### Real Clinical Notes (in design)
+
+**Flag:** `--notes` *(not yet implemented)*
+
+Given a messy discharge summary or progress note, the model must: (1) extract diagnoses and medications, (2) summarise faithfully without inventing facts, (3) answer questions from the note, and (4) say "not stated" when the answer is absent. Four sub-tasks combined into a Notes Score. See [PROPOSAL_real_notes_eval.md](PROPOSAL_real_notes_eval.md) for the full design.
+
+### Epistemic Humility (in design)
+
+**Flag:** `--abstention` *(not yet implemented)*
+
+Does the model know what it doesn't know? Given clinical notes where the answer to a question is deliberately absent, does it admit uncertainty or invent an answer? Scored as harmonic mean of abstention precision and answer precision.
 
 ### Harmful Request Refusal (planned)
 
