@@ -1,160 +1,138 @@
-# HealthLLM — The Open Health AI Hub
+# HealthLLM — Open Benchmarks for Health AI
 
-**[healthxllm.netlify.app](https://healthxllm.netlify.app)** · [Browse Models](https://healthxllm.netlify.app/models.html) · [Browse Datasets](https://healthxllm.netlify.app/datasets.html)
+**[healthxllm.netlify.app](https://healthxllm.netlify.app)** · [Leaderboard](https://healthxllm.netlify.app/leaderboard) · [Models](https://healthxllm.netlify.app/models) · [Datasets](https://healthxllm.netlify.app/datasets)
 
-An open hub for health AI: browse 47 LLMs and 44 datasets, benchmark any model against 7 reproducible clinical evals, and contribute your results in one pull request.
+Browse 329 health LLMs and 266 clinical datasets. Benchmark any model that runs in Ollama against 7 reproducible clinical evals — same datasets, same temperature, same seed every time.
 
-> **Not medical advice, and not clinical validation.** A high score here does not make a model safe to use in patient care.
-
----
-
-## What's in the hub
-
-### 🧠 Models catalog (`/models.html`)
-47 open-source LLMs for health — from specialized medical fine-tunes to general models with strong clinical performance. Each entry has: use case, "best for" summary, task tags, HuggingFace link, Ollama tag, and license.
-
-Includes: Meditron 7B/70B, OpenBioLLM 8B/70B, MedGemma 4B/27B, BioMistral, Med42, BioBERT, ClinicalBERT, PubMedBERT, GatorTron, MedCPT, CheXbert, ClinicalT5, LLaMA 3 Aloe, and more.
-
-### 📊 Datasets catalog (`/datasets.html`)
-44 openly licensed datasets for training, fine-tuning, and evaluating health AI — spanning Medical QA, NER, Radiology, Clinical Records, Drug Safety, Genomics, Instruction Tuning, and Literature.
-
-Includes: MedQA, MedMCQA, PubMedQA, PubHealth, NCBI Disease, MIMIC-IV, CheXpert, Medical-O1 Reasoning, HealthCareMagic 100k, EPFL Guidelines, LOINC, ICD-10, and more.
-
-### 📈 Evals (7 reproducible health benchmarks)
-
-| Eval | Measures | Dataset | Metric |
-|---|---|---|---|
-| `med-knowledge` | Medical fact recall | MedMCQA | Accuracy |
-| `clinical-reasoning` | Patient vignette → diagnosis | MedQA USMLE | Accuracy |
-| `evidence-reasoning` | Abstract → yes/no/maybe | PubMedQA | Accuracy |
-| `claim-verification` | Health claim true/false/mixture/unproven | PubHealth | Accuracy |
-| `entity-extraction` | Disease mentions in a passage | NCBI Disease | F1 |
-| `json-reliability` | Valid JSON output rate | Extraction replies | % valid |
-| `consistency` | Same answer with shuffled options | MedMCQA | % consistent |
-
-The **health rating** is the unweighted mean of all seven. See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for details and known limits.
+> **Not medical advice.** A high score does not make a model safe for patient care. Always validate with domain experts before clinical use.
 
 ---
 
-## Add a model and submit scores
+## What's here
 
-Any open model that runs in [Ollama](https://ollama.com) can be evaluated. Full guide: **[docs/ADDING_A_MODEL.md](docs/ADDING_A_MODEL.md)**
+### Models catalog (`/models`)
+329 open-source and open-weight LLMs for health — from specialized medical fine-tunes to general models with strong clinical performance. Filterable by size, license, specialty, language, and tags.
 
-**Quick start:**
+### Datasets catalog (`/datasets`)
+266 openly licensed datasets for training, fine-tuning, and evaluating health AI — spanning Medical QA, NER, Radiology, Clinical Records, Drug Safety, Genomics, and more.
+
+### Leaderboard (`/leaderboard`)
+Eval scores submitted by the community. Each row shows all 7 eval scores, the Health Score, grade, and hardware used.
+
+---
+
+## The 7 evals
+
+| Eval | Dataset | Metric |
+|------|---------|--------|
+| Medical knowledge | MedMCQA | Accuracy |
+| Clinical reasoning | MedQA USMLE | Accuracy |
+| Evidence reasoning | PubMedQA | Accuracy |
+| Claim verification | PubHealth | Accuracy |
+| Entity extraction | NCBI Disease | F1 |
+| JSON reliability | (extraction replies) | % valid |
+| Consistency | MedMCQA (shuffled) | % consistent |
+
+The **Health Score** is the unweighted mean of all seven (0–100). See [docs/METHODOLOGY.md](docs/METHODOLOGY.md) for scoring rules and known limits.
+
+### Safety evals (opt-in, not in Health Score)
+
+| Eval | Flag | Metric |
+|------|------|--------|
+| Citation Grounding | `--grounding` | Citation F1 (precision + recall on PubMedQA passages) |
+
+---
+
+## Run evals locally
+
+Requires Python 3.10+, [Ollama](https://ollama.com), and the `datasets` package.
 
 ```bash
-# 1. Fork and clone the repo
-git clone https://github.com/<your-handle>/healthllm && cd healthllm
+pip install datasets python-dotenv
+```
 
-# 2. Create a model file
-cp data/models/mistral-7b.json data/models/my-model-7b.json
-# → edit id, name, developer, params_b, license, ollama, hf, medical_tuned
+```bash
+# Basic run — 7 evals, 100 samples
+python3 scripts/run_evals.py meditron:7b --hardware "MacBook Pro M3"
 
-# 3. Install eval dependencies
-pip install -r evals/requirements.txt
+# Quick trial (20 samples, do not submit)
+python3 scripts/run_evals.py meditron:7b --samples 20
 
-# 4. Pull the model in Ollama
-ollama pull my-model:7b
+# Include citation grounding eval
+python3 scripts/run_evals.py meditron:7b --grounding
 
-# 5. Run all 7 evals (takes 20–60 min depending on hardware)
-python evals/run_eval.py \
-  --model my-model-7b \
-  --hardware "M2 Pro, 16 GB" \
-  --submitted-by your-github-handle
+# Measure run-to-run variance
+python3 scripts/run_evals.py meditron:7b --repeats 3
 
-# 6. Validate and preview the site
-npm run check    # validates all data files
-npm start        # serves the site at http://localhost:4173
-
-# 7. Open a pull request with:
-#    data/models/my-model-7b.json
-#    data/results/my-model-7b.json
+# Upload result to the leaderboard
+python3 scripts/run_evals.py meditron:7b --push --submitted-by yourhandle
 ```
 
 **Rules for a comparable submission:**
-- Keep `--samples 100` and `--seed 42` (the defaults) so every model answers the same questions
-- Run all 7 evals — the health rating only appears when all seven scores are present
-- Do not edit the results file by hand; if a score looks wrong, open an issue
+- Keep `--samples 100` and seed 42 (the defaults)
+- Run all 7 evals — Health Score only appears when all seven are present
+- Do not edit the results JSON by hand
 - Include `--hardware` so speed numbers are interpretable
-
-**Useful flags:**
-
-| Flag | What it does |
-|---|---|
-| `--dry-run` | Fake model + built-in fixtures — verifies setup without Ollama |
-| `--evals med-knowledge consistency` | Run only specific evals |
-| `--samples 20` | Quick trial run (do not submit) |
-| `--inspect med-knowledge` | Print first dataset row to debug field changes |
-| `--host http://other-machine:11434` | Use a remote Ollama server |
-
-**List a model without scores:**
-Submit only `data/models/my-model.json`. It appears in the catalog, and anyone can add results later.
 
 ---
 
 ## Run the site locally
 
-Node 18+ required. No dependencies to install.
+Node 22+ required.
 
 ```bash
-npm start
-# → validates data, writes build/, serves at http://localhost:4173
+npm install
+npm run dev      # → http://localhost:3000
+npm run build    # production build
 ```
 
-Validation only (CI check):
+---
 
-```bash
-npm run check
-```
+## Contribute
 
-Run the eval unit tests:
+Three ways to get involved:
 
-```bash
-python -m unittest discover evals
-```
+| | Who | How |
+|---|---|---|
+| Add a model | ML engineers, researchers | [Open an issue](https://github.com/devankit01/healthllm/issues/new?template=add-model-catalog.yml) with the HuggingFace ID |
+| Submit eval scores | Anyone with a GPU or Apple Silicon | Run the eval script and push with `--push` |
+| Add a dataset | Clinicians, NLP researchers | [Open an issue](https://github.com/devankit01/healthllm/issues/new?template=add-dataset.yml) |
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the full guide at [/contribute](https://healthxllm.netlify.app/contribute).
 
 ---
 
 ## Repo layout
 
 ```
+app/                   Next.js App Router pages
+components/            React components (Header, Footer, ModelCard, etc.)
 data/
-  evals.json             eval definitions + site examples
-  models/*.json          one file per leaderboard model (name, params, license, ollama tag)
-  results/*.json         eval scores, written by run_eval.py
-  health-models.json     full models catalog (47 entries, shown on /models.html)
-  health-datasets.json   full datasets catalog (44 entries, shown on /datasets.html)
-
-evals/
-  run_eval.py            eval runner — downloads datasets, queries Ollama, writes results
-  test_run_eval.py       unit tests for parsing and scoring
-  requirements.txt       pip dependencies (datasets>=2.19)
-
-site/
-  index.html             home page
-  models.html            models catalog page
-  datasets.html          datasets catalog page
-  app.js                 leaderboard rendering (index.html)
-  catalog.js             filter + card rendering (models/datasets pages)
-  styles.css             shared styles
-
+  health-models.json   329 models catalog
+  health-datasets.json 266 datasets catalog
+  results/             eval result JSONs (one per model run)
 scripts/
-  build.mjs              validates data, bundles data.json, copies site → build/
-  serve.mjs              local dev server
-
+  run_evals.py         eval runner — queries Ollama, scores replies, pushes to Supabase
+  schema.sql           Supabase table definitions
+  migrate_to_supabase.py  seeds Supabase from JSON files
 docs/
-  ADDING_A_MODEL.md      full step-by-step guide for submitting a model
-  METHODOLOGY.md         how the health rating is computed and its known limits
+  METHODOLOGY.md       how Health Score is computed and its limits
+  PROPOSAL_grounding_refusal_evals.md  design doc for safety evals
+types/
+  index.ts             shared TypeScript types
 ```
 
 ---
 
-## Contributing
+## Stack
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). Model submissions, new evals with openly licensed data, and documentation fixes are all welcome.
+- **Frontend:** Next.js 16 (App Router), deployed on Netlify
+- **Database:** Supabase (PostgreSQL) — models, datasets, eval results, subscribers
+- **Evals:** Python 3 + Ollama (local inference, temperature 0, seed 42)
+- **Datasets:** Hugging Face `datasets` library (downloaded at eval time, not stored in repo)
 
-For new evals, open an issue first. Requirements: openly licensed dataset (no access request), automatic metric (no judge model), entry in `data/evals.json`, loader + scorer in `run_eval.py`.
+---
 
 ## Licence
 
-Code and site: [MIT](LICENSE). Datasets keep their own licences and are downloaded at run time — no dataset rows are stored in this repo.
+Code: [MIT](LICENSE). Datasets keep their own licences and are downloaded at run time — no dataset rows are stored in this repo.

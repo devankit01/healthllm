@@ -54,6 +54,7 @@ export interface EvalResult {
   json_reliability: number;
   consistency: number;
   health_score: number;
+  citation_grounding?: number;
   samples: number;
   seed: number;
   submitted_at: string;

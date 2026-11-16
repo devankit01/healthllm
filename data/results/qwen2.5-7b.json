@@ -1,0 +1,20 @@
+{
+  "model_id": "qwen2.5-7b",
+  "model_name": "qwen2.5:7b",
+  "hardware": "Local machine",
+  "submitted_by": "ankitcodes01",
+  "samples": 100,
+  "seed": 42,
+  "temperature": 0,
+  "elapsed_seconds": 992,
+  "scores": {
+    "med_knowledge": 51.0,
+    "clinical_reasoning": 67.0,
+    "evidence_reasoning": 30.0,
+    "claim_verification": 23.0,
+    "entity_extraction": 22.4,
+    "json_reliability": 27.0,
+    "consistency": 68.0
+  },
+  "health_score": 41.2
+}

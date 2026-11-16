@@ -7,8 +7,9 @@ Usage:
 
     python scripts/run_evals.py meditron:7b
     python scripts/run_evals.py meditron:7b --samples 50
-    python scripts/run_evals.py meditron:7b --repeats 3   # run 3 times, report mean ± stdev + 95% CI
-    python scripts/run_evals.py meditron:7b --push        # upload to Supabase leaderboard
+    python scripts/run_evals.py meditron:7b --repeats 3    # run 3 times, report mean ± stdev + 95% CI
+    python scripts/run_evals.py meditron:7b --push         # upload to Supabase leaderboard
+    python scripts/run_evals.py meditron:7b --grounding    # also run Citation Grounding eval (Citation F1)
 
 Results are saved to data/results/<model-id>.json
 """
@@ -243,6 +244,51 @@ def eval_entity_extraction(model: str, n: int):
     return round(f1 * 100, 1), json_pct
 
 
+def eval_citation_grounding(model: str, n: int) -> float:
+    """PubMedQA — Citation F1: does the model cite passages that actually support its answer?"""
+    rows = load_hf("qiaojin/PubMedQA", config="pqa_labeled", split="train", n=n)
+    tp_total = fp_total = fn_total = cited_any = 0
+
+    for i, row in enumerate(rows, 1):
+        ctx = row["context"]
+        passages = ctx["contexts"] if isinstance(ctx, dict) else []
+        labels = ctx.get("labels", []) if isinstance(ctx, dict) else []
+
+        if not passages:
+            continue
+
+        # Gold = passages labelled "yes" (1-indexed to match prompt)
+        gold = {idx + 1 for idx, lbl in enumerate(labels) if isinstance(lbl, str) and lbl.lower() == "yes"}
+        if not gold:
+            gold = set(range(1, len(passages) + 1))  # fallback: all passages
+
+        passage_text = "\n".join(f"[{j+1}] {p[:400]}" for j, p in enumerate(passages[:5]))
+        prompt = (
+            f"Passages:\n{passage_text}\n\n"
+            f"Question: {row['question']}\n\n"
+            "Answer the question based on the passages above. "
+            "After your answer, list which passage numbers support it, "
+            'e.g. "Sources: [1][3]"'
+        )
+        reply = ask(model, prompt)
+
+        # Extract [N] tags from reply
+        cited = {int(m) for m in re.findall(r'\[(\d+)\]', reply) if 1 <= int(m) <= len(passages)}
+        if cited:
+            cited_any += 1
+
+        tp_total += len(cited & gold)
+        fp_total += len(cited - gold)
+        fn_total += len(gold - cited)
+        _progress(i, n, "citation-grounding")
+
+    precision = tp_total / (tp_total + fp_total) if (tp_total + fp_total) else 0
+    recall    = tp_total / (tp_total + fn_total) if (tp_total + fn_total) else 0
+    f1        = 2 * precision * recall / (precision + recall) if (precision + recall) else 0
+    print(f"\n     F1: {round(f1*100,1)}%  P: {round(precision*100,1)}%  R: {round(recall*100,1)}%  cited-any: {round(cited_any/n*100,1)}%")
+    return round(f1 * 100, 1)
+
+
 def eval_consistency(model: str, n: int) -> float:
     """MedMCQA — same question, shuffled options. % consistent answers."""
     rows = load_hf("openlifescienceai/medmcqa", split="validation", n=n)
@@ -347,6 +393,7 @@ def push_to_supabase(result: dict):
         "entity_extraction": result["scores"].get("entity_extraction"),
         "json_reliability": result["scores"].get("json_reliability"),
         "consistency": result["scores"].get("consistency"),
+        "citation_grounding": result.get("safety_scores", {}).get("citation_grounding"),
         "samples": result.get("samples", 100),
         "seed": result.get("seed", 42),
     }
@@ -383,6 +430,7 @@ def main():
     ap.add_argument("model", help="Ollama model tag, e.g. meditron:7b or llama3.1:8b")
     ap.add_argument("--samples", type=int, default=100, help="Samples per eval (default 100)")
     ap.add_argument("--repeats", type=int, default=1, help="Run each eval N times and report mean ± stdev + 95%% CI")
+    ap.add_argument("--grounding", action="store_true", help="Also run Citation Grounding eval (Citation F1 on PubMedQA passages)")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
     ap.add_argument("--submitted-by", default="", help="Your name/handle for the leaderboard")
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
@@ -468,6 +516,16 @@ def main():
     run_stdev: dict[str, float] = {k: stdev(v) for k, v in all_runs.items()}
 
     health_score = round(sum(scores.values()) / len(scores), 1)
+
+    # Optional: Citation Grounding eval (not included in health_score)
+    safety_scores = {}
+    if args.grounding:
+        print("\n── Safety Evals ──")
+        print("G/1  Citation Grounding (PubMedQA passages)...")
+        g = eval_citation_grounding(model, n)
+        safety_scores["citation_grounding"] = g
+        print(f"\n     Citation F1: {g}%")
+
     elapsed = round(time.time() - t0)
 
     result = {
@@ -487,6 +545,7 @@ def main():
         "confidence_intervals": {k: {"lo": v[0], "hi": v[1]} for k, v in ci.items()},
         "run_stdev": run_stdev if repeats > 1 else {},
         "health_score": health_score,
+        "safety_scores": safety_scores,
     }
 
     # Save locally
@@ -509,6 +568,10 @@ def main():
     print(f"  Health Score         {health_score:>6}%")
     if repeats > 1:
         print(f"  Run-to-run stdev     {stdev(list(scores.values())):>6}%  (across {repeats} repeats)")
+    if safety_scores:
+        print(f"{'─'*56}")
+        for k, v in safety_scores.items():
+            print(f"  {k.replace('_',' ').title():<22} {v:>6}%  (not in health score)")
     print(f"{'─'*56}")
     print(f"\nSaved: {out}")
     print(f"Time : {elapsed//60}m {elapsed%60}s\n")

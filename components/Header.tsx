@@ -13,6 +13,7 @@ export default function Header() {
     { href: "/datasets", label: "Datasets" },
     { href: "/leaderboard", label: "Leaderboard" },
     { href: "/contribute", label: "Contribute" },
+    { href: "/methodology", label: "Methodology" },
   ];
 
   return (

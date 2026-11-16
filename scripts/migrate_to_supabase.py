@@ -33,7 +33,26 @@ HEADERS = {
 }
 
 
+def deduplicate(rows, key="id"):
+    """Remove duplicate rows by primary key, keeping the last occurrence."""
+    seen = {}
+    for r in rows:
+        if r.get(key):
+            seen[r[key]] = r
+    return list(seen.values())
+
+
+def normalize_rows(rows):
+    """Ensure every row has the same keys — required by Supabase batch upsert."""
+    all_keys = set()
+    for r in rows:
+        all_keys.update(r.keys())
+    return [{k: r.get(k, None) for k in all_keys} for r in rows]
+
+
 def upsert_batch(table, rows):
+    rows = deduplicate(rows)
+    rows = normalize_rows(rows)
     endpoint = f"{url}/rest/v1/{table}"
     for i in range(0, len(rows), 100):
         batch = rows[i : i + 100]

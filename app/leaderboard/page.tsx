@@ -81,6 +81,7 @@ export default async function LeaderboardPage() {
                 {EVALS.map((e) => <th key={e.key}>{e.label}</th>)}
                 <th>Health Score</th>
                 <th>Grade</th>
+                <th title="Citation F1 — does the model cite passages that support its answer?">Cite F1</th>
               </tr>
             </thead>
             <tbody>
@@ -107,6 +108,11 @@ export default async function LeaderboardPage() {
                     <span className={`grade g-${grade(r.health_score)}`}>
                       {grade(r.health_score)}
                     </span>
+                  </td>
+                  <td className="score">
+                    {r.citation_grounding != null
+                      ? r.citation_grounding.toFixed(1)
+                      : <span className="none">—</span>}
                   </td>
                 </tr>
               ))}

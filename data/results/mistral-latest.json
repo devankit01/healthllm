@@ -1,0 +1,20 @@
+{
+  "model_id": "mistral-latest",
+  "model_name": "mistral:latest",
+  "hardware": "Local machine",
+  "submitted_by": "ankitcodes01",
+  "samples": 100,
+  "seed": 42,
+  "temperature": 0,
+  "elapsed_seconds": 2490,
+  "scores": {
+    "med_knowledge": 43.0,
+    "clinical_reasoning": 51.0,
+    "evidence_reasoning": 44.0,
+    "claim_verification": 21.2,
+    "entity_extraction": 37.9,
+    "json_reliability": 85.0,
+    "consistency": 55.0
+  },
+  "health_score": 48.2
+}
