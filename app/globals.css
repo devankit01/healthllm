@@ -291,6 +291,30 @@ footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 28px 0 40
 .hf-card-lic { font-size: 12px; color: var(--muted); margin-left: auto; }
 .card-link-note { font-size: 12px; color: var(--muted); font-style: italic; }
 
+/* ── Leaderboard two-tier headers ── */
+.lb-group-row th { padding: 6px 8px; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border-bottom: none; }
+.lb-group-tier1 { background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent); text-align: center; border-radius: 6px 6px 0 0; }
+.lb-group-tier2 { background: color-mix(in srgb, #7c3aed 10%, transparent); color: #7c3aed; text-align: center; border-radius: 6px 6px 0 0; }
+.lb-group-score { background: none; }
+
+/* ── Score cell color coding ── */
+.score-green { background: color-mix(in srgb, #16a34a 12%, transparent); color: #14532d; font-weight: 600; }
+.score-yellow { background: color-mix(in srgb, #ca8a04 12%, transparent); color: #713f12; }
+.score-red { background: color-mix(in srgb, #dc2626 10%, transparent); color: #7f1d1d; }
+:root[data-theme="dark"] .score-green { background: color-mix(in srgb, #16a34a 20%, transparent); color: #86efac; }
+:root[data-theme="dark"] .score-yellow { background: color-mix(in srgb, #ca8a04 20%, transparent); color: #fde68a; }
+:root[data-theme="dark"] .score-red { background: color-mix(in srgb, #dc2626 18%, transparent); color: #fca5a5; }
+
+/* ── Health Score cell with bar ── */
+.health-score-cell { display: flex; flex-direction: column; gap: 4px; align-items: center; min-width: 72px; }
+.health-score-num { font-weight: 700; font-size: 15px; }
+.score-bar-wrap { width: 60px; height: 5px; background: var(--line); border-radius: 3px; overflow: hidden; }
+.score-bar { height: 100%; background: var(--accent); border-radius: 3px; transition: width 0.3s; }
+
+/* ── Table wrap ── */
+.table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+.lb-table { border-radius: 0; border: none; }
+
 /* ── Scores banner ── */
 .scores-banner { display: flex; align-items: flex-start; gap: 10px; background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent); border-radius: 10px; padding: 12px 16px; margin: 16px auto; font-size: 13.5px; color: var(--ink); line-height: 1.55; }
 .scores-banner-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
