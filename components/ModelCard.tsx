@@ -74,9 +74,9 @@ export default function ModelCard({ model }: { model: HealthModel }) {
             <span className="trust-val">Requires custom code</span>
           </span>
         )}
-        <span className={`trust-item trust-status ${model.status === "checked" ? "trust-checked" : "trust-auto"}`}>
-          {model.status === "checked" ? "✓ Licence verified" : "Auto-listed"}
-        </span>
+        {model.status === "checked" && (
+          <span className="trust-item trust-status trust-checked">✓ Licence verified</span>
+        )}
       </div>
     </div>
   );
