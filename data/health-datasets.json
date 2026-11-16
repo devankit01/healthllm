@@ -748,7 +748,7 @@
   },
   {
     "id": "ms2",
-    "name": "MS\u00b2",
+    "name": "MS²",
     "type": "Biomedical Literature",
     "size": "470k papers",
     "task": "summarization",
@@ -971,7 +971,7 @@
       "ehr",
       "interoperability"
     ],
-    "description": "Logical Observation Identifiers Names and Codes \u2014 the universal standard for lab tests, vital signs, and clinical measurements.",
+    "description": "Logical Observation Identifiers Names and Codes — the universal standard for lab tests, vital signs, and clinical measurements.",
     "usecase": "EHR standardisation, lab result NLP, interoperability tasks, clinical code prediction.",
     "tags": [
       "terminology",
@@ -6437,6 +6437,2875 @@
       "Amharic",
       "Zulu",
       "Yoruba"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rodriguescarson-adaption-medical-qa-diagnosis-treatment",
+    "name": "adaption medical qa diagnosis treatment",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "rodriguescarson/adaption-medical-qa-diagnosis-treatment",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "clinical-reasoning",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "batuhanaktas-turkish-synthetic-medical-multiple-choice-qa",
+    "name": "turkish synthetic medical multiple choice QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "batuhanaktas/turkish_synthetic_medical_multiple_choice_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "foundershubham1729-medical-qa-datasets",
+    "name": "medical qa datasets",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "FounderShubham1729/medical-qa-datasets",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "xingqiang-microbiology-medical-qa",
+    "name": "microbiology medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "xingqiang/microbiology-medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "batuhanaktas-tr-synt-medical-multiple-choice-qa-with-reasoning",
+    "name": "TR synt medical multiple choice QA with reasoning",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "batuhanaktas/TR_synt_medical_multiple_choice_QA_with_reasoning",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pedro1321-chsa-triage-medical-qa-fr-en",
+    "name": "chsa triage medical qa fr en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Pedro1321/chsa-triage-medical-qa-fr-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "abhiram973-medicalqa",
+    "name": "MedicalQA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "abhiram973/MedicalQA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "s200862-medical-qa-meds",
+    "name": "medical qa meds",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "s200862/medical_qa_meds",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dqdung205-medical-vietnamese-qa",
+    "name": "medical vietnamese qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Dqdung205/medical-vietnamese-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "shutajb-medical-qa-instruction-zht",
+    "name": "medical qa instruction zht",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "shutajb/medical-qa-instruction-zht",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nharshavardhana-adaption-medical-qa-explanations",
+    "name": "adaption medical qa explanations",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "nharshavardhana/adaption-medical-qa-explanations",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "zuoxiaojia-medical-qa-datasets",
+    "name": "medical qa datasets",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "ZuoXiaojia/medical-qa-datasets",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "alipay2025-medical-qa",
+    "name": "medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "alipay2025/medical_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "jtatman-medquad-medicalqa-wizdolalpaca-instruct",
+    "name": "medquad medicalqa wizdolalpaca instruct",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "jtatman/medquad-medicalqa-wizdolalpaca-instruct",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "huzaifa525-medical-intelligence-dataset-40k-rows-of-disease-info-treatments-and-medical-qa",
+    "name": "Medical Intelligence Dataset 40k Rows of Disease Info Treatments and Medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "huzaifa525/Medical_Intelligence_Dataset_40k_Rows_of_Disease_Info_Treatments_and_Medical_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dopeornope-medical-qa-200k-ours-synthetic",
+    "name": "medical qa 200k ours synthetic",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "DopeorNope/medical_qa_200k_ours_synthetic",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part1",
+    "name": "MedicalQA part1",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part1",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lavita-medical-qa-shared-task-v1-half",
+    "name": "medical qa shared task v1 half",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lavita/medical-qa-shared-task-v1-half",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "tudb-labs-medical-qa",
+    "name": "medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TUDB-Labs/medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nikolayrainway-medical-qa-specialization-dataset",
+    "name": "medical qa specialization dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "NikolayRainWay/medical-qa-specialization-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "bsc-nlp4bia-swedish-medical-exams-qa",
+    "name": "swedish medical exams qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "BSC-NLP4BIA/swedish_medical_exams_qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "zimax-medical-board-exam-qa",
+    "name": "medical board exam qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Zimax/medical-board-exam-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part1-en",
+    "name": "MedicalQA part1 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part1-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ghufran27-medical-qa-v3",
+    "name": "medical qa v3",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Ghufran27/medical-qa-v3",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part3-en",
+    "name": "MedicalQA part3 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part3-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "awannaby-luciolescribe-sovereign-medical-whisper-qa",
+    "name": "LucioleScribe Sovereign Medical Whisper QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "AWANNABY/LucioleScribe-Sovereign-Medical-Whisper-QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part6-en",
+    "name": "MedicalQA part6 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part6-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part8-en",
+    "name": "MedicalQA part8 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part8-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0014-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0014 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0014_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "graf-medmcqa-bonvoyage-28581-recall-0.4-qwen3-1b-instruct-medical-qa-p2-ht-40k",
+    "name": "medmcqa bonvoyage 28581 recall 0.4 qwen3 1b instruct medical qa p2 ht 40k",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "graf/medmcqa-bonvoyage-28581_recall_0.4-qwen3-1b-instruct-medical-qa-p2-ht-40k",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lavita-medical-qa-shared-task-v1-toy-eval",
+    "name": "medical qa shared task v1 toy eval",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lavita/medical-qa-shared-task-v1-toy-eval",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mohamed-ahmed161-medical-qa-data",
+    "name": "Medical QA Data",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Mohamed-Ahmed161/Medical-QA-Data",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part7",
+    "name": "MedicalQA part7",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part7",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0017-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0017 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0017_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "localllama-datainventor-medical-qa",
+    "name": "datainventor medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "LocalLLaMA/datainventor-medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "llama-based",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part5",
+    "name": "MedicalQA part5",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part5",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nicholas-ugbala-hf-medical-qa-narrative-10k",
+    "name": "medical qa narrative 10k",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "nicholas-ugbala-hf/medical-qa-narrative-10k",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ldsprgrm-medicalqa",
+    "name": "medicalQA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "ldsprgrm/medicalQA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "younesgu-medicalqallama2",
+    "name": "medicalQALlama2",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "younesgu/medicalQALlama2",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "chinyemba-medical-qa",
+    "name": "medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Chinyemba/medical-QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "saxo-ko-medical-meadow-med-qa-options-linkbricks-single-dataset-with-prompt-text-huggingface",
+    "name": "ko medical meadow med qa options linkbricks single dataset with prompt text huggingface",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Saxo/ko_medical_meadow_med_qa_options_linkbricks_single_dataset_with_prompt_text_huggingface",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "birdiebyte1024-medical-qa",
+    "name": "medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "BirdieByte1024/medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "phuocsang-vinmec-medical-qa",
+    "name": "vinmec medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "phuocsang/vinmec-medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0252-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0252 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0252_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "serguntsov-medicalqa",
+    "name": "medicalQA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "serguntsov/medicalQA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "graf-medmcqa-bonvoyage-33053-recall-0.4-qwen3-1b-instruct-medical-qa-ht-40k",
+    "name": "medmcqa bonvoyage 33053 recall 0.4 qwen3 1b instruct medical qa ht 40k",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "graf/medmcqa-bonvoyage-33053_recall_0.4-qwen3-1b-instruct-medical-qa-ht-40k",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kaunghtetcho-medicalqa",
+    "name": "MedicalQA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "KaungHtetCho/MedicalQA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part3",
+    "name": "MedicalQA part3",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part3",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part4-en",
+    "name": "MedicalQA part4 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part4-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "derinsozen-medical-qa",
+    "name": "medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "DerinSozen/medical_qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1292-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1292 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1292_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "graf-medmcqa-bonvoyage-37753-recall-0.2-qwen3-4b-instruct-medical-qa-p3-ht-40k",
+    "name": "medmcqa bonvoyage 37753 recall 0.2 qwen3 4b instruct medical qa p3 ht 40k",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "graf/medmcqa-bonvoyage-37753_recall_0.2-qwen3-4b-instruct-medical-qa-p3-ht-40k",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "builder-syntaxlabs-medical-billing-icd10-qa-sample",
+    "name": "medical billing icd10 qa sample",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Builder-syntaxlabs/medical-billing-icd10-qa-sample",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "llama-based",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "deep-div-medical-qa-mediqa",
+    "name": "medical qa mediqa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "deep-div/medical_qa_mediqa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dangmanh1811-vietnamese-medical-qa",
+    "name": "vietnamese medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "dangmanh1811/vietnamese-medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "varun500-medical-qa-us",
+    "name": "medical qa us",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "varun500/medical-qa-us",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2705-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2705 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2705_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kaishih-medical-qa-tzh",
+    "name": "medical qa tzh",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "kaishih/medical-qa-tzh",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pial2233-medical-english-bangla-qa",
+    "name": "Medical english bangla QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Pial2233/Medical-english-bangla-QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part8",
+    "name": "MedicalQA part8",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part8",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "quirkydatascientist-medical-qa-dataset-part-4",
+    "name": "medical qa dataset part 4",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "QuirkyDataScientist/medical_qa_dataset_part_4",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0224-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0224 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0224_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "qian-jin-medical-intelligence-dataset-40k-rows-of-disease-info-treatments-and-medical-qa",
+    "name": "Medical Intelligence Dataset 40k Rows of Disease Info Treatments and Medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "QIAN-JIN/Medical_Intelligence_Dataset_40k_Rows_of_Disease_Info_Treatments_and_Medical_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pks3kor-medical-qa-chatbot",
+    "name": "medical qa chatbot",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "pks3kor/medical_qa_chatbot",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part10",
+    "name": "MedicalQA part10",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part10",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "quannguyen204-combined-medical-qa-dataset",
+    "name": "combined medical qa dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "quannguyen204/combined_medical_qa_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0179-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0179 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0179_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0464-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0464 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0464_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2601-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2601 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2601_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3120-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3120 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3120_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "graf-medmcqa-bonvoyage-8229-recall-0.4-qwen3-1b-instruct-medical-qa-ht",
+    "name": "medmcqa bonvoyage 8229 recall 0.4 qwen3 1b instruct medical qa ht",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "graf/medmcqa-bonvoyage-8229_recall_0.4-qwen3-1b-instruct-medical-qa-ht",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "geenmab-medical-qa-ja",
+    "name": "medical qa ja",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "geenmab/medical-qa-ja",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part5-en",
+    "name": "MedicalQA part5 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part5-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "codcodingcode-medical-qa-combined",
+    "name": "medical qa combined",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "CodCodingCode/medical-qa-combined",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "emtpro01-medical-chatbot-qa-dataset",
+    "name": "medical chatbot qa dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "EmTpro01/medical-chatbot-qa-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0407-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0407 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0407_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0529-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0529 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0529_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1582-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1582 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1582_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kbsss-medical-qa-knowledge-base",
+    "name": "medical qa knowledge base",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "kbsss/medical-qa-knowledge-base",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3119-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3119 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3119_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3121-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3121 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3121_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "roshang09112007-adaption-medical-qa-vignettes",
+    "name": "adaption medical qa vignettes",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Roshang09112007/adaption-medical-qa-vignettes",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "syntaxlabs-medical-billing-icd10-qa",
+    "name": "medical billing icd10 qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "syntaxlabs/medical-billing-icd10-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dim-medical-qa-ru-prompts",
+    "name": "medical qa ru prompts",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "dim/medical_qa_ru_prompts",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "goodnight7-sample-medicalqa-embed",
+    "name": "sample medicalQA embed",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Goodnight7/sample_medicalQA_embed",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part2-en",
+    "name": "MedicalQA part2 en",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part2-en",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dangmanh1811-synthetic-vietnamese-medical-qa",
+    "name": "synthetic vietnamese medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "dangmanh1811/synthetic-vietnamese-medical-qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0103-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0103 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0103_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0200-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0200 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0200_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0387-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0387 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0387_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0434-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0434 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0434_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0758-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0758 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0758_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rishabh9559-rk-medical-qa",
+    "name": "Rk medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "rishabh9559/Rk_medical_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1401-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1401 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1401_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3106-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3106 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3106_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "graf-medmcqa-bonvoyage-18067-recall-0.4-qwen3-4b-medical-qa-ht",
+    "name": "medmcqa bonvoyage 18067 recall 0.4 qwen3 4b medical qa ht",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "graf/medmcqa-bonvoyage-18067_recall_0.4-qwen3-4b-medical-qa-ht",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nicholas-ugbala-hf-medical-qa-combined-10.5k",
+    "name": "medical qa combined 10.5k",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "nicholas-ugbala-hf/medical-qa-combined-10.5k",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "goodnight7-sample-medicalqa",
+    "name": "sample medicalQA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Goodnight7/sample_medicalQA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "danda245-medical-qa-id-llama-split",
+    "name": "medical qa id llama split",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Danda245/medical-qa-id-llama-split",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "bsc-nlp4bia-swedish-medical-qa",
+    "name": "swedish medical qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "BSC-NLP4BIA/swedish_medical_qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part4",
+    "name": "MedicalQA part4",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part4",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part6",
+    "name": "MedicalQA part6",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part6",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "falan42-medicalqa-part9",
+    "name": "MedicalQA part9",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "falan42/MedicalQA-part9",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "codcodingcode-medical-qa-combined-split",
+    "name": "medical qa combined split",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "CodCodingCode/medical-qa-combined-split",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0172-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0172 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0172_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0491-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0491 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0491_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0749-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0749 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0749_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0805-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0805 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0805_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0989-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0989 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0989_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1005-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1005 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1005_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "binoddai-medical-report-570-qa",
+    "name": "medical report 570 QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Binoddai/medical-report-570-QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1322-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1322 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1322_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1420-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1420 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1420_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1538-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1538 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1538_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1585-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1585 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1585_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1608-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1608 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1608_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1714-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1714 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1714_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "prajwals21-medical-qa-sft-dataset",
+    "name": "medical qa sft dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "PrajwalS21/medical-qa-sft-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ajayaadhi-medical-qa",
+    "name": "Medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Ajayaadhi/Medical-QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dragon1218-medicalqa",
+    "name": "MedicalQA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Dragon1218/MedicalQA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "minhquy1624-qa-medical",
+    "name": "QA medical",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "minhquy1624/QA-medical",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "perfectsadmin-medical-dataset-5k-qa",
+    "name": "medical dataset 5k qa",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "PerfectsAdmin/medical_dataset_5k_qa",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lintangbs-medical-qa-id-llama",
+    "name": "medical qa id llama",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lintangbs/medical-qa-id-llama",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "quangtohe-medical-qa-abstract",
+    "name": "medical qa abstract",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "quangtohe/medical_qa_abstract",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rishabh0603-medical-qa-synthetic",
+    "name": "medical qa synthetic",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Rishabh0603/medical-qa-synthetic",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0186-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0186 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0186_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0914-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0914 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0914_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0955-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0955 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0955_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1403-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1403 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1403_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1598-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1598 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1598_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2213-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2213 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2213_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2692-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2692 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2692_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2766-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2766 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2766_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2806-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2806 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2806_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2987-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2987 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2987_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3022-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3022 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3022_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "david-sprague-medical-health-qa-articles-dataset",
+    "name": "Medical Health QA Articles Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "david-sprague/Medical-Health-QA-Articles-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "clinical-reasoning",
+      "general",
+      "medical-qa",
+      "summarization"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elsabado-comprehensive-medical-qa-dataset",
+    "name": "Comprehensive Medical QA Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "elsabado/Comprehensive-Medical-QA-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "jary20-synthetic.qa.medical.free",
+    "name": "synthetic.qa.medical.free",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "jary20/synthetic.qa.medical.free",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0123-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0123 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0123_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0193-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0193 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0193_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0375-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0375 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0375_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0404-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0404 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0404_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0479-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0479 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0479_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0481-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0481 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0481_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2680-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2680 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2680_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3059-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3059 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3059_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "hajzxcodsmjfwrilfj-medical-intelligence-dataset-40k-rows-of-disease-info-treatments-and-medical-qa",
+    "name": "Medical Intelligence Dataset 40k Rows of Disease Info Treatments and Medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "hajzxcodsmjfwrilfj/Medical_Intelligence_Dataset_40k_Rows_of_Disease_Info_Treatments_and_Medical_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "juliabot-medical-qa-formatted",
+    "name": "medical qa formatted",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Juliabot/medical-qa-formatted",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "quirkydatascientist-medical-qa-dataset-part-4-100",
+    "name": "medical qa dataset part 4 100",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "QuirkyDataScientist/medical_qa_dataset_part_4_100",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
     ],
     "featured": false
   }
