@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import type { EvalResult } from "@/types";
 import type { Metadata } from "next";
+import ScoresBanner from "@/components/ScoresBanner";
 
 export const metadata: Metadata = {
   title: "Leaderboard — HealthLLM",
@@ -56,6 +57,8 @@ export default async function LeaderboardPage() {
   const results: EvalResult[] = data ?? [];
 
   return (
+    <>
+    <ScoresBanner />
     <div className="wrap" style={{ paddingTop: 48, paddingBottom: 80 }}>
       <p className="sec-label">Leaderboard</p>
       <div className="sec-head">
@@ -121,5 +124,6 @@ export default async function LeaderboardPage() {
         </div>
       )}
     </div>
+    </>
   );
 }

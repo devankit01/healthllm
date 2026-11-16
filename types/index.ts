@@ -11,6 +11,7 @@ export interface HealthModel {
   ollama: string | null;
   weights_format?: string;
   remote_code?: boolean;
+  status?: "checked" | "auto";
   specialty: string[];
   usecase: string;
   strength: string;

@@ -47,6 +47,9 @@ jobs:
           python scripts/sync_hf.py $ARGS --limit "$LIMIT" > /tmp/sync_output.txt 2>&1
           cat /tmp/sync_output.txt
 
+          # Write last-sync date so the footer can show it
+          echo "{\"date\":\"$(date -u +%Y-%m-%d)\"}" > data/last-sync.json
+
           # Parse the counts printed by the script
           NEW_MODELS=$(grep "^SYNC_NEW_MODELS=" /tmp/sync_output.txt | cut -d= -f2 || echo "0")
           NEW_DATASETS=$(grep "^SYNC_NEW_DATASETS=" /tmp/sync_output.txt | cut -d= -f2 || echo "0")
