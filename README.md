@@ -2,7 +2,7 @@
 
 **[healthxllm.netlify.app](https://healthxllm.netlify.app)** · [Leaderboard](https://healthxllm.netlify.app/leaderboard) · [Models](https://healthxllm.netlify.app/models) · [Datasets](https://healthxllm.netlify.app/datasets)
 
-Browse 329 health LLMs and 266 clinical datasets. Benchmark any model that runs in Ollama against 7 reproducible clinical evals — same datasets, same temperature, same seed every time.
+A catalogue for shortlisting open health LLMs and clinical datasets. Compare models under the same questions and settings — same datasets, same temperature, same seed every time. Live counts at the top of the site; see the leaderboard for scored models.
 
 > **Not medical advice.** A high score does not make a model safe for patient care. Always validate with domain experts before clinical use.
 
@@ -11,10 +11,10 @@ Browse 329 health LLMs and 266 clinical datasets. Benchmark any model that runs 
 ## What's here
 
 ### Models catalog (`/models`)
-329 open-source and open-weight LLMs for health — from specialized medical fine-tunes to general models with strong clinical performance. Filterable by size, license, specialty, language, and tags.
+Open-source and open-weight LLMs for health — from specialized medical fine-tunes to general models with strong clinical performance. Filterable by size, license, specialty, language, and tags. Counts updated weekly.
 
 ### Datasets catalog (`/datasets`)
-266 openly licensed datasets for training, fine-tuning, and evaluating health AI — spanning Medical QA, NER, Radiology, Clinical Records, Drug Safety, Genomics, and more.
+Openly licensed datasets for training, fine-tuning, and evaluating health AI — spanning Medical QA, NER, Radiology, Clinical Records, Drug Safety, Genomics, and more. Counts updated weekly.
 
 ### Leaderboard (`/leaderboard`)
 Eval scores submitted by the community. Each row shows all 7 eval scores, the Health Score, grade, and hardware used.

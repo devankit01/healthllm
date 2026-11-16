@@ -43,6 +43,16 @@ export default function DatasetCard({ dataset }: { dataset: HealthDataset }) {
         )}
         <span className="hf-card-lic">{dataset.license}</span>
       </div>
+
+      <div className="trust-row">
+        <span className="trust-item">
+          <span className="trust-label">Licence source</span>
+          <span className="trust-val">HuggingFace card</span>
+        </span>
+        <span className={`trust-item trust-status ${dataset.status === "checked" ? "trust-checked" : "trust-auto"}`}>
+          {dataset.status === "checked" ? "✓ Licence verified" : "Auto-listed"}
+        </span>
+      </div>
     </div>
   );
 }

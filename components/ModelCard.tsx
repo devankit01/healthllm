@@ -56,6 +56,28 @@ export default function ModelCard({ model }: { model: HealthModel }) {
         )}
         <span className="hf-card-lic">{model.license}</span>
       </div>
+
+      <div className="trust-row">
+        <span className="trust-item">
+          <span className="trust-label">Licence source</span>
+          <span className="trust-val">HuggingFace card</span>
+        </span>
+        {model.weights_format && (
+          <span className="trust-item">
+            <span className="trust-label">Weights</span>
+            <span className="trust-val">{model.weights_format}</span>
+          </span>
+        )}
+        {model.remote_code && (
+          <span className="trust-item trust-warn">
+            <span className="trust-label">⚠</span>
+            <span className="trust-val">Requires custom code</span>
+          </span>
+        )}
+        <span className={`trust-item trust-status ${model.status === "checked" ? "trust-checked" : "trust-auto"}`}>
+          {model.status === "checked" ? "✓ Licence verified" : "Auto-listed"}
+        </span>
+      </div>
     </div>
   );
 }

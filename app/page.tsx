@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import SubscribeForm from "@/components/SubscribeForm";
+import ScoresBanner from "@/components/ScoresBanner";
 
 export default async function HomePage() {
   const supabase = await createClient();
@@ -20,7 +21,7 @@ export default async function HomePage() {
           <p className="eyebrow">Open Health AI</p>
           <h1>The benchmark for <span>health AI</span></h1>
           <p className="lede">
-            Browse {mc} open health LLMs and {dc} datasets. Run reproducible evals.
+            Browse {mc} open health LLMs and {dc} datasets. Compare models under the same questions and settings.
             Compare clinical reasoning, medical knowledge, and RAG reliability — all at temperature&nbsp;0.
           </p>
           <div className="cta">
@@ -31,11 +32,13 @@ export default async function HomePage() {
           <dl className="stats-strip">
             <div className="stat"><dt>{mc}</dt><dd>Health LLMs</dd></div>
             <div className="stat"><dt>{dc}</dt><dd>Datasets</dd></div>
-            <div className="stat"><dt>7</dt><dd>Reproducible evals</dd></div>
+            <div className="stat"><dt>7</dt><dd>Clinical evals</dd></div>
             <div className="stat"><dt>0°</dt><dd>Temperature — always</dd></div>
           </dl>
         </section>
       </div>
+
+      <ScoresBanner />
 
       {/* Hub teasers */}
       <section className="wrap hub-teasers" aria-label="Browse">
@@ -60,7 +63,7 @@ export default async function HomePage() {
             <div className="teaser-icon">📈</div>
             <div>
               <h3>Leaderboard</h3>
-              <p>Community-submitted eval scores across 7 clinical benchmarks. All reproducible.</p>
+              <p>Community-submitted scores across 7 clinical benchmarks. Same questions, same settings for every model.</p>
               <span className="teaser-link">View leaderboard →</span>
             </div>
           </Link>
