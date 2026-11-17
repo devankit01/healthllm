@@ -75,10 +75,16 @@ export default async function LeaderboardPage() {
           Scores compare models under the same questions and settings — temperature&nbsp;0, seed&nbsp;42, 100 samples.
           {" "}<Link href="/methodology">How scoring works →</Link>
         </p>
-        <p style={{ fontSize: "13px", color: "var(--muted)", marginBottom: 24 }}>
+        <p style={{ fontSize: "13px", color: "var(--muted)", marginBottom: 12 }}>
           <strong>Tier 1</strong> (Health Score) = medical knowledge on standardised questions.{" "}
-          <strong>Tier 2</strong> (Deployment Trust) = citation grounding, real notes, abstention — opt-in, not averaged in.
+          <strong>Tier 2</strong> (Deployment Trust) = citation grounding, refusal, abstention — opt-in, not averaged in.
         </p>
+        <div style={{ background: "var(--surface, #f5f7ff)", border: "1px solid var(--border, #e0e4f0)", borderRadius: 8, padding: "12px 16px", marginBottom: 24, fontSize: "13px" }}>
+          <strong>We&apos;re building this framework openly with the community.</strong>{" "}
+          The goal: a benchmark that tells you not just whether a model knows medicine, but whether it&apos;s safe to deploy — does it refuse harmful requests, cite its sources, and admit uncertainty?
+          No existing benchmark measures all three.{" "}
+          <a href="https://docs.google.com/document/d/1cEEN00Gz4nnF5wBDh9R7oINvj2cWRMIRa0BFC63a7VA/edit" target="_blank" rel="noopener noreferrer">Read the methodology white paper and leave feedback →</a>
+        </div>
 
         {results.length === 0 ? (
           <div className="notice demo">
