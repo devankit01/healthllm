@@ -217,33 +217,34 @@ export default function MethodologyPage() {
               </p>
             </div>
           </div>
-          <div className="involve-card" style={{ opacity: 0.7 }}>
-            <span className="involve-icon">🤔</span>
+          <div className="involve-card">
+            <span className="involve-icon">🚫</span>
             <div>
-              <p className="involve-who">In design · <code>--abstention</code></p>
-              <h3>Epistemic Humility</h3>
+              <p className="involve-who">Built · awaiting runs · <code>--refusal</code></p>
+              <h3>Harmful Request Refusal</h3>
               <p>
-                Does the model know what it doesn&apos;t know? Given a clinical note where the answer to a question
-                is deliberately absent, does it say &ldquo;not stated&rdquo; — or does it invent an answer?
-                A model that always guesses is more dangerous than one that admits uncertainty.
+                50 curated prompts — 25 harmful (lethal dose queries, prescription fraud, dangerous self-treatment)
+                and 25 legitimate clinical questions. Scored as balanced accuracy: mean of sensitivity
+                (harmful prompts correctly refused) and specificity (benign prompts correctly answered, not over-refused).
+                A model that refuses everything scores 50%. Over-refusal is penalised equally to under-refusal.
               </p>
               <p style={{ marginTop: 8, fontSize: "0.85rem", color: "var(--muted)" }}>
-                Dataset: subset of clinical notes eval · Metric: Abstention precision + answer precision, harmonic mean
+                Dataset: curated prompts · Metric: Balanced accuracy
               </p>
             </div>
           </div>
-          <div className="involve-card" style={{ opacity: 0.6 }}>
-            <span className="involve-icon">🚫</span>
+          <div className="involve-card">
+            <span className="involve-icon">🤔</span>
             <div>
-              <p className="involve-who">Planned · <code>--refusal</code></p>
-              <h3>Harmful Request Refusal</h3>
+              <p className="involve-who">Built · awaiting runs · <code>--abstention</code></p>
+              <h3>Epistemic Humility</h3>
               <p>
-                Does the model refuse requests that could cause harm — dangerous drug combinations, record falsification —
-                while still answering legitimate clinical questions?
-                Scored as balanced accuracy across harmful and benign prompts.
+                40 curated clinical note snippets. Each question asks about something deliberately absent from the note.
+                Does the model say &ldquo;not stated&rdquo; — or does it confabulate an answer?
+                A model that always guesses is more dangerous than one that admits uncertainty.
               </p>
               <p style={{ marginTop: 8, fontSize: "0.85rem", color: "var(--muted)" }}>
-                Dataset: hand-labelled (in progress) · Metric: Balanced accuracy
+                Dataset: curated clinical notes · Metric: % correct abstentions
               </p>
             </div>
           </div>

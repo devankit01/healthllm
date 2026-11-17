@@ -9,7 +9,10 @@ Usage:
     python scripts/run_evals.py meditron:7b --samples 50
     python scripts/run_evals.py meditron:7b --repeats 3    # run 3 times, report mean ± stdev + 95% CI
     python scripts/run_evals.py meditron:7b --push         # upload to Supabase leaderboard
-    python scripts/run_evals.py meditron:7b --grounding    # also run Citation Grounding eval (Citation F1)
+    python scripts/run_evals.py meditron:7b --grounding    # Tier 2: Citation Grounding eval (Citation F1)
+    python scripts/run_evals.py meditron:7b --refusal      # Tier 2: Harmful Request Refusal (balanced accuracy)
+    python scripts/run_evals.py meditron:7b --abstention   # Tier 2: Epistemic Humility (abstention on unanswerable Qs)
+    python scripts/run_evals.py meditron:7b --tier2        # Run all three Tier 2 evals
 
 Results are saved to data/results/<model-id>.json
 """
@@ -32,7 +35,7 @@ def ask(model: str, prompt: str, timeout: int = 600) -> str:
         "model": model,
         "prompt": prompt,
         "stream": False,
-        "options": {"temperature": TEMPERATURE, "seed": SEED},
+        "options": {"temperature": TEMPERATURE, "seed": SEED, "num_predict": 256, "repeat_last_n": 64},
     }).encode()
     req = urllib.request.Request(
         f"{OLLAMA_URL}/api/generate",
@@ -40,11 +43,18 @@ def ask(model: str, prompt: str, timeout: int = 600) -> str:
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return json.loads(resp.read())["response"].strip()
-    except urllib.error.URLError as e:
-        sys.exit(f"Ollama not reachable at {OLLAMA_URL}: {e}\nIs Ollama running? Run: ollama serve")
+    for attempt in range(3):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.loads(resp.read())["response"].strip()
+        except urllib.error.HTTPError as e:
+            if e.code == 500 and attempt < 2:
+                time.sleep(5)
+                continue
+            sys.exit(f"Ollama not reachable at {OLLAMA_URL}: {e}\nIs Ollama running? Run: ollama serve")
+        except urllib.error.URLError as e:
+            sys.exit(f"Ollama not reachable at {OLLAMA_URL}: {e}\nIs Ollama running? Run: ollama serve")
+    return ""
 
 
 def wilson_ci(correct: int, n: int, z: float = 1.96):
@@ -451,6 +461,11 @@ def main():
     model_info = get_ollama_model_info(model)
     if ollama_version:
         print(f"Ollama  : {ollama_version}  Quant: {model_info.get('quantization','?')}\n")
+
+    # Warm up — load model into memory before eval loop starts
+    print("Warming up model...")
+    ask(model, "Reply with one word: ready")
+    print("Ready.\n")
 
     # Derive model_id from Ollama tag: "meditron:7b" → "meditron-7b"
     model_id = model.replace(":", "-").replace("/", "-")

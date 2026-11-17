@@ -1,0 +1,56 @@
+{
+  "model_id": "meditron-7b",
+  "model_name": "meditron:7b",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.16",
+  "quantization": "Q4_0",
+  "parameter_size": "7B",
+  "elapsed_seconds": 1774,
+  "scores": {
+    "med_knowledge": 38.0,
+    "clinical_reasoning": 25.0,
+    "evidence_reasoning": 0.0,
+    "claim_verification": 0.0,
+    "entity_extraction": 0.0,
+    "json_reliability": 0.0,
+    "consistency": 3.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 29.1,
+      "hi": 47.8
+    },
+    "clinical_reasoning": {
+      "lo": 17.5,
+      "hi": 34.3
+    },
+    "evidence_reasoning": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "claim_verification": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "entity_extraction": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "json_reliability": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "consistency": {
+      "lo": 1.0,
+      "hi": 8.5
+    }
+  },
+  "run_stdev": {},
+  "health_score": 9.4,
+  "safety_scores": {}
+}
