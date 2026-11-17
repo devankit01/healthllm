@@ -76,8 +76,10 @@ create policy "Public read eval_results" on public.eval_results for select using
 alter table public.health_models add column if not exists language text[] default '{}';
 alter table public.health_datasets add column if not exists language text[] default '{}';
 
--- Citation Grounding safety eval score (run if adding to existing tables)
+-- Tier 2 eval scores (run if adding to existing tables)
 alter table public.eval_results add column if not exists citation_grounding numeric;
+alter table public.eval_results add column if not exists safety_refusal numeric;
+alter table public.eval_results add column if not exists abstention numeric;
 
 -- Dataset review status and model metadata (run if adding to existing tables)
 alter table public.health_datasets add column if not exists status text default 'auto';
