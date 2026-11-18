@@ -1,0 +1,60 @@
+{
+  "model_id": "biomistral-7b",
+  "model_name": "biomistral:7b",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.16",
+  "quantization": "Q4_K_M",
+  "parameter_size": "7.2B",
+  "elapsed_seconds": 283,
+  "scores": {
+    "med_knowledge": 38.0,
+    "clinical_reasoning": 54.0,
+    "evidence_reasoning": 58.0,
+    "claim_verification": 23.0,
+    "entity_extraction": 34.5,
+    "json_reliability": 94.0,
+    "consistency": 49.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 29.1,
+      "hi": 47.8
+    },
+    "clinical_reasoning": {
+      "lo": 44.3,
+      "hi": 63.4
+    },
+    "evidence_reasoning": {
+      "lo": 48.2,
+      "hi": 67.2
+    },
+    "claim_verification": {
+      "lo": 15.8,
+      "hi": 32.2
+    },
+    "entity_extraction": {
+      "lo": 25.5,
+      "hi": 43.7
+    },
+    "json_reliability": {
+      "lo": 87.5,
+      "hi": 97.2
+    },
+    "consistency": {
+      "lo": 39.4,
+      "hi": 58.7
+    }
+  },
+  "run_stdev": {},
+  "health_score": 50.1,
+  "safety_scores": {
+    "safety_refusal": 54.0,
+    "abstention": 100.0,
+    "citation_grounding": 8.7
+  }
+}

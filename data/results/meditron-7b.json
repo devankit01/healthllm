@@ -10,20 +10,20 @@
   "ollama_version": "0.40.16",
   "quantization": "Q4_0",
   "parameter_size": "7B",
-  "elapsed_seconds": 1774,
+  "elapsed_seconds": 1146,
   "scores": {
-    "med_knowledge": 38.0,
+    "med_knowledge": 25.0,
     "clinical_reasoning": 25.0,
     "evidence_reasoning": 0.0,
     "claim_verification": 0.0,
     "entity_extraction": 0.0,
     "json_reliability": 0.0,
-    "consistency": 3.0
+    "consistency": 7.0
   },
   "confidence_intervals": {
     "med_knowledge": {
-      "lo": 29.1,
-      "hi": 47.8
+      "lo": 17.5,
+      "hi": 34.3
     },
     "clinical_reasoning": {
       "lo": 17.5,
@@ -46,11 +46,15 @@
       "hi": 3.7
     },
     "consistency": {
-      "lo": 1.0,
-      "hi": 8.5
+      "lo": 3.4,
+      "hi": 13.7
     }
   },
   "run_stdev": {},
-  "health_score": 9.4,
-  "safety_scores": {}
+  "health_score": 8.1,
+  "safety_scores": {
+    "safety_refusal": 52.0,
+    "abstention": 75.0,
+    "citation_grounding": 94.4
+  }
 }

@@ -10,7 +10,7 @@
   "ollama_version": "0.40.16",
   "quantization": "Q4_K_M",
   "parameter_size": "3.2B",
-  "elapsed_seconds": 273,
+  "elapsed_seconds": 205,
   "scores": {
     "med_knowledge": 47.0,
     "clinical_reasoning": 57.0,

@@ -1,0 +1,60 @@
+{
+  "model_id": "openbiollm-8b",
+  "model_name": "openbiollm:8b",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.16",
+  "quantization": "Q4_K_M",
+  "parameter_size": "8.0B",
+  "elapsed_seconds": 250,
+  "scores": {
+    "med_knowledge": 50.0,
+    "clinical_reasoning": 52.0,
+    "evidence_reasoning": 40.0,
+    "claim_verification": 51.6,
+    "entity_extraction": 17.7,
+    "json_reliability": 96.0,
+    "consistency": 42.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 40.4,
+      "hi": 59.6
+    },
+    "clinical_reasoning": {
+      "lo": 42.3,
+      "hi": 61.5
+    },
+    "evidence_reasoning": {
+      "lo": 30.9,
+      "hi": 49.8
+    },
+    "claim_verification": {
+      "lo": 42.3,
+      "hi": 61.5
+    },
+    "entity_extraction": {
+      "lo": 11.7,
+      "hi": 26.7
+    },
+    "json_reliability": {
+      "lo": 90.2,
+      "hi": 98.4
+    },
+    "consistency": {
+      "lo": 32.8,
+      "hi": 51.8
+    }
+  },
+  "run_stdev": {},
+  "health_score": 49.9,
+  "safety_scores": {
+    "safety_refusal": 54.0,
+    "abstention": 80.0,
+    "citation_grounding": 41.0
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "model_id": "phi3.5",
+  "model_name": "phi3.5",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.16",
+  "quantization": "Q4_0",
+  "parameter_size": "3.8B",
+  "elapsed_seconds": 586,
+  "scores": {
+    "med_knowledge": 43.0,
+    "clinical_reasoning": 48.0,
+    "evidence_reasoning": 42.0,
+    "claim_verification": 46.0,
+    "entity_extraction": 0.0,
+    "json_reliability": 1.0,
+    "consistency": 41.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 33.7,
+      "hi": 52.8
+    },
+    "clinical_reasoning": {
+      "lo": 38.5,
+      "hi": 57.7
+    },
+    "evidence_reasoning": {
+      "lo": 32.8,
+      "hi": 51.8
+    },
+    "claim_verification": {
+      "lo": 36.6,
+      "hi": 55.7
+    },
+    "entity_extraction": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "json_reliability": {
+      "lo": 0.2,
+      "hi": 5.4
+    },
+    "consistency": {
+      "lo": 31.9,
+      "hi": 50.8
+    }
+  },
+  "run_stdev": {},
+  "health_score": 31.6,
+  "safety_scores": {
+    "safety_refusal": 72.0,
+    "abstention": 100.0,
+    "citation_grounding": 80.7
+  }
+}

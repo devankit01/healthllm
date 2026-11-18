@@ -1,0 +1,60 @@
+{
+  "model_id": "mistral",
+  "model_name": "mistral",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.16",
+  "quantization": "Q4_K_M",
+  "parameter_size": "7.2B",
+  "elapsed_seconds": 582,
+  "scores": {
+    "med_knowledge": 42.0,
+    "clinical_reasoning": 50.0,
+    "evidence_reasoning": 44.0,
+    "claim_verification": 23.2,
+    "entity_extraction": 37.5,
+    "json_reliability": 82.0,
+    "consistency": 53.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 32.8,
+      "hi": 51.8
+    },
+    "clinical_reasoning": {
+      "lo": 40.4,
+      "hi": 59.6
+    },
+    "evidence_reasoning": {
+      "lo": 34.7,
+      "hi": 53.8
+    },
+    "claim_verification": {
+      "lo": 15.8,
+      "hi": 32.2
+    },
+    "entity_extraction": {
+      "lo": 29.1,
+      "hi": 47.8
+    },
+    "json_reliability": {
+      "lo": 73.3,
+      "hi": 88.3
+    },
+    "consistency": {
+      "lo": 43.3,
+      "hi": 62.5
+    }
+  },
+  "run_stdev": {},
+  "health_score": 47.4,
+  "safety_scores": {
+    "safety_refusal": 68.0,
+    "abstention": 100.0,
+    "citation_grounding": 77.6
+  }
+}

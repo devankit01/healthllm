@@ -1,12 +1,16 @@
 {
   "model_id": "qwen2.5-7b",
   "model_name": "qwen2.5:7b",
-  "hardware": "Local machine",
-  "submitted_by": "ankitcodes01",
+  "hardware": "",
+  "submitted_by": "",
   "samples": 100,
+  "repeats": 1,
   "seed": 42,
   "temperature": 0,
-  "elapsed_seconds": 992,
+  "ollama_version": "0.40.16",
+  "quantization": "Q4_K_M",
+  "parameter_size": "7.6B",
+  "elapsed_seconds": 620,
   "scores": {
     "med_knowledge": 51.0,
     "clinical_reasoning": 67.0,
@@ -16,5 +20,41 @@
     "json_reliability": 27.0,
     "consistency": 68.0
   },
-  "health_score": 41.2
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 41.3,
+      "hi": 60.6
+    },
+    "clinical_reasoning": {
+      "lo": 57.3,
+      "hi": 75.4
+    },
+    "evidence_reasoning": {
+      "lo": 21.9,
+      "hi": 39.6
+    },
+    "claim_verification": {
+      "lo": 15.8,
+      "hi": 32.2
+    },
+    "entity_extraction": {
+      "lo": 15.0,
+      "hi": 31.1
+    },
+    "json_reliability": {
+      "lo": 19.3,
+      "hi": 36.4
+    },
+    "consistency": {
+      "lo": 58.3,
+      "hi": 76.3
+    }
+  },
+  "run_stdev": {},
+  "health_score": 41.2,
+  "safety_scores": {
+    "safety_refusal": 78.0,
+    "abstention": 100.0,
+    "citation_grounding": 75.2
+  }
 }
