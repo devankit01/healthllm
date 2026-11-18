@@ -561,9 +561,20 @@ def eval_consistency(model: str, n: int) -> float:
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
 def _first_letter(text: str) -> str:
-    m = re.search(r"\b([A-Da-d])\b", text)
-    if m:
-        return m.group(1).upper()
+    # Try explicit answer patterns first (handles reasoning models like DeepSeek-R1)
+    for pattern in [
+        r"[Aa]nswer\s*[:is]+\s*\**([A-Da-d])\b",
+        r"[Cc]orrect\s+(?:answer|option|choice)\s*[:is]+\s*\**([A-Da-d])\b",
+        r"[Tt]herefore[^.]*\b([A-Da-d])\)",
+        r"(?:^|\n)\s*\**([A-Da-d])\)\s",   # "B) text" at start of line
+    ]:
+        m = re.search(pattern, text)
+        if m:
+            return m.group(1).upper()
+    # Fall back to last standalone letter (more reliable than first for reasoning models)
+    matches = list(re.finditer(r"\b([A-Da-d])\b", text))
+    if matches:
+        return matches[-1].group(1).upper()
     m = re.search(r"[A-Da-d]", text)
     return m.group(0).upper() if m else ""
 
@@ -659,22 +670,22 @@ def push_to_supabase(result: dict):
             resp.read()
         print("Pushed to Supabase leaderboard.")
     except urllib.error.HTTPError as e:
-        body = e.read().decode()
+        err_body = e.read().decode()
         # Retry without Tier 2 columns if they don't exist in the schema yet
-        if e.code == 400 and ("safety_refusal" in body or "abstention" in body):
+        if e.code == 400 and ("safety_refusal" in err_body or "abstention" in err_body):
             print("Tier 2 columns not in schema yet — pushing Tier 1 scores only.")
             for key in ("safety_refusal", "abstention"):
-                payload.pop(key, None)
-            data2 = json.dumps(payload).encode()
+                row.pop(key, None)
+            data2 = json.dumps(row).encode()
             req2 = urllib.request.Request(url + "/rest/v1/eval_results", data=data2, headers=headers, method="POST")
             try:
                 with urllib.request.urlopen(req2) as resp:
                     resp.read()
-                print("Pushed to Supabase leaderboard (Tier 1 only).")
+                print("Pushed to Supabase leaderboard (Tier 1 only — add columns to push Tier 2).")
             except urllib.error.HTTPError as e2:
                 print(f"Supabase push failed: {e2.code} {e2.read().decode()}")
         else:
-            print(f"Supabase push failed: {e.code} {body}")
+            print(f"Supabase push failed: {e.code} {err_body}")
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
@@ -688,6 +699,7 @@ def main():
     ap.add_argument("--refusal",     action="store_true", help="Tier 2: Harmful Request Refusal (balanced accuracy)")
     ap.add_argument("--abstention",  action="store_true", help="Tier 2: Epistemic Humility / Abstention")
     ap.add_argument("--tier2",       action="store_true", help="Run all three Tier 2 evals")
+    ap.add_argument("--tier2-only",  action="store_true", help="Skip Tier 1, load saved results and run Tier 2 only")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
     ap.add_argument("--submitted-by", default="", help="Your name/handle for the leaderboard")
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
@@ -702,84 +714,97 @@ def main():
     print(f"Samples : {n} per eval  Repeats: {repeats}")
     print(f"Temp    : {TEMPERATURE}  Seed: {SEED}\n")
 
-    check_ollama(model)
-
-    ollama_version = get_ollama_version()
-    model_info = get_ollama_model_info(model)
-    if ollama_version:
-        print(f"Ollama  : {ollama_version}  Quant: {model_info.get('quantization','?')}\n")
-
-    # Warm up — load model into memory before eval loop starts
-    print("Warming up model...")
-    ask(model, "Reply with one word: ready")
-    print("Ready.\n")
-
-    # Derive model_id from Ollama tag: "meditron:7b" → "meditron-7b"
     model_id = model.replace(":", "-").replace("/", "-")
 
-    # Store per-repeat scores for CI/stdev
-    all_runs: dict[str, list] = {
-        "med_knowledge": [], "clinical_reasoning": [], "evidence_reasoning": [],
-        "claim_verification": [], "entity_extraction": [], "json_reliability": [],
-        "consistency": [],
-    }
+    # --tier2-only: load saved Tier 1 results, skip re-running them
+    if args.tier2_only:
+        saved_path = Path(__file__).parent.parent / "data" / "results" / f"{model_id}.json"
+        if not saved_path.exists():
+            print(f"No saved results found at {saved_path}. Run Tier 1 first.")
+            return
+        with open(saved_path) as f:
+            result = json.load(f)
+        scores = result["scores"]
+        health_score = result["health_score"]
+        ci = {k: (v["lo"], v["hi"]) for k, v in result.get("confidence_intervals", {}).items()}
+        run_stdev = result.get("run_stdev", {})
+        ollama_version = get_ollama_version()
+        model_info = get_ollama_model_info(model)
+        print(f"Loaded saved Tier 1 results from {saved_path}")
+        print(f"Health Score: {health_score}%\n")
+        args.tier2 = True
+    else:
+        check_ollama(model)
+        ollama_version = get_ollama_version()
+        model_info = get_ollama_model_info(model)
+        if ollama_version:
+            print(f"Ollama  : {ollama_version}  Quant: {model_info.get('quantization','?')}\n")
 
-    scores = {}
+        print("Warming up model...")
+        ask(model, "Reply with one word: ready")
+        print("Ready.\n")
+
+        all_runs: dict[str, list] = {
+            "med_knowledge": [], "clinical_reasoning": [], "evidence_reasoning": [],
+            "claim_verification": [], "entity_extraction": [], "json_reliability": [],
+            "consistency": [],
+        }
+
+        scores = {}
+        t0 = time.time()
+
+        for repeat in range(repeats):
+            if repeats > 1:
+                print(f"\n── Repeat {repeat + 1}/{repeats} ──")
+
+            print("1/7  Medical knowledge (MedMCQA)...")
+            s = eval_med_knowledge(model, n)
+            all_runs["med_knowledge"].append(s)
+            print(f"\n     Score: {s}%")
+
+            print("2/7  Clinical reasoning (MedQA USMLE)...")
+            s = eval_clinical_reasoning(model, n)
+            all_runs["clinical_reasoning"].append(s)
+            print(f"\n     Score: {s}%")
+
+            print("3/7  Evidence reasoning (PubMedQA)...")
+            s = eval_evidence_reasoning(model, n)
+            all_runs["evidence_reasoning"].append(s)
+            print(f"\n     Score: {s}%")
+
+            print("4/7  Claim verification (PubHealth)...")
+            s = eval_claim_verification(model, n)
+            all_runs["claim_verification"].append(s)
+            print(f"\n     Score: {s}%")
+
+            print("5/7  Entity extraction + JSON reliability (NCBI Disease)...")
+            f1, json_pct = eval_entity_extraction(model, n)
+            all_runs["entity_extraction"].append(f1)
+            all_runs["json_reliability"].append(json_pct)
+            print(f"\n     F1: {f1}%  JSON valid: {json_pct}%")
+
+            print("6/7  (json_reliability computed above)")
+
+            print("7/7  Consistency (MedMCQA shuffled)...")
+            s = eval_consistency(model, n)
+            all_runs["consistency"].append(s)
+            print(f"\n     Score: {s}%")
+
+        for k, vals in all_runs.items():
+            scores[k] = round(sum(vals) / len(vals), 1)
+
+        ci: dict[str, tuple] = {}
+        for k, vals in all_runs.items():
+            mean_pct = sum(vals) / len(vals)
+            correct_equiv = round(mean_pct / 100 * n)
+            ci[k] = wilson_ci(correct_equiv, n)
+
+        run_stdev: dict[str, float] = {k: stdev(v) for k, v in all_runs.items()}
+        health_score = round(sum(scores.values()) / len(scores), 1)
+
     t0 = time.time()
 
-    for repeat in range(repeats):
-        if repeats > 1:
-            print(f"\n── Repeat {repeat + 1}/{repeats} ──")
-
-        print("1/7  Medical knowledge (MedMCQA)...")
-        s = eval_med_knowledge(model, n)
-        all_runs["med_knowledge"].append(s)
-        print(f"\n     Score: {s}%")
-
-        print("2/7  Clinical reasoning (MedQA USMLE)...")
-        s = eval_clinical_reasoning(model, n)
-        all_runs["clinical_reasoning"].append(s)
-        print(f"\n     Score: {s}%")
-
-        print("3/7  Evidence reasoning (PubMedQA)...")
-        s = eval_evidence_reasoning(model, n)
-        all_runs["evidence_reasoning"].append(s)
-        print(f"\n     Score: {s}%")
-
-        print("4/7  Claim verification (PubHealth)...")
-        s = eval_claim_verification(model, n)
-        all_runs["claim_verification"].append(s)
-        print(f"\n     Score: {s}%")
-
-        print("5/7  Entity extraction + JSON reliability (NCBI Disease)...")
-        f1, json_pct = eval_entity_extraction(model, n)
-        all_runs["entity_extraction"].append(f1)
-        all_runs["json_reliability"].append(json_pct)
-        print(f"\n     F1: {f1}%  JSON valid: {json_pct}%")
-
-        print("6/7  (json_reliability computed above)")
-
-        print("7/7  Consistency (MedMCQA shuffled)...")
-        s = eval_consistency(model, n)
-        all_runs["consistency"].append(s)
-        print(f"\n     Score: {s}%")
-
-    # Aggregate across repeats
-    for k, vals in all_runs.items():
-        scores[k] = round(sum(vals) / len(vals), 1)
-
-    # Compute Wilson CI on the final mean (treating mean% as proportion)
-    ci: dict[str, tuple] = {}
-    for k, vals in all_runs.items():
-        mean_pct = sum(vals) / len(vals)
-        correct_equiv = round(mean_pct / 100 * n)
-        ci[k] = wilson_ci(correct_equiv, n)
-
-    run_stdev: dict[str, float] = {k: stdev(v) for k, v in all_runs.items()}
-
-    health_score = round(sum(scores.values()) / len(scores), 1)
-
-    # Optional: Citation Grounding eval (not included in health_score)
+    # Tier 2 evals (not included in health_score)
     safety_scores = {}
     if args.tier2:
         args.grounding  = True
@@ -787,22 +812,19 @@ def main():
         args.abstention = True
 
     if args.refusal:
-        n = args.samples
         print(f"\nT2/1  Harmful Request Refusal...")
         score = eval_safety_refusal(args.model, n)
         print(f"     Balanced Accuracy: {score}%")
-        result["safety_scores"]["safety_refusal"] = score
+        safety_scores["safety_refusal"] = score
 
     if args.abstention:
-        n = args.samples
         print(f"\nT2/2  Epistemic Humility (Abstention)...")
         score = eval_abstention(args.model, n)
         print(f"     Score: {score}%")
-        result["safety_scores"]["abstention"] = score
+        safety_scores["abstention"] = score
 
     if args.grounding:
-        print("\n── Safety Evals ──")
-        print("G/1  Citation Grounding (PubMedQA passages)...")
+        print("\nT2/3  Citation Grounding (PubMedQA passages)...")
         g = eval_citation_grounding(model, n)
         safety_scores["citation_grounding"] = g
         print(f"\n     Citation F1: {g}%")
