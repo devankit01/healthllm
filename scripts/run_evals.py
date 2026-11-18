@@ -35,7 +35,7 @@ def ask(model: str, prompt: str, timeout: int = 600) -> str:
         "model": model,
         "prompt": prompt,
         "stream": False,
-        "options": {"temperature": TEMPERATURE, "seed": SEED, "num_predict": 256, "repeat_last_n": 64},
+        "options": {"temperature": TEMPERATURE, "seed": SEED, "num_predict": 1024, "repeat_last_n": 64},
     }).encode()
     req = urllib.request.Request(
         f"{OLLAMA_URL}/api/generate",
