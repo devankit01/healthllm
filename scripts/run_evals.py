@@ -29,10 +29,42 @@ OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 SEED = 42
 TEMPERATURE = 0
 WORKERS = 1  # set via --workers flag
+BACKEND = "ollama"  # set via --backend flag
+
+# ── MLX backend (lazy-loaded) ──────────────────────────────────────────────────
+
+_mlx_model = None
+_mlx_tokenizer = None
+
+def _load_mlx(model_id: str):
+    global _mlx_model, _mlx_tokenizer
+    if _mlx_model is None:
+        try:
+            from mlx_lm import load
+        except ImportError:
+            sys.exit("mlx-lm not installed. Run: .venv-mlx/bin/pip install mlx-lm")
+        print(f"Loading MLX model {model_id} (first run may download weights)...")
+        _mlx_model, _mlx_tokenizer = load(model_id)
+        print("MLX model loaded.\n")
+
+
+def ask_mlx(model_id: str, prompt: str) -> str:
+    from mlx_lm import generate
+    from mlx_lm.sample_utils import greedy_sampler
+    _load_mlx(model_id)
+    # Apply the model's instruct chat template (same as Ollama does automatically)
+    messages = [{"role": "user", "content": prompt}]
+    formatted = _mlx_tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+    return generate(_mlx_model, _mlx_tokenizer, prompt=formatted, verbose=False, max_tokens=1024, sampler=greedy_sampler)
+
 
 # ── Ollama helper ──────────────────────────────────────────────────────────────
 
 def ask(model: str, prompt: str, timeout: int = 600) -> str:
+    if BACKEND == "mlx":
+        return ask_mlx(model, prompt)
     payload = json.dumps({
         "model": model,
         "prompt": prompt,
@@ -173,7 +205,7 @@ def eval_med_knowledge(model: str, n: int) -> float:
 def eval_clinical_reasoning(model: str, n: int) -> float:
     """MedQA USMLE 4-options — accuracy"""
     rows = load_hf("GBaker/MedQA-USMLE-4-options", split="test", n=n)
-    correct = 0
+    prompts, answers = [], []
     for i, row in enumerate(rows, 1):
         opts = row["options"]  # dict: {"A": "...", "B": "...", ...}
         opts_text = "\n".join(f"{k}. {v}" for k, v in opts.items())
@@ -714,20 +746,25 @@ def main():
     ap.add_argument("--abstention",  action="store_true", help="Tier 2: Epistemic Humility / Abstention")
     ap.add_argument("--tier2",       action="store_true", help="Run all three Tier 2 evals")
     ap.add_argument("--tier2-only",  action="store_true", help="Skip Tier 1, load saved results and run Tier 2 only")
-    ap.add_argument("--workers", type=int, default=4, help="Parallel Ollama workers (default 4, use 1 for strict sequential)")
+    ap.add_argument("--workers", type=int, default=4, help="Parallel inference workers (default 4)")
+    ap.add_argument("--backend", choices=["ollama", "mlx"], default="ollama", help="Inference backend: ollama (default) or mlx (Apple Silicon)")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
     ap.add_argument("--submitted-by", default="", help="Your name/handle for the leaderboard")
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
     args = ap.parse_args()
 
-    global WORKERS
+    global WORKERS, BACKEND
     WORKERS = args.workers
+    BACKEND = args.backend
+    if BACKEND == "mlx":
+        WORKERS = 1  # MLX is single-process (model loaded in-process)
     model = args.model
     n = args.samples
     repeats = max(1, args.repeats)
 
     print(f"\nHealthLLM Eval Runner")
     print(f"Model   : {model}")
+    print(f"Backend : {BACKEND}")
     print(f"Samples : {n} per eval  Repeats: {repeats}")
     print(f"Temp    : {TEMPERATURE}  Seed: {SEED}\n")
 
@@ -751,15 +788,22 @@ def main():
         print(f"Health Score: {health_score}%\n")
         args.tier2 = True
     else:
-        check_ollama(model)
-        ollama_version = get_ollama_version()
-        model_info = get_ollama_model_info(model)
-        if ollama_version:
-            print(f"Ollama  : {ollama_version}  Quant: {model_info.get('quantization','?')}\n")
+        if BACKEND == "mlx":
+            ollama_version = ""
+            model_info = {}
+            print("Warming up MLX model (loading weights)...")
+            ask(model, "Reply with one word: ready")
+            print("Ready.\n")
+        else:
+            check_ollama(model)
+            ollama_version = get_ollama_version()
+            model_info = get_ollama_model_info(model)
+            if ollama_version:
+                print(f"Ollama  : {ollama_version}  Quant: {model_info.get('quantization','?')}\n")
 
-        print("Warming up model...")
-        ask(model, "Reply with one word: ready")
-        print("Ready.\n")
+            print("Warming up model...")
+            ask(model, "Reply with one word: ready")
+            print("Ready.\n")
 
         all_runs: dict[str, list] = {
             "med_knowledge": [], "clinical_reasoning": [], "evidence_reasoning": [],
