@@ -77,7 +77,7 @@ export default function MethodologyPage() {
               <li>Medical knowledge + reasoning</li>
               <li>Averaged into a 0–100 Health Score</li>
               <li>Graded A to E</li>
-              <li>7 evals, all live today</li>
+              <li>6 tasks → 7 scores, all live</li>
             </ul>
           </div>
           <div style={{ background: "var(--surface)", border: "1px solid var(--border)", borderRadius: 12, padding: "24px" }}>
@@ -91,7 +91,7 @@ export default function MethodologyPage() {
               <li>Hallucination, citation, uncertainty</li>
               <li>Shown separately — not in Health Score</li>
               <li>Does not penalise general models</li>
-              <li>3 evals, in progress</li>
+              <li>3 evals, all live</li>
             </ul>
           </div>
         </div>
@@ -124,12 +124,12 @@ export default function MethodologyPage() {
       {/* 7 evals table */}
       <section className="wrap" style={{ paddingBottom: 64 }}>
         <p className="sec-label">Core evals</p>
-        <h2 className="sec-title">The 7 scored evals</h2>
+        <h2 className="sec-title">The 7 Tier 1 scores</h2>
         <p className="intro" style={{ marginBottom: 16 }}>
-          Each eval has one dataset and one deterministic scoring rule. No model judgment involved.
+          6 tasks produce 7 scores — entity extraction and JSON reliability share one API call but count separately. Each has one dataset and one deterministic scoring rule. No model judgment involved.
         </p>
         <div style={{ background: "var(--warn-bg)", border: "1px solid var(--warn-line)", borderRadius: 8, padding: "10px 16px", fontSize: "13px", color: "var(--warn-ink)", marginBottom: 24 }}>
-          <strong>Note:</strong> 4 of the 7 evals are multiple-choice questions. The Health Score is 57% driven by MCQ performance. High scores reflect strong medical knowledge on standardised questions — not necessarily real clinical workflow performance. That is what Tier 2 evals are for.
+          <strong>Note:</strong> 4 of the 7 scores are multiple-choice questions. The Health Score is 57% driven by MCQ performance. High scores reflect strong medical knowledge on standardised questions — not necessarily real clinical workflow performance. That is what Tier 2 evals are for.
         </div>
         <div style={{ overflowX: "auto" }}>
           <table className="lb-table" style={{ minWidth: 560 }}>
@@ -163,7 +163,7 @@ export default function MethodologyPage() {
         <p className="sec-label">The score</p>
         <h2 className="sec-title">Health Score and grades</h2>
         <p className="intro" style={{ marginBottom: 32 }}>
-          The Health Score is the unweighted mean of all seven evals (0–100).
+          The Health Score is the unweighted mean of all seven Tier 1 scores (0–100).
           Equal weights are a starting choice, not a research finding.
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 32 }}>
