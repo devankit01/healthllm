@@ -19,6 +19,7 @@ Results are saved to data/results/<model-id>.json
 
 import argparse, json, math, os, re, sys, time, urllib.request, urllib.error, urllib.parse
 from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT = Path(__file__).parent.parent
 RESULTS_DIR = ROOT / "data" / "results"
@@ -27,6 +28,7 @@ RESULTS_DIR.mkdir(exist_ok=True)
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434")
 SEED = 42
 TEMPERATURE = 0
+WORKERS = 1  # set via --workers flag
 
 # ── Ollama helper ──────────────────────────────────────────────────────────────
 
@@ -104,6 +106,18 @@ def get_ollama_version() -> str:
         return ""
 
 
+def ask_batch(model: str, prompts: list) -> list:
+    """Run prompts in parallel using WORKERS threads. Returns responses in order."""
+    if WORKERS <= 1:
+        return [ask(model, p) for p in prompts]
+    results = [None] * len(prompts)
+    with ThreadPoolExecutor(max_workers=WORKERS) as ex:
+        futures = {ex.submit(ask, model, p): i for i, p in enumerate(prompts)}
+        for f in as_completed(futures):
+            results[futures[f]] = f.result()
+    return results
+
+
 def check_ollama(model: str):
     try:
         payload = json.dumps({"name": model}).encode()
@@ -140,20 +154,19 @@ def load_hf(path: str, config=None, split="test", n=100):
 def eval_med_knowledge(model: str, n: int) -> float:
     """MedMCQA — accuracy on 4-option MCQ"""
     rows = load_hf("openlifescienceai/medmcqa", split="validation", n=n)
-    correct = 0
-    for i, row in enumerate(rows, 1):
+    prompts = []
+    answers = []
+    for row in rows:
         opts = [row["opa"], row["opb"], row["opc"], row["opd"]]
-        prompt = (
+        prompts.append(
             f"{row['question']}\n"
             f"A. {opts[0]}\nB. {opts[1]}\nC. {opts[2]}\nD. {opts[3]}\n\n"
             "Answer with one letter only."
         )
-        reply = ask(model, prompt)
-        letter = _first_letter(reply)
-        answer = "ABCD"[row["cop"]]
-        if letter == answer:
-            correct += 1
-        _progress(i, n, "med-knowledge", correct)
+        answers.append("ABCD"[row["cop"]])
+    replies = ask_batch(model, prompts)
+    correct = sum(_first_letter(r) == a for r, a in zip(replies, answers))
+    _progress(n, n, "med-knowledge", correct)
     return round(correct / n * 100, 1)
 
 
@@ -164,34 +177,34 @@ def eval_clinical_reasoning(model: str, n: int) -> float:
     for i, row in enumerate(rows, 1):
         opts = row["options"]  # dict: {"A": "...", "B": "...", ...}
         opts_text = "\n".join(f"{k}. {v}" for k, v in opts.items())
-        prompt = f"{row['question']}\n{opts_text}\n\nAnswer with one letter only."
-        reply = ask(model, prompt)
-        letter = _first_letter(reply)
+        prompts.append(f"{row['question']}\n{opts_text}\n\nAnswer with one letter only.")
         answer = row["answer_idx"] if "answer_idx" in row else row.get("answer", "")
         if isinstance(answer, str) and len(answer) == 1:
-            if letter == answer.upper():
-                correct += 1
-        _progress(i, n, "clinical-reasoning", correct)
+            answers.append(answer.upper())
+        else:
+            answers.append("")
+    replies = ask_batch(model, prompts)
+    correct = sum(_first_letter(r) == a for r, a in zip(replies, answers) if a)
+    _progress(n, n, "clinical-reasoning", correct)
     return round(correct / n * 100, 1)
 
 
 def eval_evidence_reasoning(model: str, n: int) -> float:
     """PubMedQA — yes/no/maybe accuracy"""
     rows = load_hf("qiaojin/PubMedQA", config="pqa_labeled", split="train", n=n)
-    correct = 0
-    for i, row in enumerate(rows, 1):
+    prompts, golds = [], []
+    for row in rows:
         contexts = row["context"]["contexts"] if isinstance(row["context"], dict) else []
         abstract = " ".join(contexts[:3]) if contexts else ""
-        prompt = (
+        prompts.append(
             f"Abstract: {abstract[:1200]}\n\n"
             f"Question: {row['question']}\n\n"
             "Answer yes, no or maybe."
         )
-        reply = ask(model, prompt).lower()
-        gold = row["final_decision"].lower().strip()
-        if gold in reply[:20]:
-            correct += 1
-        _progress(i, n, "evidence-reasoning", correct)
+        golds.append(row["final_decision"].lower().strip())
+    replies = ask_batch(model, prompts)
+    correct = sum(g in r.lower()[:20] for r, g in zip(replies, golds))
+    _progress(n, n, "evidence-reasoning", correct)
     return round(correct / n * 100, 1)
 
 
@@ -200,44 +213,46 @@ def eval_claim_verification(model: str, n: int) -> float:
     rows = load_hf("ImperialCollegeLondon/health_fact", split="test", n=n)
     label_names = ["false", "mixture", "true", "unproven"]
     labels = set(label_names)
-    valid, correct = 0, 0
-    for i, row in enumerate(rows, 1):
+    prompts, golds = [], []
+    for row in rows:
         raw = row.get("label")
         gold = label_names[raw] if isinstance(raw, int) else (raw or "").lower().strip()
         if gold not in labels:
             continue
-        prompt = (
+        prompts.append(
             f"Claim: {row['claim']}\n\n"
             "Is this claim true, false, mixture or unproven? Answer with one word."
         )
-        reply = ask(model, prompt).lower()
+        golds.append(gold)
+    replies = ask_batch(model, prompts)
+    valid = correct = 0
+    for reply, gold in zip(replies, golds):
+        r = reply.lower()
         for lbl in labels:
-            if lbl in reply[:30]:
+            if lbl in r[:30]:
                 valid += 1
                 if lbl == gold:
                     correct += 1
                 break
-        _progress(i, n, "claim-verification", correct)
-    base = valid or 1
-    return round(correct / base * 100, 1)
+    _progress(n, n, "claim-verification", correct)
+    return round(correct / (valid or 1) * 100, 1)
 
 
 def eval_entity_extraction(model: str, n: int):
     """NCBI Disease — F1 + JSON reliability"""
     rows = load_hf("ncbi/ncbi_disease", split="test", n=n)
-    tp_total = fp_total = fn_total = 0
-    valid_json = 0
-    for i, row in enumerate(rows, 1):
-        tokens = row["tokens"]
-        tags = row["ner_tags"]
-        # Build gold disease spans
-        gold = _extract_spans(tokens, tags)
-        text = " ".join(tokens)
-        prompt = (
+    prompts, golds = [], []
+    for row in rows:
+        gold = _extract_spans(row["tokens"], row["ner_tags"])
+        text = " ".join(row["tokens"])
+        prompts.append(
             'List every disease mentioned in the text as JSON: {"diseases": ["..."]}.\n\n'
             f"Text: {text}"
         )
-        reply = ask(model, prompt)
+        golds.append(gold)
+    replies = ask_batch(model, prompts)
+    tp_total = fp_total = fn_total = valid_json = 0
+    for reply, gold in zip(replies, golds):
         predicted, is_valid = _parse_diseases_json(reply)
         if is_valid:
             valid_json += 1
@@ -246,12 +261,11 @@ def eval_entity_extraction(model: str, n: int):
         tp_total += len(predicted_set & gold_set)
         fp_total += len(predicted_set - gold_set)
         fn_total += len(gold_set - predicted_set)
-        _progress(i, n, "entity-extraction")
+    _progress(n, n, "entity-extraction")
     precision = tp_total / (tp_total + fp_total) if (tp_total + fp_total) else 0
     recall = tp_total / (tp_total + fn_total) if (tp_total + fn_total) else 0
     f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0
-    json_pct = round(valid_json / n * 100, 1)
-    return round(f1 * 100, 1), json_pct
+    return round(f1 * 100, 1), round(valid_json / n * 100, 1)
 
 
 def eval_citation_grounding(model: str, n: int) -> float:
@@ -700,11 +714,14 @@ def main():
     ap.add_argument("--abstention",  action="store_true", help="Tier 2: Epistemic Humility / Abstention")
     ap.add_argument("--tier2",       action="store_true", help="Run all three Tier 2 evals")
     ap.add_argument("--tier2-only",  action="store_true", help="Skip Tier 1, load saved results and run Tier 2 only")
+    ap.add_argument("--workers", type=int, default=4, help="Parallel Ollama workers (default 4, use 1 for strict sequential)")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
     ap.add_argument("--submitted-by", default="", help="Your name/handle for the leaderboard")
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
     args = ap.parse_args()
 
+    global WORKERS
+    WORKERS = args.workers
     model = args.model
     n = args.samples
     repeats = max(1, args.repeats)
