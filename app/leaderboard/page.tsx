@@ -54,6 +54,19 @@ function scoreColor(val: number): string {
   return "score-red";
 }
 
+function wilsonCI(score: number, n: number): [number, number] {
+  if (!n || score == null) return [0, 0];
+  const z = 1.96;
+  const p = score / 100;
+  const denom = 1 + (z * z) / n;
+  const centre = (p + (z * z) / (2 * n)) / denom;
+  const margin = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / denom;
+  return [
+    Math.round(Math.max(0, centre - margin) * 1000) / 10,
+    Math.round(Math.min(1, centre + margin) * 1000) / 10,
+  ];
+}
+
 export default async function LeaderboardPage() {
   const supabase = await createClient();
   const { data } = await supabase
@@ -124,8 +137,10 @@ export default async function LeaderboardPage() {
 
                     {TIER1.map((e) => {
                       const val = r[e.key as keyof EvalResult] as number;
+                      const [lo, hi] = val != null ? wilsonCI(val, r.samples ?? 100) : [0, 0];
                       return (
-                        <td key={e.key} className={`score ${val != null ? scoreColor(val) : ""}`}>
+                        <td key={e.key} className={`score ${val != null ? scoreColor(val) : ""}`}
+                            title={val != null ? `${e.label}: ${val.toFixed(1)}%  95% CI [${lo}–${hi}]` : undefined}>
                           {val != null ? val.toFixed(1) : <span className="none">—</span>}
                         </td>
                       );
@@ -134,11 +149,19 @@ export default async function LeaderboardPage() {
                     <td className="rating">
                       <div className="health-score-cell">
                         <span className="health-score-num">{r.health_score?.toFixed(1) ?? "—"}</span>
-                        {r.health_score != null && (
-                          <div className="score-bar-wrap">
-                            <div className="score-bar" style={{ width: `${Math.min(r.health_score, 100)}%` }} />
-                          </div>
-                        )}
+                        {r.health_score != null && (() => {
+                          const [lo, hi] = wilsonCI(r.health_score, r.samples ?? 100);
+                          return (
+                            <>
+                              <div className="score-bar-wrap">
+                                <div className="score-bar" style={{ width: `${Math.min(r.health_score, 100)}%` }} />
+                              </div>
+                              <div style={{ fontSize: "10px", color: "var(--muted)", marginTop: 2, letterSpacing: 0 }}>
+                                [{lo}–{hi}]
+                              </div>
+                            </>
+                          );
+                        })()}
                       </div>
                     </td>
                     <td>
@@ -163,7 +186,8 @@ export default async function LeaderboardPage() {
         )}
 
         <p style={{ marginTop: 24, fontSize: "13px", color: "var(--muted)" }}>
-          Tier 2 scores show <span className="none" style={{ fontSize: "12px", padding: "1px 6px" }}>—</span> until a model is run with <code>--grounding</code>, <code>--notes</code>, or <code>--abstention</code>.
+          Tier 1 scores show 95% Wilson confidence intervals under the Health Score. Hover individual cells for per-eval CIs (n={results[0]?.samples ?? 100}).
+          Tier 2 scores show <span className="none" style={{ fontSize: "12px", padding: "1px 6px" }}>—</span> until a model is run with <code>--grounding</code>, <code>--refusal</code>, or <code>--abstention</code>.
           {" "}<a href="https://github.com/devankit01/healthllm/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Submit your model →</a>
         </p>
       </div>
