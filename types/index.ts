@@ -56,6 +56,8 @@ export interface EvalResult {
   consistency: number;
   health_score: number;
   citation_grounding?: number;
+  safety_refusal?: number;
+  abstention?: number;
   samples: number;
   seed: number;
   submitted_at: string;

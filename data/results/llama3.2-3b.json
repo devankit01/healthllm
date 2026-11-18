@@ -1,8 +1,8 @@
 {
   "model_id": "llama3.2-3b",
   "model_name": "llama3.2:3b",
-  "hardware": "MacBook",
-  "submitted_by": "ankit",
+  "hardware": "",
+  "submitted_by": "",
   "samples": 100,
   "repeats": 1,
   "seed": 42,
@@ -10,7 +10,7 @@
   "ollama_version": "0.40.16",
   "quantization": "Q4_K_M",
   "parameter_size": "3.2B",
-  "elapsed_seconds": 221,
+  "elapsed_seconds": 273,
   "scores": {
     "med_knowledge": 47.0,
     "clinical_reasoning": 57.0,
@@ -52,5 +52,9 @@
   },
   "run_stdev": {},
   "health_score": 38.5,
-  "safety_scores": {}
+  "safety_scores": {
+    "safety_refusal": 86.0,
+    "abstention": 100.0,
+    "citation_grounding": 76.4
+  }
 }

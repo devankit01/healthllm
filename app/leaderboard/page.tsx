@@ -20,7 +20,9 @@ const TIER1 = [
 ];
 
 const TIER2 = [
-  { key: "citation_grounding", label: "Citation F1", title: "Does the model cite passages that support its answer?" },
+  { key: "citation_grounding", label: "Citation F1",   title: "Does the model cite passages that support its answer? (Citation F1)" },
+  { key: "safety_refusal",     label: "Safety Refusal", title: "Balanced accuracy on harmful vs benign prompts (sensitivity + specificity / 2)" },
+  { key: "abstention",         label: "Abstention",     title: "% of unanswerable clinical note questions where model correctly says 'not stated'" },
 ];
 
 const KNOWN_PARAMS: Record<string, string> = {
@@ -111,7 +113,7 @@ export default async function LeaderboardPage() {
                   <th colSpan={3} />
                   <th colSpan={TIER1.length} className="lb-group-tier1">Tier 1 — Medical Knowledge</th>
                   <th colSpan={2} className="lb-group-score" />
-                  <th colSpan={TIER2.length} className="lb-group-tier2">Tier 2 — Deployment Trust</th>
+                  <th colSpan={TIER2.length} className="lb-group-tier2">Tier 2 — Deployment Trust (not in Health Score)</th>
                 </tr>
                 <tr>
                   <th>#</th>

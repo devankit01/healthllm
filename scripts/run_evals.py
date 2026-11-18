@@ -749,6 +749,7 @@ def main():
     ap.add_argument("--workers", type=int, default=4, help="Parallel inference workers (default 4)")
     ap.add_argument("--backend", choices=["ollama", "mlx"], default="ollama", help="Inference backend: ollama (default) or mlx (Apple Silicon)")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
+    ap.add_argument("--push-only", action="store_true", help="Push saved results JSON to Supabase without re-running evals")
     ap.add_argument("--submitted-by", default="", help="Your name/handle for the leaderboard")
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
     args = ap.parse_args()
@@ -769,6 +770,17 @@ def main():
     print(f"Temp    : {TEMPERATURE}  Seed: {SEED}\n")
 
     model_id = model.replace(":", "-").replace("/", "-")
+
+    # --push-only: load saved results JSON and push to Supabase without re-running
+    if args.push_only:
+        saved_path = RESULTS_DIR / f"{model_id}.json"
+        if not saved_path.exists():
+            sys.exit(f"No saved results found at {saved_path}. Run the eval first.")
+        with open(saved_path) as f:
+            result = json.load(f)
+        print(f"Loaded saved results from {saved_path}")
+        push_to_supabase(result)
+        return
 
     # --tier2-only: load saved Tier 1 results, skip re-running them
     if args.tier2_only:
