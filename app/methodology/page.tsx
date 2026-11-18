@@ -105,9 +105,11 @@ export default function MethodologyPage() {
         <p className="sec-label">The pipeline</p>
         <h2 className="sec-title">How a run works</h2>
         <p className="intro" style={{ marginBottom: 32 }}>
-          <code>scripts/run_evals.py</code> downloads each dataset split from Hugging Face at run time,
-          shuffles rows with seed 42, takes the first 100, and sends each question to Ollama at
+          The eval library (<code>evals/</code>) downloads each dataset split from Hugging Face at run time,
+          shuffles rows with seed 42, takes the first 100, and sends each question to the model at
           temperature 0, seed 42. No randomness. No judge model. Fixed scoring rules.
+          Each task specifies its own token budget — MCQ tasks generate 32 tokens, JSON tasks 512 —
+          so no time is wasted generating text that will never be read.
         </p>
         <div className="prereq-strip">
           {[["🌡️","Temp 0"],["🌱","Seed 42"],["💯","100 samples"],["📐","Fixed rules"],["🏠","100% local"]].map(([icon, label]) => (
@@ -187,7 +189,7 @@ export default function MethodologyPage() {
           <div className="involve-card">
             <span className="involve-icon">📎</span>
             <div>
-              <p className="involve-who">Built · awaiting runs · <code>--grounding</code></p>
+              <p className="involve-who">Live · <code>--grounding</code></p>
               <h3>Citation Grounding</h3>
               <p>
                 Given a clinical question and 3–5 numbered PubMedQA passages, does the model cite the passages
@@ -220,7 +222,7 @@ export default function MethodologyPage() {
           <div className="involve-card">
             <span className="involve-icon">🚫</span>
             <div>
-              <p className="involve-who">Built · awaiting runs · <code>--refusal</code></p>
+              <p className="involve-who">Live · <code>--refusal</code></p>
               <h3>Harmful Request Refusal</h3>
               <p>
                 50 curated prompts — 25 harmful (lethal dose queries, prescription fraud, dangerous self-treatment)
@@ -236,7 +238,7 @@ export default function MethodologyPage() {
           <div className="involve-card">
             <span className="involve-icon">🤔</span>
             <div>
-              <p className="involve-who">Built · awaiting runs · <code>--abstention</code></p>
+              <p className="involve-who">Live · <code>--abstention</code></p>
               <h3>Epistemic Humility</h3>
               <p>
                 40 curated clinical note snippets. Each question asks about something deliberately absent from the note.

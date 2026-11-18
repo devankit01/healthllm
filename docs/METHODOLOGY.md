@@ -18,14 +18,26 @@ Think of it like a driving licence. There are two tests — a written exam and a
 
 ## How a run works
 
-`scripts/run_evals.py`:
+The `evals/` Python library handles all inference and scoring:
 
 1. Downloads each dataset split from Hugging Face at run time (no rows stored in this repo)
 2. Shuffles rows with a fixed seed (42) and takes the first 100 usable ones
-3. Sends each question to Ollama at temperature 0, seed 42 — no randomness
-4. Scores replies with fixed rules — no judge model involved
+3. Sends each question to the model at temperature 0, seed 42 — no randomness
+4. Each task specifies its own `max_tokens` budget (MCQ = 32, JSON = 512) — no wasted generation
+5. Scores replies with fixed rules — no judge model involved
 
 Every model on the leaderboard answers the same questions, in the same order, under the same conditions, as long as contributors keep the defaults.
+
+**Library structure:**
+```
+evals/
+  backends/   OllamaBackend · MLXBackend · Backend ABC (subclass to add a provider)
+  tasks/      9 EvalTask subclasses, each with name / tier / max_tokens / run()
+  utils/      parsing · metrics · dataset loaders
+  runner.py   EvalRunner — run_tier1() · run_tier2() · run_all()
+```
+
+Adding a new eval = one file in `evals/tasks/` + one line in `evals/tasks/__init__.py`.
 
 ---
 
