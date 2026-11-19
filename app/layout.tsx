@@ -20,6 +20,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <a className="skip" href="#main">Skip to content</a>
+        <div className="ph-banner">
+          <a
+            href="https://www.producthunt.com/products/healthllm?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-healthllm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ph-banner-link"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1321769&theme=light&t=1795080035942"
+              alt="HealthLLM on Product Hunt"
+              width={120}
+              height={26}
+            />
+          </a>
+        </div>
         <Header />
         <main id="main">{children}</main>
         <Footer />
