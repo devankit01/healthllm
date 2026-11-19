@@ -587,12 +587,11 @@ footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 28px 0 40
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.45);
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 48px 16px;
-  overflow-y: auto;
+  padding: 24px 16px;
 }
 .modal-panel {
   background: var(--bg);
@@ -600,8 +599,11 @@ footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 28px 0 40
   padding: 32px;
   width: 100%;
   max-width: 760px;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
   box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  box-sizing: border-box;
 }
 .modal-close {
   position: absolute;
@@ -659,7 +661,6 @@ footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 28px 0 40
 
 @media (max-width: 760px) {
   .lb-cards-grid { grid-template-columns: 1fr; }
-  .modal-panel { padding: 20px; }
   .modal-overlay { padding: 0; align-items: flex-end; }
-  .modal-panel { border-radius: 16px 16px 0 0; }
+  .modal-panel { padding: 20px; border-radius: 16px 16px 0 0; max-height: 85vh; }
 }

@@ -235,7 +235,7 @@ function ModelModal({ r, notes, onClose }: { r: EvalResult; notes: string | null
         </div>
 
         {/* Two-column scores */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0 24px", marginBottom: 20 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "0 24px", marginBottom: 20 }}>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 10 }}>Tier 1 — Medical Knowledge</div>
             {TIER1.map(e => (
