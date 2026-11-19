@@ -634,9 +634,9 @@ footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 28px 0 40
 .model-notes-md code { font-size: 12px; background: var(--surface, #f4f4f4); padding: 2px 5px; border-radius: 4px; }
 .model-notes-md pre { background: var(--surface, #f4f4f4); padding: 12px; border-radius: 8px; overflow-x: auto; margin: 10px 0; }
 .model-notes-md pre code { background: none; padding: 0; }
-.model-notes-md table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
-.model-notes-md th { background: var(--surface, #f4f4f4); padding: 6px 10px; text-align: left; border: 1px solid var(--line); }
-.model-notes-md td { padding: 6px 10px; border: 1px solid var(--line); }
+.model-notes-md table { width: auto; max-width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+.model-notes-md th { background: var(--surface, #f4f4f4); padding: 5px 12px; text-align: left; border: 1px solid var(--line); white-space: nowrap; }
+.model-notes-md td { padding: 5px 12px; border: 1px solid var(--line); white-space: nowrap; }
 .model-notes-md strong { font-weight: 700; }
 
 /* ── Table improvements ── */
