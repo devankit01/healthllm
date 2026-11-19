@@ -1,5 +1,6 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { marked } from "marked";
 import type { EvalResult } from "@/types";
 
@@ -188,9 +189,22 @@ function ModelCard({ r, rank, onClick }: { r: EvalResult; rank: number; onClick:
   );
 }
 
+// ── Portal wrapper ────────────────────────────────────────────────────────────
+
+function Portal({ children }: { children: React.ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); return () => setMounted(false); }, []);
+  if (!mounted) return null;
+  return createPortal(children, document.body);
+}
+
 // ── Modal ─────────────────────────────────────────────────────────────────────
 
 function ModelModal({ r, notes, onClose }: { r: EvalResult; notes: string | null; onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = ""; };
+  }, []);
   const size = inferSize(r.model_name);
   const tags = modelTags(r);
   const html = notes ? marked.parse(notes) as string : null;
@@ -431,11 +445,13 @@ export default function LeaderboardClient({
 
       {/* Modal */}
       {activeModel && (
-        <ModelModal
-          r={activeModel}
-          notes={modelNotes[activeModel.model_id] ?? null}
-          onClose={() => setActiveModel(null)}
-        />
+        <Portal>
+          <ModelModal
+            r={activeModel}
+            notes={modelNotes[activeModel.model_id] ?? null}
+            onClose={() => setActiveModel(null)}
+          />
+        </Portal>
       )}
     </>
   );
