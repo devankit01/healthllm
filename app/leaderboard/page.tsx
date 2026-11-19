@@ -2,71 +2,27 @@ import { createClient } from "@/utils/supabase/server";
 import type { EvalResult } from "@/types";
 import type { Metadata } from "next";
 import ScoresBanner from "@/components/ScoresBanner";
+import LeaderboardClient from "@/components/LeaderboardClient";
 import Link from "next/link";
+import fs from "fs";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "Leaderboard — HealthLLM",
   description: "Health LLM benchmark scores across 7 clinical evals. Temperature 0, seed 42, 100 samples.",
 };
 
-const TIER1 = [
-  { key: "med_knowledge",      label: "Med Knowledge",    short: "Med" },
-  { key: "clinical_reasoning", label: "Clinical Reasoning", short: "Clinical" },
-  { key: "evidence_reasoning", label: "Evidence",          short: "Evidence" },
-  { key: "claim_verification", label: "Claims",            short: "Claims" },
-  { key: "entity_extraction",  label: "NER (F1)",          short: "NER" },
-  { key: "json_reliability",   label: "JSON",              short: "JSON" },
-  { key: "consistency",        label: "Consistency",       short: "Consist." },
-];
-
-const TIER2 = [
-  { key: "citation_grounding", label: "Citation F1",   title: "Does the model cite passages that support its answer? (Citation F1)" },
-  { key: "safety_refusal",     label: "Safety Refusal", title: "Balanced accuracy on harmful vs benign prompts (sensitivity + specificity / 2)" },
-  { key: "abstention",         label: "Abstention",     title: "% of unanswerable clinical note questions where model correctly says 'not stated'" },
-];
-
-const KNOWN_PARAMS: Record<string, string> = {
-  "mistral:latest": "7.2B", "mistral": "7.2B",
-  "qwen2.5:7b": "7.6B", "deepseek-r1:7b": "7.6B",
-  "llama3.2:3b": "3.2B", "llama3.1:8b": "8B", "llama3:8b": "8B",
-  "phi3.5": "3.8B", "phi3.5:latest": "3.8B", "phi3": "3.8B",
-  "gemma2:9b": "9B", "meditron:7b": "7B",
-};
-
-function inferParams(modelName: string): string {
-  const lower = modelName.toLowerCase();
-  for (const [k, v] of Object.entries(KNOWN_PARAMS)) {
-    if (lower.includes(k.toLowerCase())) return v;
-  }
-  const m = lower.match(/(\d+\.?\d*)\s*b/);
-  return m ? `${m[1]}B` : "—";
-}
-
-function grade(score: number): string {
-  if (score >= 85) return "A";
-  if (score >= 70) return "B";
-  if (score >= 55) return "C";
-  if (score >= 40) return "D";
-  return "E";
-}
-
-function scoreColor(val: number): string {
-  if (val >= 65) return "score-green";
-  if (val >= 45) return "score-yellow";
-  return "score-red";
-}
-
-function wilsonCI(score: number, n: number): [number, number] {
-  if (!n || score == null) return [0, 0];
-  const z = 1.96;
-  const p = score / 100;
-  const denom = 1 + (z * z) / n;
-  const centre = (p + (z * z) / (2 * n)) / denom;
-  const margin = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / denom;
-  return [
-    Math.round(Math.max(0, centre - margin) * 1000) / 10,
-    Math.round(Math.min(1, centre + margin) * 1000) / 10,
-  ];
+function loadModelNotes(): Record<string, string> {
+  const dir = path.join(process.cwd(), "docs", "models");
+  const notes: Record<string, string> = {};
+  try {
+    for (const file of fs.readdirSync(dir)) {
+      if (!file.endsWith(".md") || file === "README.md") continue;
+      const id = file.replace(".md", "");
+      notes[id] = fs.readFileSync(path.join(dir, file), "utf-8");
+    }
+  } catch {}
+  return notes;
 }
 
 export default async function LeaderboardPage() {
@@ -77,6 +33,7 @@ export default async function LeaderboardPage() {
     .order("health_score", { ascending: false });
 
   const results: EvalResult[] = data ?? [];
+  const modelNotes = loadModelNotes();
 
   return (
     <>
@@ -91,14 +48,13 @@ export default async function LeaderboardPage() {
           {" "}<Link href="/methodology">How scoring works →</Link>
         </p>
         <p style={{ fontSize: "13px", color: "var(--muted)", marginBottom: 12 }}>
-          <strong>Tier 1</strong> (Health Score) = medical knowledge on standardised questions.{" "}
-          <strong>Tier 2</strong> (Deployment Trust) = citation grounding, refusal, abstention — opt-in, not averaged in.
+          <strong>Tier 1</strong> (Health Score) = weighted average across 7 medical evals.{" "}
+          <strong>Tier 2</strong> (Deployment Trust) = citation grounding, safety refusal, abstention — not averaged in.
         </p>
         <div style={{ background: "var(--surface, #f5f7ff)", border: "1px solid var(--border, #e0e4f0)", borderRadius: 8, padding: "12px 16px", marginBottom: 24, fontSize: "13px" }}>
           <strong>We&apos;re building this framework openly with the community.</strong>{" "}
-          The goal: a benchmark that tells you not just whether a model knows medicine, but whether it&apos;s safe to deploy — does it refuse harmful requests, cite its sources, and admit uncertainty?
-          No existing benchmark measures all three.{" "}
-          <a href="https://docs.google.com/document/d/1cEEN00Gz4nnF5wBDh9R7oINvj2cWRMIRa0BFC63a7VA/edit" target="_blank" rel="noopener noreferrer">Read the methodology white paper and leave feedback →</a>
+          The goal: a benchmark that tells you not just whether a model knows medicine, but whether it&apos;s safe to deploy.{" "}
+          <a href="https://docs.google.com/document/d/1cEEN00Gz4nnF5wBDh9R7oINvj2cWRMIRa0BFC63a7VA/edit" target="_blank" rel="noopener noreferrer">Read the white paper →</a>
         </div>
 
         {results.length === 0 ? (
@@ -106,91 +62,13 @@ export default async function LeaderboardPage() {
             <p>No eval results yet. Run <code>python3 scripts/run_evals.py &lt;model&gt; --push</code> to be the first.</p>
           </div>
         ) : (
-          <div className="table-wrap" style={{ marginTop: 8 }}>
-            <table className="lb-table">
-              <thead>
-                <tr className="lb-group-row">
-                  <th colSpan={3} />
-                  <th colSpan={TIER1.length} className="lb-group-tier1">Tier 1 — Medical Knowledge</th>
-                  <th colSpan={2} className="lb-group-score" />
-                  <th colSpan={TIER2.length} className="lb-group-tier2">Tier 2 — Deployment Trust (not in Health Score)</th>
-                </tr>
-                <tr>
-                  <th>#</th>
-                  <th style={{ textAlign: "left" }}>Model</th>
-                  <th>Size</th>
-                  {TIER1.map((e) => <th key={e.key} title={e.label}>{e.short}</th>)}
-                  <th>Health Score</th>
-                  <th>Grade</th>
-                  {TIER2.map((e) => <th key={e.key} title={e.title}>{e.label}</th>)}
-                </tr>
-              </thead>
-              <tbody>
-                {results.map((r, i) => (
-                  <tr key={r.id} className="row">
-                    <td className="rank">{i + 1}</td>
-                    <td className="model">
-                      <div><b>{r.model_name}</b></div>
-                      {r.hardware && <div style={{ fontSize: "11px", color: "var(--muted)", marginTop: 2 }}>{r.hardware}</div>}
-                    </td>
-                    <td style={{ textAlign: "center" }}>
-                      <span className="badge badge-type">{inferParams(r.model_name)}</span>
-                    </td>
-
-                    {TIER1.map((e) => {
-                      const val = r[e.key as keyof EvalResult] as number;
-                      const [lo, hi] = val != null ? wilsonCI(val, r.samples ?? 100) : [0, 0];
-                      return (
-                        <td key={e.key} className={`score ${val != null ? scoreColor(val) : ""}`}
-                            title={val != null ? `${e.label}: ${val.toFixed(1)}%  95% CI [${lo}–${hi}]` : undefined}>
-                          {val != null ? val.toFixed(1) : <span className="none">—</span>}
-                        </td>
-                      );
-                    })}
-
-                    <td className="rating">
-                      <div className="health-score-cell">
-                        <span className="health-score-num">{r.health_score?.toFixed(1) ?? "—"}</span>
-                        {r.health_score != null && (() => {
-                          const [lo, hi] = wilsonCI(r.health_score, r.samples ?? 100);
-                          return (
-                            <>
-                              <div className="score-bar-wrap">
-                                <div className="score-bar" style={{ width: `${Math.min(r.health_score, 100)}%` }} />
-                              </div>
-                              <div style={{ fontSize: "10px", color: "var(--muted)", marginTop: 2, letterSpacing: 0 }}>
-                                [{lo}–{hi}]
-                              </div>
-                            </>
-                          );
-                        })()}
-                      </div>
-                    </td>
-                    <td>
-                      <span className={`grade g-${grade(r.health_score)}`}>
-                        {grade(r.health_score)}
-                      </span>
-                    </td>
-
-                    {TIER2.map((e) => {
-                      const val = r[e.key as keyof EvalResult] as number;
-                      return (
-                        <td key={e.key} className={`score ${val != null ? scoreColor(val) : ""}`}>
-                          {val != null ? val.toFixed(1) : <span className="none" title="Run with --grounding">—</span>}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <LeaderboardClient results={results} modelNotes={modelNotes} />
         )}
 
         <p style={{ marginTop: 24, fontSize: "13px", color: "var(--muted)" }}>
-          Tier 1 scores show 95% Wilson confidence intervals under the Health Score. Hover individual cells for per-eval CIs (n={results[0]?.samples ?? 100}).
-          Tier 2 scores show <span className="none" style={{ fontSize: "12px", padding: "1px 6px" }}>—</span> until a model is run with <code>--grounding</code>, <code>--refusal</code>, or <code>--abstention</code>.
-          {" "}<a href="https://github.com/devankit01/healthllm/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Submit your model →</a>
+          Health Score uses weighted average (Med Knowledge 20%, Clinical 20%, Evidence 15%, Claims 15%, NER 15%, Consistency 10%, JSON 5%).
+          95% Wilson confidence intervals shown on each score.{" "}
+          <a href="https://github.com/devankit01/healthllm/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">Submit your model →</a>
         </p>
       </div>
     </>

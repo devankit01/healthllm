@@ -58,6 +58,8 @@ export interface EvalResult {
   citation_grounding?: number;
   safety_refusal?: number;
   abstention?: number;
+  quantization?: string;
+  parameter_size?: string;
   samples: number;
   seed: number;
   submitted_at: string;
