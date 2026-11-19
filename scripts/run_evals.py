@@ -95,6 +95,20 @@ def ask(model: str, prompt: str, timeout: int = 600, max_tokens: int = 1024, all
     return ""
 
 
+HEALTH_WEIGHTS = {
+    "med_knowledge":      0.20,
+    "clinical_reasoning": 0.20,
+    "evidence_reasoning": 0.15,
+    "claim_verification": 0.15,
+    "entity_extraction":  0.15,
+    "consistency":        0.10,
+    "json_reliability":   0.05,
+}
+
+def _weighted_health_score(scores: dict) -> float:
+    return sum(scores.get(k, 0) * w for k, w in HEALTH_WEIGHTS.items())
+
+
 def wilson_ci(correct: int, n: int, z: float = 1.96):
     """Wilson score 95% confidence interval for a proportion."""
     if n == 0:
@@ -658,10 +672,16 @@ def _extract_spans(tokens, tags):
 def _parse_diseases_json(text: str):
     # Strip markdown fences
     text = re.sub(r"```(?:json)?", "", text).strip()
+    # Try to extract just the JSON portion if there's surrounding text
+    json_match = re.search(r'(\{[^{}]*"diseases"[^{}]*\}|\[[^\[\]]*\])', text, re.DOTALL)
+    if json_match:
+        text = json_match.group(1)
     try:
         data = json.loads(text)
         if isinstance(data, dict) and isinstance(data.get("diseases"), list):
             return [str(d) for d in data["diseases"]], True
+        if isinstance(data, list):
+            return [str(d) for d in data], True
     except Exception:
         pass
     return [], False
@@ -762,6 +782,7 @@ def main():
     ap.add_argument("--backend", choices=["ollama", "mlx"], default="ollama", help="Inference backend: ollama (default) or mlx (Apple Silicon)")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
     ap.add_argument("--push-only", action="store_true", help="Push saved results JSON to Supabase without re-running evals")
+    ap.add_argument("--only", choices=["entity","consistency","med_knowledge","clinical","evidence","claim"], help="Re-run a single Tier 1 eval, patch saved results, recalculate health score")
     ap.add_argument("--submitted-by", default="", help="Your name/handle for the leaderboard")
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
     args = ap.parse_args()
@@ -782,6 +803,58 @@ def main():
     print(f"Temp    : {TEMPERATURE}  Seed: {SEED}\n")
 
     model_id = model.replace(":", "-").replace("/", "-")
+
+    # --only: re-run a single eval, patch saved results, recalculate health score
+    if args.only:
+        saved_path = RESULTS_DIR / f"{model_id}.json"
+        if not saved_path.exists():
+            sys.exit(f"No saved results found at {saved_path}. Run the full eval first.")
+        with open(saved_path) as f:
+            result = json.load(f)
+        scores = result["scores"]
+        n = args.samples
+        key = args.only
+        print(f"Re-running eval: {key} ...")
+        if key == "entity":
+            f1, json_pct = eval_entity_extraction(model, n)
+            scores["entity_extraction"] = round(f1, 1)
+            scores["json_reliability"] = round(json_pct, 1)
+            result["confidence_intervals"]["entity_extraction"] = dict(zip(("lo","hi"), wilson_ci(round(f1/100*n), n)))
+            result["confidence_intervals"]["json_reliability"] = dict(zip(("lo","hi"), wilson_ci(round(json_pct/100*n), n)))
+            print(f"\n  Entity F1: {f1}%  JSON valid: {json_pct}%")
+        elif key == "consistency":
+            s = eval_consistency(model, n)
+            scores["consistency"] = round(s, 1)
+            result["confidence_intervals"]["consistency"] = dict(zip(("lo","hi"), wilson_ci(round(s/100*n), n)))
+            print(f"\n  Consistency: {s}%")
+        elif key == "med_knowledge":
+            s = eval_med_knowledge(model, n)
+            scores["med_knowledge"] = round(s, 1)
+            result["confidence_intervals"]["med_knowledge"] = dict(zip(("lo","hi"), wilson_ci(round(s/100*n), n)))
+            print(f"\n  Medical knowledge: {s}%")
+        elif key == "clinical":
+            s = eval_clinical_reasoning(model, n)
+            scores["clinical_reasoning"] = round(s, 1)
+            result["confidence_intervals"]["clinical_reasoning"] = dict(zip(("lo","hi"), wilson_ci(round(s/100*n), n)))
+            print(f"\n  Clinical reasoning: {s}%")
+        elif key == "evidence":
+            s = eval_evidence_reasoning(model, n)
+            scores["evidence_reasoning"] = round(s, 1)
+            result["confidence_intervals"]["evidence_reasoning"] = dict(zip(("lo","hi"), wilson_ci(round(s/100*n), n)))
+            print(f"\n  Evidence reasoning: {s}%")
+        elif key == "claim":
+            s = eval_claim_verification(model, n)
+            scores["claim_verification"] = round(s, 1)
+            result["confidence_intervals"]["claim_verification"] = dict(zip(("lo","hi"), wilson_ci(round(s/100*n), n)))
+            print(f"\n  Claim verification: {s}%")
+        result["health_score"] = round(_weighted_health_score(scores), 1)
+        with open(saved_path, "w") as f:
+            json.dump(result, f, indent=2)
+        print(f"Health Score (updated): {result['health_score']}%")
+        print(f"Saved: {saved_path}")
+        if args.push:
+            push_to_supabase(result)
+        return
 
     # --push-only: load saved results JSON and push to Supabase without re-running
     if args.push_only:
@@ -885,7 +958,7 @@ def main():
             ci[k] = wilson_ci(correct_equiv, n)
 
         run_stdev: dict[str, float] = {k: stdev(v) for k, v in all_runs.items()}
-        health_score = round(sum(scores.values()) / len(scores), 1)
+        health_score = round(_weighted_health_score(scores), 1)
 
     t0 = time.time()
 
