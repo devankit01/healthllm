@@ -82,10 +82,10 @@ function wilsonCI(score: number, n: number): [number, number] {
 
 // ── ScoreBar ──────────────────────────────────────────────────────────────────
 
-function ScoreBar({ label, value, n }: { label: string; value: number | null; n: number }) {
+function ScoreBar({ label, value, n, showCI = false }: { label: string; value: number | null; n: number; showCI?: boolean }) {
   const val = value ?? 0;
   const hasVal = value != null;
-  const [lo, hi] = hasVal ? wilsonCI(val, n) : [0, 0];
+  const [lo, hi] = (hasVal && showCI) ? wilsonCI(val, n) : [0, 0];
   return (
     <div style={{ marginBottom: 10 }}>
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, marginBottom: 3 }}>
@@ -94,7 +94,7 @@ function ScoreBar({ label, value, n }: { label: string; value: number | null; n:
           {hasVal ? `${val.toFixed(1)}%` : "—"}
         </span>
       </div>
-      <div style={{ background: "#f0f0f0", borderRadius: 4, height: 6, position: "relative" }}>
+      <div style={{ background: "#f0f0f0", borderRadius: 4, height: 6, overflow: "hidden" }}>
         {hasVal && (
           <div style={{
             background: scoreColor(val),
@@ -105,7 +105,7 @@ function ScoreBar({ label, value, n }: { label: string; value: number | null; n:
           }} />
         )}
       </div>
-      {hasVal && <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 2 }}>[{lo}–{hi}]</div>}
+      {showCI && hasVal && <div style={{ fontSize: 10, color: "var(--muted)", marginTop: 2 }}>95% CI [{lo}–{hi}]</div>}
     </div>
   );
 }
@@ -225,13 +225,13 @@ function ModelModal({ r, notes, onClose }: { r: EvalResult; notes: string | null
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 10 }}>Tier 1 — Medical Knowledge</div>
             {TIER1.map(e => (
-              <ScoreBar key={e.key} label={e.label} value={r[e.key as keyof EvalResult] as number ?? null} n={r.samples ?? 100} />
+              <ScoreBar key={e.key} label={e.label} value={r[e.key as keyof EvalResult] as number ?? null} n={r.samples ?? 100} showCI />
             ))}
           </div>
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--muted)", marginBottom: 10 }}>Tier 2 — Deployment Trust</div>
             {TIER2.map(e => (
-              <ScoreBar key={e.key} label={e.label} value={r[e.key as keyof EvalResult] as number ?? null} n={r.samples ?? 100} />
+              <ScoreBar key={e.key} label={e.label} value={r[e.key as keyof EvalResult] as number ?? null} n={r.samples ?? 100} showCI />
             ))}
             <div style={{ marginTop: 16, fontSize: 11, color: "var(--muted)" }}>
               <div>Quantization: <strong>{r.quantization ?? "—"}</strong></div>

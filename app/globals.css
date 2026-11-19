@@ -557,6 +557,7 @@ footer { margin-top: 80px; border-top: 1px solid var(--line); padding: 28px 0 40
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 20px;
+  overflow: hidden;
   transition: box-shadow 0.15s, border-color 0.15s;
 }
 .model-card:hover {
