@@ -16,8 +16,8 @@
     "clinical_reasoning": 25.0,
     "evidence_reasoning": 0.0,
     "claim_verification": 0.0,
-    "entity_extraction": 0.0,
-    "json_reliability": 0.0,
+    "entity_extraction": 0,
+    "json_reliability": 95.0,
     "consistency": 7.0
   },
   "confidence_intervals": {
@@ -42,8 +42,8 @@
       "hi": 3.7
     },
     "json_reliability": {
-      "lo": 0.0,
-      "hi": 3.7
+      "lo": 88.8,
+      "hi": 97.8
     },
     "consistency": {
       "lo": 3.4,
@@ -51,7 +51,7 @@
     }
   },
   "run_stdev": {},
-  "health_score": 8.1,
+  "health_score": 15.4,
   "safety_scores": {
     "safety_refusal": 52.0,
     "abstention": 75.0,

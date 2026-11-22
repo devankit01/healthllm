@@ -185,7 +185,9 @@ Use `--repeats N` to run the full eval N times and report run-to-run standard de
 - **Not clinical validation.** Exam questions and abstracts are not patient care. Do not use a score to decide whether a model is safe for clinical use.
 - **Training data contamination.** These are public datasets — some models were likely trained on them, inflating scores (most likely medically tuned models).
 - **Strict parsing punishes chatty models.** A model that explains before answering loses points on format, not knowledge. This is deliberate for pipeline use, but it is a choice.
+- **Chain-of-thought / thinking models score near zero.** Models like DeepSeek-R1 that emit `<think>` reasoning blocks before their final answer will score near 0 on MCQ evals — not because the model lacks knowledge, but because the parser reads the reasoning trace rather than the answer letter. If you are evaluating a reasoning model, check whether its Ollama tag strips the thinking tokens. We plan to add a `--thinking` flag to skip the first `</think>` boundary before parsing.
 - **Exact-match extraction is harsh.** "diabetes" for "type 2 diabetes" is a miss.
 - **Quantisation matters.** Ollama tags are quantised. A score is for that specific quantisation, not the full-precision model.
+- **MLX and Ollama scores are not directly comparable.** Different quantisation schemes and chat-template handling mean the same model can produce different scores across backends. MLX results are marked separately on the leaderboard and should not be ranked alongside Ollama results.
 - **Speed is hardware-dependent.** Only compare speed numbers from the same hardware.
 - **Scores are community-submitted** and not independently re-run before merging.

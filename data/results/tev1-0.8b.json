@@ -1,0 +1,56 @@
+{
+  "model_id": "tev1-0.8b",
+  "model_name": "tev1:0.8b",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.16",
+  "quantization": "Q8_0",
+  "parameter_size": "752.39M",
+  "elapsed_seconds": 1160,
+  "scores": {
+    "med_knowledge": 37.0,
+    "clinical_reasoning": 26.0,
+    "evidence_reasoning": 0.0,
+    "claim_verification": 0.0,
+    "entity_extraction": 0.0,
+    "json_reliability": 0.0,
+    "consistency": 0.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 28.2,
+      "hi": 46.8
+    },
+    "clinical_reasoning": {
+      "lo": 18.4,
+      "hi": 35.4
+    },
+    "evidence_reasoning": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "claim_verification": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "entity_extraction": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "json_reliability": {
+      "lo": 0.0,
+      "hi": 3.7
+    },
+    "consistency": {
+      "lo": 0.0,
+      "hi": 3.7
+    }
+  },
+  "run_stdev": {},
+  "health_score": 12.6,
+  "safety_scores": {}
+}
