@@ -9308,5 +9308,2903 @@
       "medical-qa"
     ],
     "featured": false
+  },
+  {
+    "id": "xxhdxxhd-medical-qa",
+    "name": "medical QA",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "xXHDXxhd/medical_QA",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0408-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0408 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0408_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0869-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0869 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0869_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0956-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0956 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0956_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2688-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2688 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2688_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0888-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0888 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0888_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1085-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1085 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1085_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1331-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1331 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1331_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2699-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2699 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2699_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0497-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0497 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0497_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0632-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0632 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0632_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0654-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0654 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0654_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0731-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0731 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0731_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0754-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0754 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0754_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0882-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0882 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0882_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1075-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1075 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1075_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1297-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1297 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1297_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1301-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1301 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1301_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1367-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1367 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1367_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1410-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1410 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1410_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1602-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1602 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1602_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1923-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1923 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1923_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2649-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2649 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2649_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2661-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2661 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2661_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2854-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2854 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2854_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-3039-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 3039 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_3039_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lintangbs-medical-qa-indo-very-small",
+    "name": "medical qa indo very small",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lintangbs/medical-qa-indo-very-small",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "anne-desk-medical-qa-dataset",
+    "name": "Medical QA Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Anne-Desk/Medical-QA-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0342-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0342 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0342_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-0674-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 0674 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_0674_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sadaftb-clinical-nlp-train",
+    "name": "clinical nlp train",
+    "type": "Clinical Records",
+    "size": "varies",
+    "task": "clinical-records",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Sadaftb/clinical-nlp-train",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A clinical records dataset for health AI research and evaluation.",
+    "usecase": "Train models on real clinical documentation and EHR data.",
+    "tags": [
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sadaftb-clinical-nlp-features",
+    "name": "clinical nlp features",
+    "type": "Clinical Records",
+    "size": "varies",
+    "task": "clinical-records",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Sadaftb/clinical-nlp-features",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A clinical records dataset for health AI research and evaluation.",
+    "usecase": "Train models on real clinical documentation and EHR data.",
+    "tags": [
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sadaftb-clinical-nlp-dataset",
+    "name": "clinical nlp dataset",
+    "type": "Clinical Records",
+    "size": "varies",
+    "task": "clinical-records",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Sadaftb/clinical-nlp-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A clinical records dataset for health AI research and evaluation.",
+    "usecase": "Train models on real clinical documentation and EHR data.",
+    "tags": [
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-inpatient-treatment-plan-and-medical-order-consistency-evaluation-dataset",
+    "name": "Inpatient Treatment Plan and Medical Order Consistency Evaluation Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Inpatient-Treatment-Plan-and-Medical-Order-Consistency-Evaluation-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-living-organ-donor-safety-constraint-evaluation-dataset",
+    "name": "Living Organ Donor Safety Constraint Evaluation Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Living-Organ-Donor-Safety-Constraint-Evaluation-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-emergency-chest-pain-workflow-omission-detection-and-recovery-trajectory-dataset",
+    "name": "Emergency Chest Pain Workflow Omission Detection and Recovery Trajectory Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Emergency-Chest-Pain-Workflow-Omission-Detection-and-Recovery-Trajectory-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-diagnostic-test-knowledge-retrieval-dataset-for-bacterial-skin-infections",
+    "name": "Diagnostic Test Knowledge Retrieval Dataset for Bacterial Skin Infections",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Diagnostic-Test-Knowledge-Retrieval-Dataset-for-Bacterial-Skin-Infections",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-conflicting-evidence-reasoning-dataset-for-pigmentary-disorders",
+    "name": "Conflicting Evidence Reasoning Dataset for Pigmentary Disorders",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Conflicting-Evidence-Reasoning-Dataset-for-Pigmentary-Disorders",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-gerd-diagnostic-criteria-and-phenotype-information-extraction-dataset",
+    "name": "GERD Diagnostic Criteria and Phenotype Information Extraction Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/GERD-Diagnostic-Criteria-and-Phenotype-Information-Extraction-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-cutaneous-fungal-infection-differential-diagnosis-evidence-extraction-dataset",
+    "name": "Cutaneous Fungal Infection Differential Diagnosis Evidence Extraction Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Cutaneous-Fungal-Infection-Differential-Diagnosis-Evidence-Extraction-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-longitudinal-primary-care-record-consistency-and-constraint-evaluation-dataset",
+    "name": "Longitudinal Primary Care Record Consistency and Constraint Evaluation Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Longitudinal-Primary-Care-Record-Consistency-and-Constraint-Evaluation-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-hypertension-patient-education-conditional-instruction-following-dataset",
+    "name": "Hypertension Patient Education Conditional Instruction Following Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Hypertension-Patient-Education-Conditional-Instruction-Following-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-behavioral-medicine-dialogue-implicit-intent-hard-cases-dataset",
+    "name": "Behavioral Medicine Dialogue Implicit Intent Hard Cases Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Behavioral-Medicine-Dialogue-Implicit-Intent-Hard-Cases-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-pancreatitis-research-conflicting-evidence-citation-verification-benchmark-dataset",
+    "name": "Pancreatitis Research Conflicting Evidence Citation Verification Benchmark Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Pancreatitis-Research-Conflicting-Evidence-Citation-Verification-Benchmark-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-obesity-research-citation-support-verification-dataset",
+    "name": "Obesity Research Citation Support Verification Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Obesity-Research-Citation-Support-Verification-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-behavioral-medicine-counseling-dialogue-intent-classification-dataset",
+    "name": "Behavioral Medicine Counseling Dialogue Intent Classification Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Behavioral-Medicine-Counseling-Dialogue-Intent-Classification-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-psychotherapy-dialogue-response-faithfulness-evaluation-dataset",
+    "name": "Psychotherapy Dialogue Response Faithfulness Evaluation Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Psychotherapy-Dialogue-Response-Faithfulness-Evaluation-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-severe-skin-infection-warning-signs-and-complications-knowledge-retrieval-dataset",
+    "name": "Severe Skin Infection Warning Signs and Complications Knowledge Retrieval Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Severe-Skin-Infection-Warning-Signs-and-Complications-Knowledge-Retrieval-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "clinical-reasoning",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthcare-biomedical-ai-nephrotic-syndrome-academic-citation-support-verification-dataset",
+    "name": "Nephrotic Syndrome Academic Citation Support Verification Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthcare-biomedical-ai/Nephrotic-Syndrome-Academic-Citation-Support-Verification-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ihssane123-mental-health-dataset",
+    "name": "Mental Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Ihssane123/Mental_Health_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mabera-nigeria-wash-health-dataset",
+    "name": "nigeria wash health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "mabera/nigeria-wash-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aditya149-mental-health-counselling-dataset",
+    "name": "Mental Health Counselling Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Aditya149/Mental_Health_Counselling_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "noobie314-mental-health-posts-dataset",
+    "name": "mental health posts dataset",
+    "type": "NLI",
+    "size": "varies",
+    "task": "nli",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Noobie314/mental-health-posts-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A nli dataset for health AI research and evaluation.",
+    "usecase": "Evaluate natural language inference on biomedical text.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "adeputr4-mental-health-gaming-dataset",
+    "name": "mental health gaming dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "adeputr4/mental-health-gaming-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kettap-mental-health-audio-dataset",
+    "name": "mental health audio dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "KettaP/mental_health_audio_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "amna00-pet-health-symptoms-dataset",
+    "name": "pet health symptoms dataset",
+    "type": "NLI",
+    "size": "varies",
+    "task": "nli",
+    "access": "open",
+    "license": "unknown",
+    "hf": "amna00/pet-health-symptoms-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A nli dataset for health AI research and evaluation.",
+    "usecase": "Evaluate natural language inference on biomedical text.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pro-familia-bundesverband-pro-familia-intent-dataset-reproductive-health-de",
+    "name": "pro familia intent dataset reproductive health de",
+    "type": "NLI",
+    "size": "varies",
+    "task": "nli",
+    "access": "open",
+    "license": "unknown",
+    "hf": "pro-familia-Bundesverband/pro-familia-intent-dataset-reproductive-health-de",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A nli dataset for health AI research and evaluation.",
+    "usecase": "Evaluate natural language inference on biomedical text.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "vivekdugale-llama2-mental-health-dataset-172",
+    "name": "llama2 mental health dataset 172",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "vivekdugale/llama2_mental_health_dataset_172",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "fadodr-mental-health-dataset",
+    "name": "mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "fadodr/mental_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "zhang-lei-pet-health-symptoms-dataset",
+    "name": "pet health symptoms dataset",
+    "type": "NLI",
+    "size": "varies",
+    "task": "nli",
+    "access": "open",
+    "license": "unknown",
+    "hf": "zhang-lei/pet-health-symptoms-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A nli dataset for health AI research and evaluation.",
+    "usecase": "Evaluate natural language inference on biomedical text.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "jhota2025-mental-health-text-dataset",
+    "name": "Mental Health Text Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "jhota2025/Mental-Health-Text-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "winchoqi-mental-health-chatbot-dataset",
+    "name": "mental health chatbot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "WinchoQi/mental_health_chatbot_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "vivekdugale-llama2-filtered-dataset-458-amod-helios-mental-health-convos",
+    "name": "llama2 filtered dataset 458 amod helios mental health convos",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "vivekdugale/llama2_filtered_dataset_458_amod_helios_mental_health_convos",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aldsouza-health-agent-dataset",
+    "name": "health agent dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "aldsouza/health-agent-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "khalidalt-350k-dataset-health-ar-en-th",
+    "name": "350k dataset health ar en th",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "khalidalt/350k_dataset_health_ar_en_th",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "theaadityapaul-mental-health-text-classification-dataset",
+    "name": "Mental Health Text Classification Dataset",
+    "type": "NLI",
+    "size": "varies",
+    "task": "nli",
+    "access": "open",
+    "license": "unknown",
+    "hf": "theaadityapaul/Mental-Health_Text-Classification_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A nli dataset for health AI research and evaluation.",
+    "usecase": "Evaluate natural language inference on biomedical text.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mabera-nigeria-malaria-health-dataset",
+    "name": "nigeria malaria health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "mabera/nigeria-malaria-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sanadf234-food-health-dataset",
+    "name": "food health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "sanadf234/food_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "beijuka-luganda-mental-health-dataset-v2",
+    "name": "luganda mental health dataset v2",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Beijuka/luganda_mental_health_dataset_v2",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "fridriik-mental-health-arg-post-quarantine-covid19-dataset",
+    "name": "mental health arg post quarantine covid19 dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "fridriik/mental-health-arg-post-quarantine-covid19-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "oritsemisan-mental-health-dataset-mistral7b-auto-tune",
+    "name": "mental health dataset mistral7b auto tune",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Oritsemisan/mental-health-dataset-mistral7b-auto-tune",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "mistral-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yaditi1303-mental-health-preferred-dataset",
+    "name": "mental health preferred dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "yaditi1303/mental_health_preferred_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "emailmarketingdataset-health-fitness-dataset",
+    "name": "health fitness dataset",
+    "type": "NER",
+    "size": "varies",
+    "task": "ner",
+    "access": "open",
+    "license": "unknown",
+    "hf": "emailmarketingdataset/health-fitness-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A ner dataset for health AI research and evaluation.",
+    "usecase": "Fine-tune models for biomedical named entity recognition.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "haastrupea-food-health-assistant-prompt-dataset",
+    "name": "food health assistant prompt dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "haastrupea/food_health_assistant_prompt_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "jason1966-algozee-mental-health-disorder-risk-assessment-dataset",
+    "name": "algozee mental health disorder risk assessment dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "jason1966/algozee_mental-health-disorder-risk-assessment-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "alireza2317-diabetes-health-indicators-dataset",
+    "name": "Diabetes Health Indicators Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "alireza2317/Diabetes_Health_Indicators_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dialbird-mental-health-chatbot-dataset",
+    "name": "mental health chatbot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "dialbird/mental_health_chatbot_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sbgs-mental-health-dataset-mistral-7b",
+    "name": "mental health dataset mistral 7b",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "sbgs/mental-health-dataset-mistral-7b",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "mistral-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "oscar066-health-dataset",
+    "name": "health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Oscar066/health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "fadodr-mental-health-cleaned-dataset",
+    "name": "mental health cleaned dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "fadodr/mental_health_cleaned_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sabin1234-real-website-text-scrap-health-domain-dataset",
+    "name": "REAL WEBSITE TEXT SCRAP HEALTH DOMAIN DATASET",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "sabin1234/REAL_WEBSITE_TEXT_SCRAP_HEALTH_DOMAIN_DATASET",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "quocanh34-mental-health-dataset-1",
+    "name": "mental health dataset 1",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "quocanh34/mental_health_dataset_1",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lathma-mental-health-conversation-dataset",
+    "name": "Mental Health Conversation Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Lathma/Mental_Health_Conversation_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mabera-nigeria-multilingual-health-dataset",
+    "name": "nigeria multilingual health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "mabera/nigeria-multilingual-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dhiyagavaeikar-llama2-mental-health-conversations-smaller-dataset",
+    "name": "llama2 mental health conversations smaller dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "dhiyagavaeikar/llama2_mental_health_conversations_smaller_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nv9523-mental-health-dataset",
+    "name": "mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "NV9523/mental_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "healthdataset-crawler-prompt-v2-qwen-oss-v1",
+    "name": "crawler prompt v2 qwen oss v1",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "healthdataset/crawler_prompt_v2_qwen_oss_v1",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "auric-grid-e1.s6-adolescent-behavioral-health-dataset",
+    "name": "E1.S6 Adolescent Behavioral Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Auric-Grid/E1.S6-Adolescent-Behavioral-Health-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sayanroy058-social-media-and-twitter-mental-health-dataset",
+    "name": "Social Media And Twitter Mental Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "sayanroy058/Social_Media_And_Twitter_Mental_Health_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "modelhugger07-translated-mental-health-dataset-hindi",
+    "name": "translated mental health dataset Hindi",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "ModelHugger07/translated-mental-health-dataset-Hindi",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "esfersami-bangla-mental-health-dataset",
+    "name": "bangla mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "EsferSami/bangla-mental-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "introvoyz041-public-health-intelligence-datasetpublic-health-intelligence-dataset",
+    "name": "public health intelligence datasetpublic health intelligence dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "introvoyz041/public-health-intelligence-datasetpublic-health-intelligence-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "titung-nepali-nsl-health-ocr-dataset",
+    "name": "nepali nsl health ocr dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Titung/nepali-nsl-health-ocr-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sabin1234-real-scarp-romanized-health-faq-complile-dataset",
+    "name": "Real Scarp ROMANIZED Health FAQ Complile Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "sabin1234/Real_Scarp_ROMANIZED_Health_FAQ_Complile_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "chhabi-testing-dataset-llama2-nepali-health",
+    "name": "testing dataset llama2 nepali health",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Chhabi/testing-dataset-llama2-nepali-health",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "meetx-mental-health-dataset-mistral7b-auto-tune",
+    "name": "mental health dataset mistral7b auto tune",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "MeetX/mental-health-dataset-mistral7b-auto-tune",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "mistral-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "raks19-mental-health-dataset-llama-final",
+    "name": "mental health dataset llama final",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "RAKS19/mental-health-dataset-llama-final",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "akashpaul123-mental-health-reasoning-dataset",
+    "name": "mental health reasoning dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Akashpaul123/mental-health-reasoning-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dieuercikaz-mental-health-chatbot-dataset",
+    "name": "mental health chatbot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Dieuercikaz/mental_health_chatbot_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "meetx-mental-health-dataset-mistral7b",
+    "name": "mental health dataset mistral7b",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "MeetX/mental-health-dataset-mistral7b",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "mistral-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mshojaei77-merged-mental-health-dataset",
+    "name": "merged mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "mshojaei77/merged_mental_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "korkmazemin1-health-qa-dataset",
+    "name": "health QA dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "korkmazemin1/health_QA_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lpzerba-health-factory-dataset-test",
+    "name": "health factory dataset test",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lpzerba/health-factory-dataset-test",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "veerendramanikonda-predictive-maintenance-engine-health-dataset",
+    "name": "predictive maintenance engine health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "VeerendraManikonda/predictive-maintenance-engine-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aiacademy-kg-kg-health-dataset",
+    "name": "kg health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "aiacademy-kg/kg_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "raks19-mental-health-dataset-llama3",
+    "name": "mental health dataset llama3",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "RAKS19/mental-health-dataset-llama3",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "srishmath-mental-health-qa-dataset",
+    "name": "mental health qa dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Srishmath/mental-health-qa-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "srishmath-mental-health-qa-bot-dataset",
+    "name": "mental health qa bot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Srishmath/mental-health-qa-bot-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "vedxntr18-mental-health-chatbot-dataset",
+    "name": "mental health chatbot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "VedxntR18/mental_health_chatbot_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "momed33-mental-health-conversational-dataset",
+    "name": "mental health conversational dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "momed33/mental_health_conversational_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "parth211-mental-health-dataset",
+    "name": "mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Parth211/mental-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aadithya18-health-coaching-dataset",
+    "name": "Health Coaching Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Aadithya18/Health-Coaching_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kuyesu22-runyankore-health-sythentic-dataset",
+    "name": "runyankore health sythentic dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "kuyesu22/runyankore_health_sythentic_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pranilllllll-positive-conversations-dataset-mental-health",
+    "name": "positive conversations dataset mental health",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Pranilllllll/positive-conversations-dataset-mental-health",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "saarib2405-cactus-mental-health-dataset",
+    "name": "Cactus Mental Health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "saarib2405/Cactus-Mental-Health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lpzerba-health-factory-dataset",
+    "name": "health factory dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lpzerba/health-factory-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "surfiniaburger-maize-leaf-health-dataset",
+    "name": "maize leaf health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "surfiniaburger/maize-leaf-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "manishaneura-mental-health-chatbot-dataset",
+    "name": "mental health chatbot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "manishaNeura/mental_health_chatbot_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kang95-dataset-team20-chatbot-health",
+    "name": "dataset team20 chatbot health",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Kang95/dataset-team20-chatbot-health",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "hannan2004-ai-health-mentor-dataset",
+    "name": "AI Health Mentor Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Hannan2004/AI-Health-Mentor-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "lpzerba-health-factory-contextual-dataset",
+    "name": "health factory contextual dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "lpzerba/health-factory-contextual-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "snipeart007-student-buddy-mental-health-adaptor-dataset",
+    "name": "student buddy mental health adaptor dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "snipeart007/student-buddy-mental-health-adaptor-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "shivenaggarwal-mental-health-llm-dataset",
+    "name": "mental health llm dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "shivenaggarwal/mental-health-llm-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "beijuka-mental-health-numbers-audio-dataset",
+    "name": "mental health numbers audio dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Beijuka/mental_health_numbers_audio_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "masumhasan-mental-health-dataset",
+    "name": "mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "masumhasan/mental_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "raks19-mental-health-dataset-llama1",
+    "name": "mental health dataset llama1",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "RAKS19/mental-health-dataset-llama1",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "raks19-mental-health-dataset-llama2",
+    "name": "mental health dataset llama2",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "RAKS19/mental-health-dataset-llama2",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kokojake-fitness-health-rag-dataset",
+    "name": "fitness health RAG dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "kokojake/fitness-health-RAG-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ieruygfvkihesugdfvx-synthetic-health-dataset",
+    "name": "synthetic health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "ieruygfvkihesugdfvx/synthetic-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "hnuriany1-simple-health-tips-dataset",
+    "name": "simple health tips dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "hnuriany1/simple-health-tips-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "violetganteng-violetganteng-robot-health-check-dataset2",
+    "name": "violetganteng robot health check dataset2",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "VIOLETGANTENG/violetganteng-robot-health-check-dataset2",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sellamiahmed-mental-health-employees-dataset",
+    "name": "mental health employees dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "SellamiAhmed/mental-health-employees-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pritamdeb68-health-and-wellness-dataset",
+    "name": "Health and Wellness Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "pritamdeb68/Health-and-Wellness-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "violetganteng-violetganteng-robot-health-check-dataset",
+    "name": "violetganteng robot health check dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "VIOLETGANTENG/violetganteng-robot-health-check-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mabera-nigeria-occupational-health-law-dataset",
+    "name": "nigeria occupational health law dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "mabera/nigeria-occupational-health-law-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "celsowm-mental-health-chatbot-dataset",
+    "name": "mental health chatbot dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "celsowm/mental_health_chatbot_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "bhaskars113-beer-dataset-health-vs-budget",
+    "name": "beer dataset health vs budget",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "bhaskars113/beer_dataset_health_vs_budget",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "raks19-mental-health-dataset-llama",
+    "name": "mental health dataset llama",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "RAKS19/mental-health-dataset-llama",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "manoj2423-mental-health-chatbot-dataset",
+    "name": "Mental Health Chatbot Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "manoj2423/Mental_Health_Chatbot_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rajj18-mental-health-dataset",
+    "name": "mental health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "RAJJ18/mental_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "praneshkk16-merged-health-dataset",
+    "name": "merged health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "praneshkk16/merged-health-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "tahasawan-health-dataset",
+    "name": "Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "tahasawan/Health_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "hannan2004-mental-health-dataset",
+    "name": "Mental Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Hannan2004/Mental_Health_Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "gauuu-564-mental-health-dataset",
+    "name": "Mental Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Gauuu-564/Mental-Health-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "violetganteng-violetganteng-robot-health-check-dataset1",
+    "name": "violetganteng robot health check dataset1",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "VIOLETGANTENG/violetganteng-robot-health-check-dataset1",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kokojake-fitness-health-unnormalized-rag-dataset",
+    "name": "fitness health unnormalized RAG dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "kokojake/fitness-health-unnormalized-RAG-dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "salomonmetre13-zindi-health-dataset",
+    "name": "zindi health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "SalomonMetre13/zindi_health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mahim47-health-dataset",
+    "name": "health dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Mahim47/health_dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "celagenexresearch-women-health-dataset",
+    "name": "Women Health Dataset",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "CelagenexResearch/Women-Health-Dataset",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "masterofaudio2077-dutch-medical-phi-ner",
+    "name": "dutch medical phi ner",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "masterofaudio2077/dutch-medical-phi-ner",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "clinical-reasoning",
+      "medical-qa",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "masterofaudio2077-spanish-medical-phi-ner",
+    "name": "spanish medical phi ner",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "masterofaudio2077/spanish-medical-phi-ner",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "clinical-reasoning",
+      "medical-qa",
+      "ner"
+    ],
+    "featured": false
   }
 ]

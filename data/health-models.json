@@ -18258,5 +18258,1829 @@
       "biomedical"
     ],
     "featured": false
+  },
+  {
+    "id": "rui525-clinicalbert-finetune-headqa",
+    "name": "ClinicalBERT finetune HEADQA",
+    "developer": "RUI525",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "RUI525/ClinicalBERT-finetune-HEADQA",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "okho0653-bio-clinicalbert-finetuned-cad-20pc",
+    "name": "Bio ClinicalBERT finetuned cad 20pc",
+    "developer": "okho0653",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "okho0653/Bio_ClinicalBERT-finetuned-cad-20pc",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ahmed792002-finetuning-bert-clinicalnotes-diagnosis-classification",
+    "name": "Finetuning Bert ClinicalNotes Diagnosis Classification",
+    "developer": "ahmed792002",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ahmed792002/Finetuning_Bert_ClinicalNotes_Diagnosis_Classification",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "alexd063-bio-clinicalbert-finetuned-medmentions",
+    "name": "bio clinicalbert finetuned medmentions",
+    "developer": "alexd063",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "alexd063/bio-clinicalbert-finetuned-medmentions",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-10-ternary-v1",
+    "name": "Bio ClinicalBERT fold 10 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_10_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "yamaceay-pii-detector-clinical-bert",
+    "name": "PII Detector Clinical BERT",
+    "developer": "yamaceay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "yamaceay/PII-Detector-Clinical-BERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "commanderstrife-bc4chemd-ner-bio-clinicalbert-finetuned-ner",
+    "name": "bc4chemd ner Bio ClinicalBERT finetuned ner",
+    "developer": "commanderstrife",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "commanderstrife/bc4chemd_ner-Bio_ClinicalBERT-finetuned-ner",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "gucuchiara-nlp-hiba-distemist-fine-tuned-clinicalbert-pretrained-model",
+    "name": "NLP HIBA DisTEMIST fine tuned ClinicalBERT pretrained model",
+    "developer": "GuCuChiara",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "GuCuChiara/NLP-HIBA_DisTEMIST_fine_tuned_ClinicalBERT-pretrained-model",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-7-binary-v1",
+    "name": "Bio ClinicalBERT fold 7 binary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_7_binary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-2-ternary-v1",
+    "name": "Bio ClinicalBERT fold 2 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_2_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-clinical-bio-bert-ft",
+    "name": "clinical bio bert ft",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/clinical_bio_bert_ft",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs7",
+    "name": "stbl clinical bert ft rs7",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs7",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-9-ternary-v1",
+    "name": "Bio ClinicalBERT fold 9 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_9_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft",
+    "name": "stbl clinical bert ft",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs3",
+    "name": "stbl clinical bert ft rs3",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs3",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-6-ternary-v1",
+    "name": "Bio ClinicalBERT fold 6 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_6_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-ft-clinical-bert-diabetes",
+    "name": "ft clinical bert diabetes",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/ft_clinical_bert_diabetes",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs9",
+    "name": "stbl clinical bert ft rs9",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs9",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs10",
+    "name": "stbl clinical bert ft rs10",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs10",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "amiralishojaee123-amir-clinicalbert-2",
+    "name": "amir clinicalbert 2",
+    "developer": "amiralishojaee123",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "amiralishojaee123/amir-clinicalbert-2",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "urbija-bio-clinicalbert",
+    "name": "Bio ClinicalBERT",
+    "developer": "urbija",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "urbija/Bio_ClinicalBERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sugirdha12-clinical-bert",
+    "name": "CLINICAL BERT",
+    "developer": "sugirdha12",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "sugirdha12/CLINICAL-BERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "li-lab-ascle-clinicalbert-finetune-headqa",
+    "name": "ascle ClinicalBERT finetune HEADQA",
+    "developer": "li-lab",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "li-lab/ascle-ClinicalBERT-finetune-HEADQA",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "li-lab-ascle-clinicalbert-finetune-medmcqa-wo-context",
+    "name": "ascle ClinicalBERT finetune MedMCQA wo context",
+    "developer": "li-lab",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "li-lab/ascle-ClinicalBERT-finetune-MedMCQA-wo-context",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "efbaro-healthhistorybio-clinicalbert-en",
+    "name": "HealthHistoryBio ClinicalBERT en",
+    "developer": "efbaro",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "efbaro/HealthHistoryBio_ClinicalBERT-en",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-6-binary-v1",
+    "name": "Bio ClinicalBERT fold 6 binary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_6_binary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-9-binary-v1",
+    "name": "Bio ClinicalBERT fold 9 binary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_9_binary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-4-ternary-v1",
+    "name": "Bio ClinicalBERT fold 4 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_4_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-7-ternary-v1",
+    "name": "Bio ClinicalBERT fold 7 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_7_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs4",
+    "name": "stbl clinical bert ft rs4",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs4",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-3-binary-v1",
+    "name": "Bio ClinicalBERT fold 3 binary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_3_binary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-10-binary-v1",
+    "name": "Bio ClinicalBERT fold 10 binary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_10_binary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-8-ternary-v1",
+    "name": "Bio ClinicalBERT fold 8 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_8_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs1",
+    "name": "stbl clinical bert ft rs1",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "embanemb-bio-clinicalbert-frozen-embeddings-30",
+    "name": "Bio clinicalBERT frozen embeddings 30",
+    "developer": "embanEMB",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "embanEMB/Bio_clinicalBERT-frozen_embeddings-30",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "krishna2908-clinicalbert-finetuned",
+    "name": "clinicalbert finetuned",
+    "developer": "Krishna2908",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Krishna2908/clinicalbert_finetuned",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "paramdev-clinicalbert-medical-doc-oversampled-headtail",
+    "name": "clinicalbert medical doc oversampled headtail",
+    "developer": "ParamDev",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ParamDev/clinicalbert-medical-doc-oversampled-headtail",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-clinical-bert-ft",
+    "name": "clinical bert ft",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/clinical_bert_ft",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-3-ternary-v1",
+    "name": "Bio ClinicalBERT fold 3 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_3_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs2",
+    "name": "stbl clinical bert ft rs2",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs2",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs2bs",
+    "name": "stbl clinical bert ft rs2bs",
+    "developer": "ericntay",
+    "params": "2B",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs2bs",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nazzx1-bio-clinical-bert-section-classification-v6",
+    "name": "bio clinical bert section classification v6",
+    "developer": "NazzX1",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "NazzX1/bio-clinical-bert-section-classification-v6",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "ericntay-stbl-clinical-bert-ft-rs6",
+    "name": "stbl clinical bert ft rs6",
+    "developer": "ericntay",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ericntay/stbl_clinical_bert_ft_rs6",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "dinithi-bio-clinicalbert-finetuning-data",
+    "name": "Bio ClinicalBERT finetuning data",
+    "developer": "Dinithi",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Dinithi/Bio_ClinicalBERT-finetuning-data",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rui525-clinicalbert-finetune-medmcqa-w-context",
+    "name": "ClinicalBERT finetune MedMCQA w context",
+    "developer": "RUI525",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "RUI525/ClinicalBERT-finetune-MedMCQA-w-context",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "reza93v-bio-clinicalbert-finetuned-imdb",
+    "name": "Bio ClinicalBERT finetuned imdb",
+    "developer": "reza93v",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "reza93v/Bio_ClinicalBERT-finetuned-imdb",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "li-lab-ascle-clinicalbert-finetune-medmcqa-w-context",
+    "name": "ascle ClinicalBERT finetune MedMCQA w context",
+    "developer": "li-lab",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "li-lab/ascle-ClinicalBERT-finetune-MedMCQA-w-context",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "elopezlopez-bio-clinicalbert-fold-5-ternary-v1",
+    "name": "Bio ClinicalBERT fold 5 ternary v1",
+    "developer": "elopezlopez",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "elopezlopez/Bio_ClinicalBERT_fold_5_ternary_v1",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "paramdev-clinicalbert-medical-doc-chunked",
+    "name": "clinicalbert medical doc chunked",
+    "developer": "ParamDev",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "ParamDev/clinicalbert-medical-doc-chunked",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "alygh-clinicalbert-negsym-bio",
+    "name": "clinicalbert negsym bio",
+    "developer": "Alygh",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Alygh/clinicalbert-negsym-bio",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "moro01525-icu-returns-clinicalbert",
+    "name": "ICU Returns ClinicalBERT",
+    "developer": "moro01525",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "moro01525/ICU_Returns_ClinicalBERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "nehozyo-clinicalbert-3",
+    "name": "ClinicalBERT 3",
+    "developer": "NehozYo",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "NehozYo/ClinicalBERT_3",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning"
+    ],
+    "featured": false
+  },
+  {
+    "id": "singhshivam23-clinicalbert-nli",
+    "name": "clinicalbert nli",
+    "developer": "singhshivam23",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "singhshivam23/clinicalbert-nli",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "anjaly1510-medical-urgency-classifier-clinicalbert",
+    "name": "Medical Urgency Classifier ClinicalBERT",
+    "developer": "Anjaly1510",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Anjaly1510/Medical-Urgency-Classifier-ClinicalBERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, general.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "minhpqn-bio-roberta-base-pubmed",
+    "name": "bio roberta base pubmed",
+    "developer": "minhpqn",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "minhpqn/bio_roberta-base_pubmed",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "clagator-biobert-v1.1-pubmed-nli-sts",
+    "name": "biobert v1.1 pubmed nli sts",
+    "developer": "clagator",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "clagator/biobert_v1.1_pubmed_nli_sts",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rui525-pubmedbert-finetune-medmcqa-wo-context",
+    "name": "PubMedBERT finetune MedMCQA wo context",
+    "developer": "RUI525",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "RUI525/PubMedBERT-finetune-MedMCQA-wo-context",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "jialinselenasong-pubmed-bert-all-deep",
+    "name": "pubmed bert all deep",
+    "developer": "jialinselenasong",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "jialinselenasong/pubmed-bert-all-deep",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pruas-bent-pubmedbert-ner-organism",
+    "name": "BENT PubMedBERT NER Organism",
+    "developer": "pruas",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pruas/BENT-PubMedBERT-NER-Organism",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "rui525-pubmedbert-finetune-headqa",
+    "name": "PubMedBERT finetune HEADQA",
+    "developer": "RUI525",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "RUI525/PubMedBERT-finetune-HEADQA",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "osunlp-pubmedbert-replica",
+    "name": "PubMedBERT Replica",
+    "developer": "osunlp",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "osunlp/PubMedBERT_Replica",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "xincan-pubmedbert-semrep-accuracy-classifier",
+    "name": "pubmedbert semrep accuracy classifier",
+    "developer": "xincan",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "xincan/pubmedbert-semrep-accuracy-classifier",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, general.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pi3ni0-pubmedqa-scibert-classical",
+    "name": "pubmedqa scibert classical",
+    "developer": "pi3ni0",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pi3ni0/pubmedqa-scibert-classical",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "otar3088-cellate3.1-reinitllrd-no-vague-adapted-pubmed",
+    "name": "CeLLaTe3.1 ReinitLLRD no vague adapted pubmed",
+    "developer": "OTAR3088",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "OTAR3088/CeLLaTe3.1_ReinitLLRD_no_vague_adapted_pubmed",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pi3ni0-pubmedqa-scibert-special",
+    "name": "pubmedqa scibert special",
+    "developer": "pi3ni0",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pi3ni0/pubmedqa-scibert-special",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
+  },
+  {
+    "id": "aaditya-biomednlp-pubmedbert-base-uncased-abstract-fulltext-emrqa",
+    "name": "BiomedNLP PubMedBERT base uncased abstract fulltext emrqa",
+    "developer": "aaditya",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "aaditya/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext_emrqa",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, medical qa.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "stride-lab-pubmedbert-setting-20250221",
+    "name": "pubmedbert setting 20250221",
+    "developer": "STRIDE-lab",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "STRIDE-lab/pubmedbert-setting-20250221",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, general.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "general",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "sschet-ner-gene-dna-rna-jnlpba-pubmed",
+    "name": "ner gene dna rna jnlpba pubmed",
+    "developer": "sschet",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "sschet/ner-gene-dna-rna-jnlpba-pubmed",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "razent-scifive-base-pubmed",
+    "name": "SciFive base Pubmed",
+    "developer": "razent",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "razent/SciFive-base-Pubmed",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, general, medical qa.",
+    "tags": [
+      "biomedical",
+      "general",
+      "medical-qa",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "clinicalnlplab-finetuned-pmcllama-13b-pubmedqa",
+    "name": "finetuned PMCLLaMA 13B PubmedQA",
+    "developer": "clinicalnlplab",
+    "params": "13B",
+    "params_size": "medium",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "clinicalnlplab/finetuned-PMCLLaMA-13B-PubmedQA",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, clinical reasoning, general.",
+    "tags": [
+      "biomedical",
+      "clinical-reasoning",
+      "general",
+      "llama-based"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pankajrajdeo-pubmedner-deepseek-r1-distill-qwen-14b",
+    "name": "PubmedNER Deepseek R1 Distill Qwen 14B",
+    "developer": "pankajrajdeo",
+    "params": "14B",
+    "params_size": "medium",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pankajrajdeo/PubmedNER-Deepseek-R1-Distill-Qwen-14B",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, general.",
+    "tags": [
+      "biomedical",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pankajrajdeo-pubmedner-deepseek-r1-distill-qwen-7b",
+    "name": "PubmedNER Deepseek R1 Distill Qwen 7B",
+    "developer": "pankajrajdeo",
+    "params": "7B",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pankajrajdeo/PubmedNER-Deepseek-R1-Distill-Qwen-7B",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, general.",
+    "tags": [
+      "biomedical",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pythonist-biomednlp-pubmedbert-base-uncased-abstract-fulltext-contaminationqamodel-pubmedbert",
+    "name": "BiomedNLP PubMedBERT base uncased abstract fulltext ContaminationQAmodel PubmedBERT",
+    "developer": "pythonist",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pythonist/BiomedNLP-PubMedBERT-base-uncased-abstract-fulltext-ContaminationQAmodel_PubmedBERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, medical qa.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "chung-fan-bart-pubmed-20k-bottom-tokens",
+    "name": "bart pubmed 20k bottom tokens",
+    "developer": "Chung-Fan",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Chung-Fan/bart-pubmed-20k-bottom-tokens",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, general.",
+    "tags": [
+      "biomedical",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "chung-fan-distilbart-pubmed-20k-bottom-tokens",
+    "name": "distilbart pubmed 20k bottom tokens",
+    "developer": "Chung-Fan",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Chung-Fan/distilbart-pubmed-20k-bottom-tokens",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, general.",
+    "tags": [
+      "biomedical",
+      "general"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thanhkt-lsg-bart-base-16384-pubmed-finetuned-pubmed-16394",
+    "name": "lsg bart base 16384 pubmed finetuned pubmed 16394",
+    "developer": "thanhkt",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "thanhkt/lsg-bart-base-16384-pubmed-finetuned-pubmed-16394",
+    "ollama": null,
+    "specialty": [
+      "biomedical"
+    ],
+    "usecase": "Open health LLM suitable for biomedical tasks.",
+    "strength": "Biomedical, general, summarization.",
+    "tags": [
+      "biomedical",
+      "general",
+      "summarization"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mardiyyah-base-pubmedbert-3class-label-all-false",
+    "name": "base pubmedbert 3class label all false",
+    "developer": "Mardiyyah",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Mardiyyah/base_pubmedbert_3class_label_all_false",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "raynardj-ner-gene-dna-rna-jnlpba-pubmed",
+    "name": "ner gene dna rna jnlpba pubmed",
+    "developer": "raynardj",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "raynardj/ner-gene-dna-rna-jnlpba-pubmed",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "pythonist-distilbert-base-uncased-finetuned-pubmedqa",
+    "name": "distilbert base uncased finetuned PubmedQA",
+    "developer": "pythonist",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "pythonist/distilbert-base-uncased-finetuned-PubmedQA",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, medical qa.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mardiyyah-cellate-tapt-pubmedbert-tokenizer-adapted-baseline",
+    "name": "CeLLaTe tapt pubmedbert tokenizer adapted baseline",
+    "developer": "Mardiyyah",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Mardiyyah/CeLLaTe-tapt-pubmedbert-tokenizer-adapted-baseline",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical.",
+    "tags": [
+      "bert-based",
+      "biomedical"
+    ],
+    "featured": false
   }
 ]
