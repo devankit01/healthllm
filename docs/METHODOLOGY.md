@@ -62,7 +62,9 @@ Licences are as listed on each dataset card when last checked. Verify independen
 ## Scoring rules
 
 **Multiple choice** (medical knowledge, clinical reasoning):
-The model is told to answer with one letter. A reply counts only if it clearly names one option — `C`, `C.`, `(C)`, or `The answer is C`. Anything ambiguous is wrong.
+The model is told to answer with one letter. The default parser (`strict` mode) requires a clear unambiguous answer — `C`, `C.`, `(C)`, `The answer is C`, or `Correct answer is C`. Anything ambiguous is scored wrong.
+
+For chain-of-thought / thinking models (e.g. DeepSeek-R1), use `--strip-thinking`: this strips `<think>…</think>` blocks before parsing and falls back to the last standalone letter in the cleaned reply (`lenient` mode). The `parser_mode` and `parse_rates` fields in the result JSON record which mode was used and what fraction of replies were successfully parsed. A parse rate below 80% is flagged with ⚠ in the CLI output.
 
 **Evidence reasoning:**
 The first occurrence of `yes`, `no`, or `maybe` in the reply is taken as the answer.
@@ -174,11 +176,25 @@ Given a messy discharge summary or progress note, the model must: (1) extract di
 
 ## Confidence intervals and variance
 
-Each percentage score has a 95% Wilson confidence interval computed from `n=100` samples. At 100 questions, a score of 70% has a margin of roughly ±9 points — models a few points apart are not meaningfully different.
+Each percentage score has a 95% Wilson confidence interval computed from `n=100` samples. **At 100 questions, a score of 70% has a margin of roughly ±9 points — models within that range are not meaningfully distinguishable.** The leaderboard marks any two adjacent entries whose CIs overlap with `~` to make this visible.
 
-Use `--repeats N` to run the full eval N times and report run-to-run standard deviation alongside the mean.
+The current top result (MedGemma 4B, 54.6%) has a CI of approximately [44.9–64.0]. The next-ranked model (LLaMA 3.2 3B, 50.3%) has a CI of [40.7–59.9]. These overlap — neither can be called definitively ahead of the other at n=100 without `--repeats`.
+
+Use `--repeats N` to run the full eval N times and report run-to-run standard deviation alongside the mean. All published results to date use `repeats=1`; treat rankings as provisional until repeats are added.
 
 ---
+
+## Comparability requirements
+
+A result is only directly comparable to other leaderboard entries if it used:
+- The same **backend** (Ollama results only; MLX is listed separately as a preview)
+- The same **quantization** (Q4_K_M is the reference; Q4_0 or Q8_0 results are flagged)
+- The same **hardware class** is preferred but not enforced (record `--hardware` so readers can judge)
+- `--samples 100` and `--seed 42` (the defaults)
+
+Results that don't meet these criteria are shown with warning indicators on the leaderboard but are not hidden — they are useful data points with appropriate caveats.
+
+> **Contamination risk.** Two Tier 1 evals use public test splits that medical fine-tunes may have been trained on: `clinical-reasoning` (MedQA USMLE test) and `claim-verification` (PubHealth test). Scores on these two evals may be inflated for specialist models. If you know your model was trained on either dataset, disclose it in `--submitted-by` notes.
 
 ## What the scores do not tell you
 
