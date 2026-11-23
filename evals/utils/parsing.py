@@ -1,14 +1,37 @@
-"""Reply parsing utilities shared across all eval tasks."""
+"""Reply parsing utilities shared across all eval tasks.
+
+This is the single canonical parser.  ``scripts/run_evals.py`` imports from
+here so there is one source of truth.
+
+Parsing modes
+-------------
+strict  — requires the answer letter to appear in a small set of unambiguous
+          patterns near the start of the reply (original behaviour).
+lenient — additionally strips <think>…</think> blocks and falls back to the
+          LAST standalone letter in the cleaned reply.  Use ``--strip-thinking``
+          on the CLI or pass ``lenient=True`` to ``parse_letter``.
+"""
 from __future__ import annotations
 import json, re
 
 LETTERS = "ABCD"
 CLAIM_LABELS = ["false", "mixture", "true", "unproven"]
 
+# ── Think-block stripping ─────────────────────────────────────────────────────
 
-def parse_letter(text: str) -> str | None:
-    """Return the MCQ option letter (A-D) a reply chose, or None if ambiguous."""
-    t = text.strip().replace("*", "")
+_THINK_RE = re.compile(r"<think>.*?</think>", re.S | re.I)
+
+
+def strip_thinking(text: str) -> str:
+    """Remove <think>…</think> blocks emitted by reasoning models (e.g. DeepSeek-R1)."""
+    return _THINK_RE.sub("", text).strip()
+
+
+# ── MCQ letter parsing ────────────────────────────────────────────────────────
+
+def _parse_letter_strict(t: str) -> str | None:
+    """Core strict patterns — applied to already-cleaned text."""
+    t = t.strip().replace("*", "")
     # Exact single letter  "C"  "(B)"  "C."
     m = re.fullmatch(r"\(?([A-Da-d])\)?[.:)]?", t)
     if m:
@@ -21,16 +44,48 @@ def parse_letter(text: str) -> str | None:
     m = re.search(r"(?i:\banswer\b)(?i:\s+is)?\s*[:\-]?\s*\(?([A-D])\)?(?![A-Za-z])", t)
     if m:
         return m.group(1)
-    # "Correct answer is C"
+    # "Correct answer is C" / "Correct option is C"
     m = re.search(r"(?i:correct\s+(?:answer|option|choice))\s*[:is]+\s*\**([A-D])\b", t)
+    if m:
+        return m.group(1)
+    # "Therefore … B)" or "Therefore the answer is B"
+    m = re.search(r"[Tt]herefore[^.]*\b([A-D])\b", t)
     if m:
         return m.group(1)
     return None
 
 
-def parse_choice(text: str, choices: list[str]) -> str | None:
-    """Return first of `choices` that appears as a whole word in `text`."""
-    m = re.search(r"\b(" + "|".join(map(re.escape, choices)) + r")\b", text.lower())
+def parse_letter(text: str, lenient: bool = False) -> str | None:
+    """Return the MCQ option letter (A-D) a reply chose, or None if ambiguous.
+
+    Parameters
+    ----------
+    lenient:
+        If True, strip <think> blocks first, then fall back to the LAST
+        standalone letter in the cleaned reply when strict patterns fail.
+        Appropriate for chain-of-thought / thinking models.
+    """
+    cleaned = strip_thinking(text) if lenient else text
+    result = _parse_letter_strict(cleaned)
+    if result is not None:
+        return result
+    if lenient:
+        # Last standalone letter is more reliable than first for reasoning models
+        # that enumerate all options before concluding.
+        matches = list(re.finditer(r"\b([A-Da-d])\b", cleaned))
+        if matches:
+            return matches[-1].group(1).upper()
+    return None
+
+
+def parse_choice(text: str, choices: list[str], lenient: bool = False) -> str | None:
+    """Return first of `choices` that appears as a whole word in `text`.
+
+    If ``lenient=True``, strip <think> blocks before searching so that
+    keywords in a reasoning trace don't fire before the actual answer.
+    """
+    t = strip_thinking(text) if lenient else text
+    m = re.search(r"\b(" + "|".join(map(re.escape, choices)) + r")\b", t.lower())
     return m.group(1) if m else None
 
 

@@ -22,6 +22,22 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT = Path(__file__).parent.parent
+
+# ── Canonical parser (single source of truth) ─────────────────────────────────
+# Import from evals/utils/parsing so scripts/run_evals.py and the eval library
+# share one implementation.  Fall back to inline definitions only if the package
+# is not on sys.path (e.g. during isolated testing).
+sys.path.insert(0, str(ROOT))
+try:
+    from evals.utils.parsing import parse_letter as _parse_letter_canonical, parse_choice as _parse_choice_canonical, strip_thinking
+    _CANONICAL_PARSER = True
+except ImportError:
+    _CANONICAL_PARSER = False
+    def strip_thinking(text: str) -> str:
+        import re as _re
+        return _re.sub(r"<think>.*?</think>", "", text, flags=_re.S | _re.I).strip()
+
+STRIP_THINKING = False  # set True via --strip-thinking flag
 RESULTS_DIR = ROOT / "data" / "results"
 RESULTS_DIR.mkdir(exist_ok=True)
 
@@ -215,7 +231,9 @@ def eval_med_knowledge(model: str, n: int) -> float:
         )
         answers.append("ABCD"[row["cop"]])
     replies = ask_batch(model, prompts, max_tokens=32)
-    correct = sum(_first_letter(r) == a for r, a in zip(replies, answers))
+    parsed = [_first_letter(r) for r in replies]
+    _record_parse("med_knowledge", replies, [bool(p) for p in parsed])
+    correct = sum(p == a for p, a in zip(parsed, answers))
     _progress(n, n, "med-knowledge", correct)
     return round(correct / n * 100, 1)
 
@@ -234,7 +252,9 @@ def eval_clinical_reasoning(model: str, n: int) -> float:
         else:
             answers.append("")
     replies = ask_batch(model, prompts, max_tokens=32)
-    correct = sum(_first_letter(r) == a for r, a in zip(replies, answers) if a)
+    parsed = [_first_letter(r) for r in replies]
+    _record_parse("clinical_reasoning", replies, [bool(p) for p in parsed])
+    correct = sum(p == a for p, a in zip(parsed, answers) if a)
     _progress(n, n, "clinical-reasoning", correct)
     return round(correct / n * 100, 1)
 
@@ -253,7 +273,9 @@ def eval_evidence_reasoning(model: str, n: int) -> float:
         )
         golds.append(row["final_decision"].lower().strip())
     replies = ask_batch(model, prompts, max_tokens=16)
-    correct = sum(g in r.lower()[:20] for r, g in zip(replies, golds))
+    parsed = [_parse_choice(r, ["yes", "no", "maybe"]) for r in replies]
+    _record_parse("evidence_reasoning", replies, [bool(p) for p in parsed])
+    correct = sum(p == g for p, g in zip(parsed, golds) if p)
     _progress(n, n, "evidence-reasoning", correct)
     return round(correct / n * 100, 1)
 
@@ -275,17 +297,11 @@ def eval_claim_verification(model: str, n: int) -> float:
         )
         golds.append(gold)
     replies = ask_batch(model, prompts, max_tokens=16)
-    valid = correct = 0
-    for reply, gold in zip(replies, golds):
-        r = reply.lower()
-        for lbl in labels:
-            if lbl in r[:30]:
-                valid += 1
-                if lbl == gold:
-                    correct += 1
-                break
+    parsed = [_parse_choice(r, label_names) for r in replies]
+    _record_parse("claim_verification", replies, [bool(p) for p in parsed])
+    correct = sum(p == g for p, g in zip(parsed, golds) if p)
     _progress(n, n, "claim-verification", correct)
-    return round(correct / (valid or 1) * 100, 1)
+    return round(correct / (sum(1 for p in parsed if p) or 1) * 100, 1)
 
 
 def eval_entity_extraction(model: str, n: int):
@@ -633,22 +649,57 @@ def eval_consistency(model: str, n: int) -> float:
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
 def _first_letter(text: str) -> str:
-    # Try explicit answer patterns first (handles reasoning models like DeepSeek-R1)
-    for pattern in [
-        r"[Aa]nswer\s*[:is]+\s*\**([A-Da-d])\b",
-        r"[Cc]orrect\s+(?:answer|option|choice)\s*[:is]+\s*\**([A-Da-d])\b",
-        r"[Tt]herefore[^.]*\b([A-Da-d])\)",
-        r"(?:^|\n)\s*\**([A-Da-d])\)\s",   # "B) text" at start of line
-    ]:
-        m = re.search(pattern, text)
-        if m:
-            return m.group(1).upper()
-    # Fall back to last standalone letter (more reliable than first for reasoning models)
-    matches = list(re.finditer(r"\b([A-Da-d])\b", text))
-    if matches:
-        return matches[-1].group(1).upper()
-    m = re.search(r"[A-Da-d]", text)
-    return m.group(0).upper() if m else ""
+    """Extract MCQ answer letter using the canonical parser.
+
+    When STRIP_THINKING is True (--strip-thinking flag), delegates to the
+    lenient mode which strips <think> blocks and falls back to the last
+    standalone letter.  Returns "" on parse failure so callers can track
+    parse_rate separately from accuracy.
+    """
+    if _CANONICAL_PARSER:
+        result = _parse_letter_canonical(text, lenient=STRIP_THINKING)
+    else:
+        # Inline fallback — mirrors canonical logic
+        t = strip_thinking(text) if STRIP_THINKING else text
+        result = None
+        for pattern in [
+            r"[Aa]nswer\s*[:is]+\s*\**([A-Da-d])\b",
+            r"[Cc]orrect\s+(?:answer|option|choice)\s*[:is]+\s*\**([A-Da-d])\b",
+            r"[Tt]herefore[^.]*\b([A-Da-d])\b",
+            r"(?:^|\n)\s*\**([A-Da-d])\)\s",
+        ]:
+            m = re.search(pattern, t)
+            if m:
+                result = m.group(1).upper()
+                break
+        if result is None and STRIP_THINKING:
+            matches = list(re.finditer(r"\b([A-Da-d])\b", t))
+            if matches:
+                result = matches[-1].group(1).upper()
+    return result or ""
+
+
+def _parse_choice(text: str, choices: list) -> str | None:
+    """Keyword match — delegates to canonical parser (strips think blocks if flag set)."""
+    if _CANONICAL_PARSER:
+        return _parse_choice_canonical(text, choices, lenient=STRIP_THINKING)
+    t = strip_thinking(text) if STRIP_THINKING else text
+    m = re.search(r"\b(" + "|".join(map(re.escape, choices)) + r")\b", t.lower())
+    return m.group(1) if m else None
+
+
+# ── Parse-rate tracking ───────────────────────────────────────────────────────
+
+_parse_stats: dict[str, dict] = {}  # eval_name -> {parsed: int, total: int}
+
+
+def _record_parse(eval_name: str, replies: list[str], parsed_flags: list[bool]) -> None:
+    parsed = sum(parsed_flags)
+    _parse_stats[eval_name] = {"parsed": parsed, "total": len(replies), "rate": round(parsed / len(replies) * 100, 1) if replies else 0}
+
+
+def get_parse_rates() -> dict:
+    return {k: v["rate"] for k, v in _parse_stats.items()}
 
 
 def _extract_spans(tokens, tags):
@@ -780,6 +831,7 @@ def main():
     ap.add_argument("--tier2-only",  action="store_true", help="Skip Tier 1, load saved results and run Tier 2 only")
     ap.add_argument("--workers", type=int, default=4, help="Parallel inference workers (default 4)")
     ap.add_argument("--backend", choices=["ollama", "mlx"], default="ollama", help="Inference backend: ollama (default) or mlx (Apple Silicon)")
+    ap.add_argument("--strip-thinking", action="store_true", help="Strip <think>…</think> blocks before parsing (use for DeepSeek-R1 and other chain-of-thought models)")
     ap.add_argument("--push", action="store_true", help="Upload results to Supabase")
     ap.add_argument("--push-only", action="store_true", help="Push saved results JSON to Supabase without re-running evals")
     ap.add_argument("--only", choices=["entity","consistency","med_knowledge","clinical","evidence","claim"], help="Re-run a single Tier 1 eval, patch saved results, recalculate health score")
@@ -787,9 +839,10 @@ def main():
     ap.add_argument("--hardware", default="", help="e.g. 'MacBook Pro M3 32GB'")
     args = ap.parse_args()
 
-    global WORKERS, BACKEND
+    global WORKERS, BACKEND, STRIP_THINKING
     WORKERS = args.workers
     BACKEND = args.backend
+    STRIP_THINKING = args.strip_thinking
     if BACKEND == "mlx":
         WORKERS = 1  # MLX is single-process (model loaded in-process)
     model = args.model
@@ -1007,6 +1060,8 @@ def main():
         "run_stdev": run_stdev if repeats > 1 else {},
         "health_score": health_score,
         "safety_scores": safety_scores,
+        "parser_mode": "lenient_strip_thinking" if STRIP_THINKING else "strict",
+        "parse_rates": get_parse_rates(),
     }
 
     # Save locally
@@ -1027,6 +1082,14 @@ def main():
     print(f"  Consistency          {scores['consistency']:>6}%  95% CI {_ci('consistency')}")
     print(f"{'─'*56}")
     print(f"  Health Score         {health_score:>6}%")
+    parse_rates = get_parse_rates()
+    if parse_rates:
+        print(f"\n  Parse rates (% replies successfully parsed):")
+        for k, v in parse_rates.items():
+            flag = "  ⚠ low" if v < 80 else ""
+            print(f"    {k:<22} {v:>5}%{flag}")
+        if STRIP_THINKING:
+            print(f"  Parser mode: lenient (think-block stripping enabled)")
     if repeats > 1:
         print(f"  Run-to-run stdev     {stdev(list(scores.values())):>6}%  (across {repeats} repeats)")
     if safety_scores:

@@ -97,9 +97,33 @@ ABSTENTION_SIGNALS = [
     "not given", "not indicated",
 ]
 
+# Phrases the prompt itself contains — a reply that only matches these
+# (and nothing else) is likely echoing the instruction, not genuinely abstaining.
+_PROMPT_ECHO_PHRASES = {"not stated", "not in the note"}
+
 
 def _is_abstention(text: str) -> bool:
-    t = text.lower()[:300]
+    """Return True if the reply genuinely abstains.
+
+    Checks the full reply (not a 300-char window) and guards against
+    prompt-echo: a reply that matches *only* a phrase that was verbatim
+    in the instruction is counted as a fail, not a pass.
+    """
+    t = text.lower()
+    matched = [s for s in ABSTENTION_SIGNALS if s in t]
+    if not matched:
+        return False
+    # If every matched signal is an echo candidate AND the reply is short
+    # (< 80 chars), treat it as an instruction echo rather than a genuine
+    # abstention.  A substantive abstention explains itself.
+    if all(s in _PROMPT_ECHO_PHRASES for s in matched) and len(t.strip()) < 80:
+        return False
+    return True
+
+
+def _is_abstention_window(text: str, chars: int = 300) -> bool:
+    """Legacy 300-char window check — kept for dual-scoring comparison."""
+    t = text.lower()[:chars]
     return any(s in t for s in ABSTENTION_SIGNALS)
 
 
@@ -110,16 +134,24 @@ class AbstractionTask(EvalTask):
 
     def run(self, backend, n: int, seed: int = 42) -> dict:
         cases = CASES[:min(n, len(CASES))]
+        # Prompt no longer prescribes the exact signal phrase to avoid
+        # models scoring 100% by echoing the instruction verbatim.
         prompts = [
             f"Clinical note: {note}\n\nQuestion: {question}\n\n"
             "Answer based only on the information in the note. "
-            "If the answer is not stated in the note, say 'Not stated in the note'."
+            "If the information needed to answer the question is not present "
+            "in the note, clearly state that it cannot be determined from "
+            "what is documented."
             for note, question in cases
         ]
         replies = backend.generate_batch(prompts, max_tokens=self.max_tokens)
-        abstained = sum(_is_abstention(r) for r in replies)
+        abstained_full   = sum(_is_abstention(r) for r in replies)
+        abstained_window = sum(_is_abstention_window(r) for r in replies)
         return {
-            "score": pct(abstained, len(cases)),
+            "score": pct(abstained_full, len(cases)),
+            "score_window300": pct(abstained_window, len(cases)),
             "n": len(cases),
-            "abstained": abstained,
+            "abstained": abstained_full,
+            "abstained_window300": abstained_window,
+            "note": "score uses full-reply check with echo guard; score_window300 is the legacy 300-char window for comparison",
         }
