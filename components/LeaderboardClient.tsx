@@ -132,6 +132,7 @@ function ModelCard({ r, rank, onClick }: { r: EvalResult; rank: number; onClick:
           </div>
           <div style={{ fontWeight: 700, fontSize: 15, lineHeight: 1.3 }}>{r.model_name}</div>
           {r.hardware && <div style={{ fontSize: 11, color: "var(--muted)", marginTop: 2 }}>{r.hardware}</div>}
+          {r.submitted_at && <div style={{ fontSize: 11, color: "var(--muted)" }}>Evaluated {new Date(r.submitted_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}</div>}
         </div>
         <div style={{ textAlign: "right" }}>
           <div style={{
@@ -203,8 +204,10 @@ function Portal({ children }: { children: React.ReactNode }) {
 function ModelModal({ r, notes, onClose }: { r: EvalResult; notes: string | null; onClose: () => void }) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = ""; };
-  }, []);
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    window.addEventListener("keydown", onKey);
+    return () => { document.body.style.overflow = ""; window.removeEventListener("keydown", onKey); };
+  }, [onClose]);
   const size = inferSize(r.model_name);
   const tags = modelTags(r);
   const html = notes ? marked.parse(notes) as string : null;

@@ -1,130 +1,118 @@
-# Adding a model
+# Adding a Model
 
-Any open model that runs in [Ollama](https://ollama.com) can be listed. A submission is two JSON files in one pull request: one describing the model, one holding its scores.
+Any open model that runs in [Ollama](https://ollama.com) can be added to the leaderboard. You need Python 3.10+, Ollama running, and enough RAM (a 7B Q4 model needs ~8 GB).
 
-## Before you start
-
-You need:
-
-- Python 3.10 or newer
-- Ollama, installed and running
-- Node 18 or newer (only for checking your files)
-- Enough memory for the model; a 7B model at default quantisation needs roughly 8 GB
-
-Fork the repo and clone your fork.
-
-## 1. Describe the model
-
-Create `data/models/<id>.json`. The id is the file name: lowercase letters, digits, dots and hyphens.
-
-```json
-{
-  "id": "my-model-7b",
-  "name": "My Model 7B",
-  "developer": "Who released it",
-  "params_b": 7,
-  "license": "Apache-2.0",
-  "license_type": "open-source",
-  "ollama": "my-model:7b",
-  "hf": "org/my-model-7b",
-  "medical_tuned": false
-}
-```
-
-| Field | Meaning |
-|---|---|
-| `id` | Must match the file name. |
-| `name` | Display name. |
-| `developer` | The organisation or person that released the model. |
-| `params_b` | Parameter count in billions. |
-| `license` | The licence name as the developer states it. |
-| `license_type` | `open-source` for OSI-style licences such as Apache-2.0 or MIT. `open-weights` for licences with usage terms, such as the Llama and Gemma licences. |
-| `ollama` | The exact tag you pass to `ollama pull`. Include the size tag so the run can be repeated. |
-| `hf` | The Hugging Face repo id of the model card, or `null`. |
-| `medical_tuned` | `true` if the model was trained or fine-tuned for medicine. |
-
-Closed models and models you can only reach through a paid API are out of scope.
-
-## 2. Run the evals
+## Quick start
 
 ```bash
-pip install -r evals/requirements.txt
-```
-
-```bash
+# Pull the model
 ollama pull my-model:7b
+
+# Run all Tier 1 evals and push to leaderboard
+python3 scripts/run_evals.py my-model:7b --push
 ```
+
+That's it. Results are saved to `data/results/my-model-7b.json` and pushed to Supabase.
+
+---
+
+## Eval tiers
+
+### Tier 1 — Health Score (runs by default)
+
+| Eval | Dataset | Metric | Weight |
+|------|---------|--------|--------|
+| Medical knowledge | MedMCQA | Accuracy | 20% |
+| Clinical reasoning | MedQA USMLE | Accuracy | 20% |
+| Evidence reasoning | PubMedQA | Accuracy | 15% |
+| Claim verification | PubHealth | Accuracy | 15% |
+| Entity extraction | NCBI Disease | F1 | 15% |
+| Consistency | MedMCQA shuffled | Accuracy | 10% |
+| JSON reliability | NCBI Disease | Valid JSON % | 5% |
+
+Health Score = weighted average of all 7. Tier 2 scores are shown separately and not averaged in.
+
+### Tier 2 — Deployment Trust (optional, adds ~30 min)
 
 ```bash
-python evals/run_eval.py --model my-model-7b --hardware "M2 Pro, 16 GB" --submitted-by your-handle
+python3 scripts/run_evals.py my-model:7b --tier2 --push
 ```
 
-The script downloads the datasets from Hugging Face, asks 100 questions per eval at temperature 0, and writes `data/results/my-model-7b.json`. A 7B model takes very roughly 20 to 60 minutes, depending on your hardware.
+| Eval | What it measures |
+|------|-----------------|
+| Citation grounding | Does the model cite passages that support its answer? (F1) |
+| Safety refusal | Refuses harmful requests while answering benign ones (balanced accuracy) |
+| Abstention | Says "not stated" on unanswerable questions |
 
-Rules for a leaderboard submission:
+---
 
-- **Keep the defaults.** Use 100 samples and seed 42, so every model answers the same questions.
-- **Run all seven evals.** The health rating is only shown when all seven are present.
-- **Do not edit the results file by hand.** If a score looks wrong, open an issue instead.
-- **Say what you ran it on.** `--hardware` is required because speed depends on it.
+## Useful flags
 
-Useful options:
+| Flag | What it does |
+|------|-------------|
+| `--push` | Push results to Supabase leaderboard after running |
+| `--push-only` | Push saved results without re-running (useful after fixing env vars) |
+| `--tier2` | Run all three Tier 2 evals after Tier 1 |
+| `--tier2-only` | Run only Tier 2 (loads saved Tier 1 results) |
+| `--only entity` | Re-run just one eval and patch saved results |
+| `--workers 4` | Parallel inference workers (default 4) |
+| `--samples 20` | Quick trial run — do not submit these |
+| `--hardware "M4 Pro 48GB"` | Record hardware for the leaderboard |
+| `--submitted-by yourname` | Credit on the leaderboard |
 
-| Option | What it does |
-|---|---|
-| `--dry-run` | Uses a fake model and built-in questions to check your setup. Writes nothing. |
-| `--evals med-knowledge consistency` | Runs only the evals you name. |
-| `--samples 20` | A quick trial run. Do not submit results from it. |
-| `--host http://other-machine:11434` | Uses an Ollama server on another machine. |
-| `--inspect med-knowledge` | Prints the first dataset row for an eval, raw and as the eval uses it. |
+### `--only` options
 
-## 3. Check your files
+Re-run a single eval without touching the rest:
 
 ```bash
-npm run check
+python3 scripts/run_evals.py my-model:7b --only entity --push
+# Options: entity, consistency, med_knowledge, clinical, evidence, claim
 ```
 
-This validates every data file and tells you which field is wrong if one is. To see your model on the site:
+Useful when you fix a parser bug or want to re-run a single broken eval.
+
+---
+
+## Custom GGUFs (models not on Ollama)
+
+If your model is a GGUF from HuggingFace:
 
 ```bash
-npm start
+# Download
+huggingface-cli download org/my-model-GGUF my-model.Q4_K_M.gguf --local-dir models/
+
+# Create Modelfile (see docs/models/ for examples)
+cat > models/Modelfile.my-model << 'EOF'
+FROM ./my-model.Q4_K_M.gguf
+PARAMETER temperature 0
+PARAMETER num_predict 1024
+TEMPLATE """[INST] {{ .Prompt }} [/INST]"""
+SYSTEM "You are a helpful medical AI assistant."
+EOF
+
+# Import to Ollama
+cd models && ollama create my-model:7b -f Modelfile.my-model
 ```
 
-## 4. Open a pull request
+**Chat template matters.** Wrong template = near-zero scores. See `docs/models/` for known working templates per architecture:
+- Mistral: `[INST] {{ .Prompt }} [/INST]`
+- LLaMA 3: `<|begin_of_text|><|start_header_id|>user<|end_header_id|>...`
+- Alpaca: `### Instruction:\n{{ .Prompt }}\n\n### Response:`
 
-Commit both files:
+---
 
-```
-data/models/my-model-7b.json
-data/results/my-model-7b.json
-```
+## Known issues
 
-In the pull request, say which Ollama version you used. The checks run automatically; a maintainer reviews and merges.
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| Entity extraction 0% | Model outputs plain `[...]` array instead of `{"diseases": [...]}` — both are valid, parser v2 handles both | Update to latest scripts |
+| All scores 0% | Missing or wrong chat template in Modelfile | Set correct TEMPLATE (see above) |
+| JSON reliability 0% | Model can't follow structured output instructions (e.g. Alpaca-format models) | Known limitation, documented in model notes |
+| Ollama HTTP 500 during refusal eval | Model generates very long responses; fixed by per-task token caps | Update to latest scripts |
+| Chain-of-thought models score ~0% | `<think>...</think>` blocks confuse the MCQ parser | Strip CoT blocks before scoring (not yet automated) |
 
-## Listing a model without scores
+---
 
-You can submit only the model file. The model then appears on the board as "not run yet", and anyone can add the results later.
+## After running
 
-## Re-running a model
-
-Run the script again and commit the new results file. It replaces the old one. Mention in the pull request why you re-ran it, for example a new Ollama release or different hardware.
-
-## If the script fails
-
-| Message | What to do |
-|---|---|
-| `Could not reach Ollama` | Start Ollama with `ollama serve`, or pass `--host`. |
-| `Ollama returned HTTP 404` | Pull the model first with `ollama pull <tag>`, and check the tag in the model file. |
-| `The datasets package is missing` | Run `pip install -r evals/requirements.txt`. |
-| `No usable rows in ...` or a `KeyError` on a field name | The dataset's layout may have changed. Run `--inspect <eval>` to see a row, then open an issue with the output. |
-
-## Proposing a new eval
-
-Open an issue first. A new eval needs:
-
-- a dataset with a clear open licence that can be downloaded without an access request
-- a metric that can be computed automatically, without a judge model
-- an entry in `data/evals.json` with an example written for the site, not copied from the dataset
-- a loader and scorer in `evals/run_eval.py`, with tests
-
-Security evals are the current priority; see the Security tab on the site for the ones being drafted.
+Add a model notes file at `docs/models/my-model-7b.md` documenting the template, known quirks, and any interesting findings. See existing files for the format.
