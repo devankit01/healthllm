@@ -11,7 +11,7 @@ lenient — additionally strips <think>…</think> blocks and falls back to the
           LAST standalone letter in the cleaned reply.  Use ``--strip-thinking``
           on the CLI or pass ``lenient=True`` to ``parse_letter``.
 """
-from __future__ import annotations
+from __future__ import annotations  # enables X | Y syntax on Python 3.9
 import json, re
 
 LETTERS = "ABCD"

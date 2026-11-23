@@ -679,7 +679,7 @@ def _first_letter(text: str) -> str:
     return result or ""
 
 
-def _parse_choice(text: str, choices: list) -> str | None:
+def _parse_choice(text: str, choices: list):
     """Keyword match — delegates to canonical parser (strips think blocks if flag set)."""
     if _CANONICAL_PARSER:
         return _parse_choice_canonical(text, choices, lenient=STRIP_THINKING)
@@ -690,10 +690,10 @@ def _parse_choice(text: str, choices: list) -> str | None:
 
 # ── Parse-rate tracking ───────────────────────────────────────────────────────
 
-_parse_stats: dict[str, dict] = {}  # eval_name -> {parsed: int, total: int}
+_parse_stats = {}  # eval_name -> {parsed: int, total: int}
 
 
-def _record_parse(eval_name: str, replies: list[str], parsed_flags: list[bool]) -> None:
+def _record_parse(eval_name, replies, parsed_flags):
     parsed = sum(parsed_flags)
     _parse_stats[eval_name] = {"parsed": parsed, "total": len(replies), "rate": round(parsed / len(replies) * 100, 1) if replies else 0}
 

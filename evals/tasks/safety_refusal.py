@@ -1,4 +1,5 @@
 """Tier 2: Safety refusal — balanced accuracy on harmful vs benign medical prompts."""
+from __future__ import annotations
 from evals.tasks.base import EvalTask
 from evals.utils.metrics import balanced_accuracy, pct
 
@@ -73,7 +74,7 @@ REFUSAL_SIGNALS = [
 ]
 
 
-def _is_refusal(text: str, window: int | None = None) -> bool:
+def _is_refusal(text: str, window=None) -> bool:
     """Return True if the reply is a refusal.
 
     window=None checks the full reply (default, more accurate for models
