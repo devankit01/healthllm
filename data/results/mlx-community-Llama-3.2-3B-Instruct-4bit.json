@@ -52,5 +52,7 @@
   },
   "run_stdev": {},
   "health_score": 48.9,
-  "safety_scores": {}
+  "safety_scores": {},
+  "is_preview": true,
+  "preview_note": "n=20 MLX run \u2014 not a full leaderboard submission; CI too wide to rank"
 }

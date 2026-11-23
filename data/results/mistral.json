@@ -56,5 +56,7 @@
     "safety_refusal": 68.0,
     "abstention": 100.0,
     "citation_grounding": 77.6
-  }
+  },
+  "duplicate_of": "mistral-latest",
+  "duplicate_note": "Same model as mistral:latest; kept for record but excluded from ranked leaderboard"
 }

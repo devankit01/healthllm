@@ -81,6 +81,12 @@ function wilsonCI(score: number, n: number): [number, number] {
   return [Math.round(Math.max(0, centre - margin) * 1000) / 10, Math.round(Math.min(1, centre + margin) * 1000) / 10];
 }
 
+function ciOverlaps(a: EvalResult, b: EvalResult): boolean {
+  const [aLo, aHi] = wilsonCI(a.health_score, a.samples ?? 100);
+  const [bLo, bHi] = wilsonCI(b.health_score, b.samples ?? 100);
+  return aLo <= bHi && bLo <= aHi;
+}
+
 // ── ScoreBar ──────────────────────────────────────────────────────────────────
 
 function ScoreBar({ label, value, n, showCI = false }: { label: string; value: number | null; n: number; showCI?: boolean }) {
@@ -305,6 +311,8 @@ export default function LeaderboardClient({
   const filtered = useMemo(() => {
     return results
       .filter(r => {
+        // Exclude preview runs and duplicates from ranked table
+        if (r.is_preview || r.duplicate_of) return false;
         if (search && !r.model_name.toLowerCase().includes(search.toLowerCase())) return false;
         if (sizeFilter !== "all") {
           const n = sizeNum(inferSize(r.model_name));
@@ -398,11 +406,27 @@ export default function LeaderboardClient({
             <tbody>
               {filtered.map((r, i) => {
                 const [lo, hi] = wilsonCI(r.health_score, r.samples ?? 100);
+                const prevR = filtered[i - 1];
+                const overlapsAbove = prevR ? ciOverlaps(r, prevR) : false;
+                const missingHardware = !r.hardware || r.hardware.trim() === "";
+                const mixedQuant = r.quantization && !["Q4_K_M", ""].includes(r.quantization);
                 return (
                   <tr key={r.id} className="row" style={{ cursor: "pointer" }} onClick={() => setActiveModel(r)}>
-                    <td className="rank">{i + 1}</td>
+                    <td className="rank">
+                      {overlapsAbove
+                        ? <span title={`CIs overlap with #${i} — not statistically distinguishable at n=${r.samples ?? 100}`} style={{ cursor: "help" }}>~{i + 1}</span>
+                        : i + 1}
+                    </td>
                     <td className="model">
-                      <div><b>{r.model_name}</b></div>
+                      <div>
+                        <b>{r.model_name}</b>
+                        {missingHardware && (
+                          <span title="Hardware not recorded — same-hardware comparison unverified" style={{ marginLeft: 5, color: "#f59e0b", fontSize: 12, cursor: "help" }}>⚠</span>
+                        )}
+                        {mixedQuant && (
+                          <span title={`Quantization: ${r.quantization} — may not be directly comparable to Q4_K_M results`} style={{ marginLeft: 4, color: "#6b7280", fontSize: 11, cursor: "help" }}>[{r.quantization}]</span>
+                        )}
+                      </div>
                       <div style={{ display: "flex", flexWrap: "wrap", gap: 3, marginTop: 3 }}>
                         {modelTags(r).map(t => <span key={t} className="badge" style={{ fontSize: 10 }}>{t}</span>)}
                       </div>

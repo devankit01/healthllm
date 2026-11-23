@@ -63,4 +63,12 @@ export interface EvalResult {
   samples: number;
   seed: number;
   submitted_at: string;
+  /** "strict" | "lenient_strip_thinking" — which parser produced this result */
+  parser_mode?: string;
+  /** % of replies successfully parsed per eval */
+  parse_rates?: Record<string, number>;
+  /** True for preview/non-comparable runs (e.g. n=20 MLX) */
+  is_preview?: boolean;
+  /** model_id this entry duplicates */
+  duplicate_of?: string;
 }
