@@ -12206,5 +12206,119 @@
       "ner"
     ],
     "featured": false
+  },
+  {
+    "id": "danda245-medical-qa-id-filtered-split",
+    "name": "medical qa id filtered split",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "Danda245/medical-qa-id-filtered-split",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2845-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2845 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2845_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1484-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1484 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1484_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-1539-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 1539 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_1539_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "thefactoryx-edition-2834-lavita-medical-qa-shared-task-v1-toy-readymade",
+    "name": "edition 2834 lavita medical qa shared task v1 toy readymade",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "TheFactoryX/edition_2834_lavita-medical-qa-shared-task-v1-toy-readymade",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
+  },
+  {
+    "id": "kienlc1-medical-qa-gen-from-news",
+    "name": "medical qa gen from news",
+    "type": "Medical QA",
+    "size": "varies",
+    "task": "medical-qa",
+    "access": "open",
+    "license": "unknown",
+    "hf": "kienlc1/medical-qa-gen-from-news",
+    "specialty": [
+      "general-medicine"
+    ],
+    "description": "A medical qa dataset for health AI research and evaluation.",
+    "usecase": "Evaluate and train models on medical question answering tasks.",
+    "tags": [
+      "medical-qa"
+    ],
+    "featured": false
   }
 ]

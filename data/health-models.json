@@ -20082,5 +20082,350 @@
       "biomedical"
     ],
     "featured": false
+  },
+  {
+    "id": "crisu8-bert-finetuned-ner-clinical-plncmm-large-11",
+    "name": "bert finetuned ner clinical plncmm large 11",
+    "developer": "crisU8",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "crisU8/bert-finetuned-ner-clinical-plncmm-large-11",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, clinical reasoning, ner.",
+    "tags": [
+      "bert-based",
+      "clinical-reasoning",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mardiyyah-cellate-ner-3class-gaz-pubmedbert-tapt-tokenizer-adapted-wwmask-lr-2.97",
+    "name": "CeLLaTe ner 3class gaz pubmedbert tapt tokenizer adapted wwmask lr 2.97",
+    "developer": "Mardiyyah",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Mardiyyah/CeLLaTe-ner-3class-gaz-pubmedbert-tapt-tokenizer-adapted-wwmask-lr_2.97",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mardiyyah-cellate-ner-3class-pubmedbert-tapt-tokenizer-adapted-wwmask-lr-4.029",
+    "name": "CeLLaTe ner 3class pubmedbert tapt tokenizer adapted wwmask lr 4.029",
+    "developer": "Mardiyyah",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Mardiyyah/CeLLaTe-ner-3class-pubmedbert-tapt-tokenizer-adapted-wwmask-lr_4.029",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mardiyyah-cellate-ner-3class-reinitllrd-pubmedbert-tapt-tokenizer-adapted-wwmask-lr-3.942",
+    "name": "CeLLaTe ner 3class reinitLLRD pubmedbert tapt tokenizer adapted wwmask lr 3.942",
+    "developer": "Mardiyyah",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "Mardiyyah/CeLLaTe-ner-3class-reinitLLRD-pubmedbert-tapt-tokenizer-adapted-wwmask-lr_3.942",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-dis-wlt-320-pubmedbert-ins",
+    "name": "BioRED Dis WLT 320 PubMedBERT ins",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Dis-WLT-320-PubMedBERT-ins",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-chem-wlt-512-pubmedbert-latest",
+    "name": "BioRED Chem WLT 512 PubMedBERT latest",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Chem-WLT-512-PubMedBERT-latest",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-dis-wlt-320-pubmedbert",
+    "name": "BioRED Dis WLT 320 PubMedBERT",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Dis-WLT-320-PubMedBERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-bc5cdr-chem-wlt-512-pubmedbert-latest-wlt-75",
+    "name": "BC5CDR chem WLT 512 PubMedBERT latest wlt 75",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BC5CDR-chem-WLT-512-PubMedBERT-latest-wlt-75",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-chem-wlt-512-pubmedbert-ins",
+    "name": "BioRED Chem WLT 512 PubMedBERT INS",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Chem-WLT-512-PubMedBERT-INS",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-chem-wlt-512-pubmedbert-isns",
+    "name": "BioRED Chem WLT 512 PubMedBERT ISNS",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Chem-WLT-512-PubMedBERT-ISNS",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-chem-original-512-pubmedbert-latest",
+    "name": "BioRED Chem Original 512 PubMedBERT latest",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Chem-Original-512-PubMedBERT-latest",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-dis-wlt-320-pubmedbert-isns",
+    "name": "BioRED Dis WLT 320 PubMedBERT isns",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Dis-WLT-320-PubMedBERT-isns",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-biored-dis-original-320-pubmedbert",
+    "name": "BioRED Dis Original 320 PubMedBERT",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BioRED-Dis-Original-320-PubMedBERT",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-bc5cdr-chem-wlt-512-pubmedbert-latest-isns-75",
+    "name": "BC5CDR chem WLT 512 PubMedBERT latest isns 75",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BC5CDR-chem-WLT-512-PubMedBERT-latest-isns-75",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
+  },
+  {
+    "id": "mobashgr-bc5cdr-disease-wlt-512-pubmedbert-latest-wlt-512",
+    "name": "BC5CDR disease WLT 512 PubMedBERT latest wlt 512",
+    "developer": "mobashgr",
+    "params": "?",
+    "params_size": "small",
+    "medical_tuned": true,
+    "license": "unknown",
+    "license_type": "open-weights",
+    "hf": "mobashgr/BC5CDR-disease-WLT-512-PubMedBERT-latest-wlt-512",
+    "ollama": null,
+    "specialty": [
+      "bert-based"
+    ],
+    "usecase": "Open health LLM suitable for bert based tasks.",
+    "strength": "Bert based, biomedical, ner.",
+    "tags": [
+      "bert-based",
+      "biomedical",
+      "ner"
+    ],
+    "featured": false
   }
 ]
