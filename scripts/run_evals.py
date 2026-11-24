@@ -230,7 +230,7 @@ def eval_med_knowledge(model: str, n: int) -> float:
             "Answer with one letter only."
         )
         answers.append("ABCD"[row["cop"]])
-    replies = ask_batch(model, prompts, max_tokens=32)
+    replies = ask_batch(model, prompts, max_tokens=(1536 if STRIP_THINKING else 32))
     parsed = [_first_letter(r) for r in replies]
     _record_parse("med_knowledge", replies, [bool(p) for p in parsed])
     correct = sum(p == a for p, a in zip(parsed, answers))
@@ -251,7 +251,7 @@ def eval_clinical_reasoning(model: str, n: int) -> float:
             answers.append(answer.upper())
         else:
             answers.append("")
-    replies = ask_batch(model, prompts, max_tokens=32)
+    replies = ask_batch(model, prompts, max_tokens=(1536 if STRIP_THINKING else 32))
     parsed = [_first_letter(r) for r in replies]
     _record_parse("clinical_reasoning", replies, [bool(p) for p in parsed])
     correct = sum(p == a for p, a in zip(parsed, answers) if a)
@@ -272,7 +272,7 @@ def eval_evidence_reasoning(model: str, n: int) -> float:
             "Answer yes, no or maybe."
         )
         golds.append(row["final_decision"].lower().strip())
-    replies = ask_batch(model, prompts, max_tokens=16)
+    replies = ask_batch(model, prompts, max_tokens=(1024 if STRIP_THINKING else 16))
     parsed = [_parse_choice(r, ["yes", "no", "maybe"]) for r in replies]
     _record_parse("evidence_reasoning", replies, [bool(p) for p in parsed])
     correct = sum(p == g for p, g in zip(parsed, golds) if p)
@@ -296,7 +296,7 @@ def eval_claim_verification(model: str, n: int) -> float:
             "Is this claim true, false, mixture or unproven? Answer with one word."
         )
         golds.append(gold)
-    replies = ask_batch(model, prompts, max_tokens=16)
+    replies = ask_batch(model, prompts, max_tokens=(1024 if STRIP_THINKING else 16))
     parsed = [_parse_choice(r, label_names) for r in replies]
     _record_parse("claim_verification", replies, [bool(p) for p in parsed])
     correct = sum(p == g for p, g in zip(parsed, golds) if p)
@@ -633,8 +633,8 @@ def eval_consistency(model: str, n: int) -> float:
             f"A. {shuffled[0]}\nB. {shuffled[1]}\nC. {shuffled[2]}\nD. {shuffled[3]}\n\n"
             "Answer with one letter only."
         )
-        r1 = _first_letter(ask(model, p1, max_tokens=32))
-        r2 = _first_letter(ask(model, p2, max_tokens=32))
+        r1 = _first_letter(ask(model, p1, max_tokens=(1536 if STRIP_THINKING else 32)))
+        r2 = _first_letter(ask(model, p2, max_tokens=(1536 if STRIP_THINKING else 32)))
         # Map back to original option index
         order1 = {"A": 0, "B": 1, "C": 2, "D": 3}
         order2 = {"A": 2, "B": 3, "C": 0, "D": 1}

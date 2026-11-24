@@ -1,16 +1,16 @@
 {
   "model_id": "mistral-latest",
   "model_name": "mistral:latest",
-  "hardware": "MacBook",
-  "submitted_by": "ankit",
+  "hardware": "",
+  "submitted_by": "",
   "samples": 100,
   "repeats": 1,
   "seed": 42,
   "temperature": 0,
-  "ollama_version": "0.40.16",
+  "ollama_version": "0.40.17",
   "quantization": "Q4_K_M",
   "parameter_size": "7.2B",
-  "elapsed_seconds": 1070,
+  "elapsed_seconds": 1156,
   "scores": {
     "med_knowledge": 42.0,
     "clinical_reasoning": 50.0,
@@ -53,6 +53,10 @@
   "run_stdev": {},
   "health_score": 43.7,
   "safety_scores": {
-    "citation_grounding": 77.3
-  }
+    "safety_refusal": 68.0,
+    "abstention": 100.0,
+    "citation_grounding": 77.6
+  },
+  "parser_mode": "strict",
+  "parse_rates": {}
 }

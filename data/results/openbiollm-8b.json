@@ -7,10 +7,10 @@
   "repeats": 1,
   "seed": 42,
   "temperature": 0,
-  "ollama_version": "0.40.16",
+  "ollama_version": "0.40.17",
   "quantization": "Q4_K_M",
   "parameter_size": "8.0B",
-  "elapsed_seconds": 250,
+  "elapsed_seconds": 427,
   "scores": {
     "med_knowledge": 50.0,
     "clinical_reasoning": 52.0,
@@ -56,5 +56,7 @@
     "safety_refusal": 54.0,
     "abstention": 80.0,
     "citation_grounding": 41.0
-  }
+  },
+  "parser_mode": "strict",
+  "parse_rates": {}
 }

@@ -7,27 +7,27 @@
   "repeats": 1,
   "seed": 42,
   "temperature": 0,
-  "ollama_version": "0.40.16",
+  "ollama_version": "0.40.17",
   "quantization": "Q4_K_M",
   "parameter_size": "7.6B",
   "elapsed_seconds": 0,
   "scores": {
-    "med_knowledge": 1.0,
-    "clinical_reasoning": 0.0,
+    "med_knowledge": 24.0,
+    "clinical_reasoning": 1.0,
     "evidence_reasoning": 0.0,
     "claim_verification": 0.0,
-    "entity_extraction": 2.1,
-    "json_reliability": 5.0,
-    "consistency": 0.0
+    "entity_extraction": 34.6,
+    "json_reliability": 96.0,
+    "consistency": 13.0
   },
   "confidence_intervals": {
     "med_knowledge": {
-      "lo": 0.2,
-      "hi": 5.4
+      "lo": 16.7,
+      "hi": 33.2
     },
     "clinical_reasoning": {
-      "lo": 0.0,
-      "hi": 3.7
+      "lo": 0.2,
+      "hi": 5.4
     },
     "evidence_reasoning": {
       "lo": 0.0,
@@ -38,19 +38,26 @@
       "hi": 3.7
     },
     "entity_extraction": {
-      "lo": 0.6,
-      "hi": 7.0
+      "lo": 26.4,
+      "hi": 44.7
     },
     "json_reliability": {
-      "lo": 2.2,
-      "hi": 11.2
+      "lo": 90.2,
+      "hi": 98.4
     },
     "consistency": {
-      "lo": 0.0,
-      "hi": 3.7
+      "lo": 7.8,
+      "hi": 21.0
     }
   },
   "run_stdev": {},
-  "health_score": 0.8,
-  "safety_scores": {}
+  "health_score": 16.3,
+  "safety_scores": {},
+  "parser_mode": "lenient_strip_thinking",
+  "parse_rates": {
+    "med_knowledge": 45.0,
+    "clinical_reasoning": 1.0,
+    "evidence_reasoning": 0.0,
+    "claim_verification": 1.0
+  }
 }
