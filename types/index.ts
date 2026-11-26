@@ -65,8 +65,12 @@ export interface EvalResult {
   submitted_at: string;
   /** "strict" | "lenient_strip_thinking" — which parser produced this result */
   parser_mode?: string;
-  /** % of replies successfully parsed per eval */
+  /** % of replies successfully parsed per eval (lenient mode) */
   parse_rates?: Record<string, number>;
+  /** % of replies successfully parsed using strict patterns only */
+  parse_rates_strict?: Record<string, number>;
+  /** accuracy scores using strict (format-only) parser — for transparency */
+  scores_strict?: Record<string, number>;
   /** True for preview/non-comparable runs (e.g. n=20 MLX) */
   is_preview?: boolean;
   /** model_id this entry duplicates */

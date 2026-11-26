@@ -176,18 +176,53 @@ export default async function ModelDetailPage({ params }: { params: Promise<{ mo
               })}
             </div>
 
+            {/* Strict vs lenient score comparison */}
+            {r.scores_strict && Object.keys(r.scores_strict).length > 0 && (
+              <div className="mdl-parse-rates">
+                <div className="mdl-panel-sublabel">Strict vs lenient parser scores</div>
+                <div className="mdl-parse-rate-row mdl-parse-rate-header">
+                  <span className="mdl-parse-rate-key">eval</span>
+                  <span className="mdl-parse-rate-val">strict</span>
+                  <span className="mdl-parse-rate-val">lenient</span>
+                </div>
+                {Object.entries(r.scores_strict).map(([k, strictVal]) => {
+                  const lenientVal = r[k as keyof EvalResult] as number | undefined;
+                  const diff = lenientVal != null ? lenientVal - strictVal : 0;
+                  return (
+                    <div key={k} className="mdl-parse-rate-row">
+                      <span className="mdl-parse-rate-key">{k.replace(/_/g, " ")}</span>
+                      <span className={`mdl-parse-rate-val ${strictVal < 20 ? "mdl-parse-warn" : ""}`}>
+                        {strictVal.toFixed(1)}%
+                      </span>
+                      <span className="mdl-parse-rate-val">
+                        {lenientVal != null ? lenientVal.toFixed(1) : "—"}%
+                        {diff > 1 ? <span className="mdl-parse-gain"> +{diff.toFixed(1)}</span> : null}
+                      </span>
+                    </div>
+                  );
+                })}
+                <p className="mdl-parse-note">
+                  Strict: answer must match explicit pattern. Lenient: strips {"<think>"} blocks, falls back to last letter. For non-reasoning models these are identical.
+                </p>
+              </div>
+            )}
+
             {/* Parse rates if available */}
             {r.parse_rates && Object.keys(r.parse_rates).length > 0 && (
               <div className="mdl-parse-rates">
-                <div className="mdl-panel-sublabel">Parse rates</div>
-                {Object.entries(r.parse_rates).map(([k, v]) => (
-                  <div key={k} className="mdl-parse-rate-row">
-                    <span className="mdl-parse-rate-key">{k.replace(/_/g, " ")}</span>
-                    <span className={`mdl-parse-rate-val ${(v as number) < 80 ? "mdl-parse-warn" : ""}`}>
-                      {(v as number).toFixed(1)}%{(v as number) < 80 ? " ⚠" : ""}
-                    </span>
-                  </div>
-                ))}
+                <div className="mdl-panel-sublabel">Parse rates (% replies extracted)</div>
+                {Object.entries(r.parse_rates).map(([k, v]) => {
+                  const sv = r.parse_rates_strict?.[k];
+                  return (
+                    <div key={k} className="mdl-parse-rate-row">
+                      <span className="mdl-parse-rate-key">{k.replace(/_/g, " ")}</span>
+                      <span className={`mdl-parse-rate-val ${(v as number) < 80 ? "mdl-parse-warn" : ""}`}>
+                        {(v as number).toFixed(1)}%{(v as number) < 80 ? " ⚠" : ""}
+                        {sv != null && sv < (v as number) ? <span className="mdl-muted"> (strict: {sv.toFixed(1)}%)</span> : null}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>

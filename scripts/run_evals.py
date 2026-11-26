@@ -231,9 +231,12 @@ def eval_med_knowledge(model: str, n: int) -> float:
         )
         answers.append("ABCD"[row["cop"]])
     replies = ask_batch(model, prompts, max_tokens=(1536 if STRIP_THINKING else 32))
-    parsed = [_first_letter(r) for r in replies]
-    _record_parse("med_knowledge", replies, [bool(p) for p in parsed])
-    correct = sum(p == a for p, a in zip(parsed, answers))
+    parsed_strict  = [_parse_letter_canonical(r, lenient=False) or "" for r in replies]
+    parsed_lenient = [_parse_letter_canonical(r, lenient=True)  or "" for r in replies]
+    _record_parse("med_knowledge", replies, [bool(p) for p in parsed_lenient])
+    correct_strict = sum(p == a for p, a in zip(parsed_strict, answers))
+    _record_strict("med_knowledge", replies, [bool(p) for p in parsed_strict], round(correct_strict / n * 100, 1))
+    correct = sum(p == a for p, a in zip(parsed_lenient, answers))
     _progress(n, n, "med-knowledge", correct)
     return round(correct / n * 100, 1)
 
@@ -252,9 +255,12 @@ def eval_clinical_reasoning(model: str, n: int) -> float:
         else:
             answers.append("")
     replies = ask_batch(model, prompts, max_tokens=(1536 if STRIP_THINKING else 32))
-    parsed = [_first_letter(r) for r in replies]
-    _record_parse("clinical_reasoning", replies, [bool(p) for p in parsed])
-    correct = sum(p == a for p, a in zip(parsed, answers) if a)
+    parsed_strict  = [_parse_letter_canonical(r, lenient=False) or "" for r in replies]
+    parsed_lenient = [_parse_letter_canonical(r, lenient=True)  or "" for r in replies]
+    _record_parse("clinical_reasoning", replies, [bool(p) for p in parsed_lenient])
+    correct_strict = sum(p == a for p, a in zip(parsed_strict, answers) if a)
+    _record_strict("clinical_reasoning", replies, [bool(p) for p in parsed_strict], round(correct_strict / n * 100, 1))
+    correct = sum(p == a for p, a in zip(parsed_lenient, answers) if a)
     _progress(n, n, "clinical-reasoning", correct)
     return round(correct / n * 100, 1)
 
@@ -273,9 +279,13 @@ def eval_evidence_reasoning(model: str, n: int) -> float:
         )
         golds.append(row["final_decision"].lower().strip())
     replies = ask_batch(model, prompts, max_tokens=(1024 if STRIP_THINKING else 16))
-    parsed = [_parse_choice(r, ["yes", "no", "maybe"]) for r in replies]
-    _record_parse("evidence_reasoning", replies, [bool(p) for p in parsed])
-    correct = sum(p == g for p, g in zip(parsed, golds) if p)
+    parsed_strict  = [_parse_choice_canonical(r, ["yes", "no", "maybe"], lenient=False) for r in replies]
+    parsed_lenient = [_parse_choice_canonical(r, ["yes", "no", "maybe"], lenient=True)  for r in replies]
+    parsed = parsed_lenient  # alias for downstream compat
+    _record_parse("evidence_reasoning", replies, [bool(p) for p in parsed_lenient])
+    correct_strict = sum(p == g for p, g in zip(parsed_strict, golds) if p)
+    _record_strict("evidence_reasoning", replies, [bool(p) for p in parsed_strict], round(correct_strict / n * 100, 1))
+    correct = sum(p == g for p, g in zip(parsed_lenient, golds) if p)
     _progress(n, n, "evidence-reasoning", correct)
     return round(correct / n * 100, 1)
 
@@ -297,9 +307,13 @@ def eval_claim_verification(model: str, n: int) -> float:
         )
         golds.append(gold)
     replies = ask_batch(model, prompts, max_tokens=(1024 if STRIP_THINKING else 16))
-    parsed = [_parse_choice(r, label_names) for r in replies]
-    _record_parse("claim_verification", replies, [bool(p) for p in parsed])
-    correct = sum(p == g for p, g in zip(parsed, golds) if p)
+    parsed_strict  = [_parse_choice_canonical(r, label_names, lenient=False) for r in replies]
+    parsed_lenient = [_parse_choice_canonical(r, label_names, lenient=True)  for r in replies]
+    parsed = parsed_lenient  # alias for downstream compat
+    _record_parse("claim_verification", replies, [bool(p) for p in parsed_lenient])
+    correct_strict = sum(p == g for p, g in zip(parsed_strict, golds) if p)
+    _record_strict("claim_verification", replies, [bool(p) for p in parsed_strict], round(correct_strict / (sum(1 for p in parsed_strict if p) or 1) * 100, 1))
+    correct = sum(p == g for p, g in zip(parsed_lenient, golds) if p)
     _progress(n, n, "claim-verification", correct)
     return round(correct / (sum(1 for p in parsed if p) or 1) * 100, 1)
 
@@ -633,8 +647,8 @@ def eval_consistency(model: str, n: int) -> float:
             f"A. {shuffled[0]}\nB. {shuffled[1]}\nC. {shuffled[2]}\nD. {shuffled[3]}\n\n"
             "Answer with one letter only."
         )
-        r1 = _first_letter(ask(model, p1, max_tokens=(1536 if STRIP_THINKING else 32)))
-        r2 = _first_letter(ask(model, p2, max_tokens=(1536 if STRIP_THINKING else 32)))
+        r1 = _parse_letter_canonical(ask(model, p1, max_tokens=(1536 if STRIP_THINKING else 32)), lenient=True) or ""
+        r2 = _parse_letter_canonical(ask(model, p2, max_tokens=(1536 if STRIP_THINKING else 32)), lenient=True) or ""
         # Map back to original option index
         order1 = {"A": 0, "B": 1, "C": 2, "D": 3}
         order2 = {"A": 2, "B": 3, "C": 0, "D": 1}
@@ -690,7 +704,9 @@ def _parse_choice(text: str, choices: list):
 
 # ── Parse-rate tracking ───────────────────────────────────────────────────────
 
-_parse_stats = {}  # eval_name -> {parsed: int, total: int}
+_parse_stats = {}        # eval_name -> {parsed, total, rate}  — lenient mode
+_parse_stats_strict = {} # eval_name -> {parsed, total, rate}  — strict mode
+_strict_scores: dict = {}  # eval_name -> strict accuracy score
 
 
 def _record_parse(eval_name, replies, parsed_flags):
@@ -698,8 +714,23 @@ def _record_parse(eval_name, replies, parsed_flags):
     _parse_stats[eval_name] = {"parsed": parsed, "total": len(replies), "rate": round(parsed / len(replies) * 100, 1) if replies else 0}
 
 
+def _record_strict(eval_name: str, replies, parsed_flags, score: float):
+    """Record strict-mode parse rate and accuracy score."""
+    parsed = sum(parsed_flags)
+    _parse_stats_strict[eval_name] = {"parsed": parsed, "total": len(replies), "rate": round(parsed / len(replies) * 100, 1) if replies else 0}
+    _strict_scores[eval_name] = score
+
+
 def get_parse_rates() -> dict:
     return {k: v["rate"] for k, v in _parse_stats.items()}
+
+
+def get_strict_parse_rates() -> dict:
+    return {k: v["rate"] for k, v in _parse_stats_strict.items()}
+
+
+def get_strict_scores() -> dict:
+    return dict(_strict_scores)
 
 
 def _extract_spans(tokens, tags):
@@ -1062,6 +1093,8 @@ def main():
         "safety_scores": safety_scores,
         "parser_mode": "lenient_strip_thinking" if STRIP_THINKING else "strict",
         "parse_rates": get_parse_rates(),
+        "parse_rates_strict": get_strict_parse_rates(),
+        "scores_strict": get_strict_scores(),
     }
 
     # Save locally
@@ -1083,13 +1116,23 @@ def main():
     print(f"{'─'*56}")
     print(f"  Health Score         {health_score:>6}%")
     parse_rates = get_parse_rates()
+    strict_parse_rates = get_strict_parse_rates()
+    strict_scores_map = get_strict_scores()
     if parse_rates:
-        print(f"\n  Parse rates (% replies successfully parsed):")
+        print(f"\n  Parse rates & strict vs lenient scores:")
+        print(f"    {'eval':<24} {'parse%':>6}  {'strict':>7}  {'lenient':>7}")
+        print(f"    {'─'*50}")
         for k, v in parse_rates.items():
-            flag = "  ⚠ low" if v < 80 else ""
-            print(f"    {k:<22} {v:>5}%{flag}")
+            warn = " ⚠" if v < 80 else ""
+            sp = strict_parse_rates.get(k, v)
+            ss = strict_scores_map.get(k)
+            ls = scores.get(k)
+            ss_str = f"{ss:>5.1f}%" if ss is not None else "   —  "
+            ls_str = f"{ls:>5.1f}%" if ls is not None else "   —  "
+            diff = f" ▲{ls-ss:.1f}" if ss is not None and ls is not None and ls > ss else ""
+            print(f"    {k:<24} {v:>5}%{warn}  {ss_str}  {ls_str}{diff}")
         if STRIP_THINKING:
-            print(f"  Parser mode: lenient (think-block stripping enabled)")
+            print(f"  Parser: lenient (think-block stripping + last-letter fallback)")
     if repeats > 1:
         print(f"  Run-to-run stdev     {stdev(list(scores.values())):>6}%  (across {repeats} repeats)")
     if safety_scores:
