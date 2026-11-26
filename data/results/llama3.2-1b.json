@@ -1,0 +1,75 @@
+{
+  "model_id": "llama3.2-1b",
+  "model_name": "llama3.2:1b",
+  "hardware": "",
+  "submitted_by": "",
+  "samples": 100,
+  "repeats": 1,
+  "seed": 42,
+  "temperature": 0,
+  "ollama_version": "0.40.18",
+  "quantization": "Q8_0",
+  "parameter_size": "1.2B",
+  "elapsed_seconds": 0,
+  "scores": {
+    "med_knowledge": 39.0,
+    "clinical_reasoning": 29.0,
+    "evidence_reasoning": 43.0,
+    "claim_verification": 49.0,
+    "entity_extraction": 27.8,
+    "json_reliability": 73.0,
+    "consistency": 34.0
+  },
+  "confidence_intervals": {
+    "med_knowledge": {
+      "lo": 30.0,
+      "hi": 48.8
+    },
+    "clinical_reasoning": {
+      "lo": 21.0,
+      "hi": 38.5
+    },
+    "evidence_reasoning": {
+      "lo": 33.7,
+      "hi": 52.8
+    },
+    "claim_verification": {
+      "lo": 39.4,
+      "hi": 58.7
+    },
+    "entity_extraction": {
+      "lo": 20.1,
+      "hi": 37.5
+    },
+    "json_reliability": {
+      "lo": 63.6,
+      "hi": 80.7
+    },
+    "consistency": {
+      "lo": 25.5,
+      "hi": 43.7
+    }
+  },
+  "run_stdev": {},
+  "health_score": 38.6,
+  "safety_scores": {},
+  "parser_mode": "strict",
+  "parse_rates": {
+    "med_knowledge": 98.0,
+    "clinical_reasoning": 89.0,
+    "evidence_reasoning": 88.0,
+    "claim_verification": 100.0
+  },
+  "parse_rates_strict": {
+    "med_knowledge": 95.0,
+    "clinical_reasoning": 61.0,
+    "evidence_reasoning": 88.0,
+    "claim_verification": 100.0
+  },
+  "scores_strict": {
+    "med_knowledge": 39.0,
+    "clinical_reasoning": 21.0,
+    "evidence_reasoning": 43.0,
+    "claim_verification": 49.0
+  }
+}
