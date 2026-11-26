@@ -1,5 +1,39 @@
 [
   {
+    "id": "lingsante-3.1-flash",
+    "name": "LingSante-3.1-Flash",
+    "developer": "InclusionAI (Ant Group)",
+    "params": "560B (25B active)",
+    "params_size": "large",
+    "medical_tuned": true,
+    "license": "MIT",
+    "license_type": "open-weights",
+    "hf": "inclusionAI/LingSante-3.1-flash",
+    "ollama": null,
+    "specialty": [
+      "clinical-reasoning",
+      "medical-qa",
+      "evidence-reasoning"
+    ],
+    "usecase": "State-of-the-art open medical MoE model from Ant Group. 560B total / 25B active parameters. Designed for complex medical reasoning, healthcare communication, and long-horizon clinical tasks.",
+    "strength": "Ranked #1 among open medical models on InclusionMed. 1M context window. Strong on USMLE and evidence-based reasoning.",
+    "tags": [
+      "medical-qa",
+      "clinical-reasoning",
+      "moe",
+      "large-model",
+      "featured"
+    ],
+    "featured": true,
+    "language": [
+      "English",
+      "Chinese",
+      "Multilingual"
+    ],
+    "weights_format": "Other",
+    "remote_code": false
+  },
+  {
     "id": "openbiollm-70b",
     "name": "OpenBioLLM 70B",
     "developer": "Saama AI Research",
@@ -15,7 +49,7 @@
       "medical-qa"
     ],
     "usecase": "Top-performing open medical LLM. Outperforms GPT-4 on several medical benchmarks. Best choice when accuracy is critical.",
-    "strength": "USMLE, MedQA, PubMedQA — best-in-class open model across all three.",
+    "strength": "USMLE, MedQA, PubMedQA \u2014 best-in-class open model across all three.",
     "tags": [
       "medical-qa",
       "clinical-reasoning",
@@ -171,7 +205,7 @@
       "medical-qa"
     ],
     "usecase": "Biomedical text understanding and generation. Pre-trained on PubMed Central full-text. Best open-source mid-size option.",
-    "strength": "Biomedical NER, relation extraction, literature QA — strong open-source choice.",
+    "strength": "Biomedical NER, relation extraction, literature QA \u2014 strong open-source choice.",
     "tags": [
       "biomedical",
       "medical-qa",
@@ -232,7 +266,7 @@
       "medical-qa"
     ],
     "usecase": "High-performance medical LLM that runs on consumer hardware. Best balance of accuracy and resource use.",
-    "strength": "Medical QA, clinical reasoning — strong performance without requiring a 70B setup.",
+    "strength": "Medical QA, clinical reasoning \u2014 strong performance without requiring a 70B setup.",
     "tags": [
       "medical-qa",
       "clinical-reasoning",
@@ -565,7 +599,7 @@
       "knowledge-graph"
     ],
     "usecase": "BioBERT variant that leverages document links for richer biomedical knowledge. State-of-the-art on many bio NLP benchmarks.",
-    "strength": "Biomedical QA, NER, semantic similarity — especially strong when citation/link context matters.",
+    "strength": "Biomedical QA, NER, semantic similarity \u2014 especially strong when citation/link context matters.",
     "tags": [
       "biomedical",
       "ner",
@@ -1123,7 +1157,7 @@
       "general-medicine"
     ],
     "usecase": "Lightweight health-focused model optimised for patient-facing applications and healthcare Q&A with low latency.",
-    "strength": "Fast health Q&A, patient education, symptom description — ideal for low-resource deployments.",
+    "strength": "Fast health Q&A, patient education, symptom description \u2014 ideal for low-resource deployments.",
     "tags": [
       "medical-qa",
       "patient-communication",
@@ -1215,7 +1249,7 @@
       "rag"
     ],
     "usecase": "Zero-shot biomedical retrieval model trained by NCBI. Encodes medical queries and articles for semantic search.",
-    "strength": "Medical RAG pipelines, PubMed article retrieval, biomedical semantic search — purpose-built for health retrieval.",
+    "strength": "Medical RAG pipelines, PubMed article retrieval, biomedical semantic search \u2014 purpose-built for health retrieval.",
     "tags": [
       "rag",
       "embeddings",
@@ -1246,7 +1280,7 @@
       "ner"
     ],
     "usecase": "ELECTRA architecture pre-trained on PubMed. More sample-efficient than BioBERT for most biomedical NLP tasks.",
-    "strength": "Biomedical NER, text classification — trains faster and often outperforms BioBERT on small datasets.",
+    "strength": "Biomedical NER, text classification \u2014 trains faster and often outperforms BioBERT on small datasets.",
     "tags": [
       "biomedical",
       "ner",

@@ -23,7 +23,7 @@ const LIMITS = [
   },
   {
     title: "Training data contamination",
-    body: "These are public datasets. Some models — especially medical fine-tunes — may have been trained on them, inflating their scores.",
+    body: "These are public datasets. MedQA USMLE and PubHealth are the highest-risk splits — both are widely indexed and likely appeared in pre-training corpora for models released after 2023. Medical fine-tunes are especially suspect: if the fine-tune dataset overlapped with the test split, scores on those evals are not comparable to general models. We flag this per model where known, but cannot verify it for every submission.",
   },
   {
     title: "Strict parsing punishes chatty models",
